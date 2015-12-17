@@ -23,6 +23,7 @@ Route::get('/admin/auth/signin',function(){
 Route::post('/admin/auth/signin',function(){
     $login = \Input::get('login');
     //TODO : เพิ่มขั้นตอนการ login ตรงนี้ สำหรับ ผู้ดูแลระบบ
+    //return $login;
     return redirect('/admin/index');
 });
 
