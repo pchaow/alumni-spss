@@ -103,3 +103,28 @@ body {
     display: inline-block;
     border-radius: 50%;
 }
+.progress div {
+    padding-left:20px;
+    width:100%;
+
+}
+.progress span {
+    position: absolute;
+    display: block;
+    color: black;
+    line-height: 30px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.progress span.left{
+    text-align: right;
+}
+
+.progress span.right{
+    text-align: right;
+}
+
+.progress {
+    height: 30px;
+}

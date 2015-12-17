@@ -5,13 +5,14 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Project name</a>
+                <a class="navbar-brand" href="#">SAS : SPSS Alumni System</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -53,26 +54,78 @@
                 <h1 class="page-header">Dashboard</h1>
 
                 <div class="row placeholders">
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
+                    <div class="col-xs-6 col-sm-4 placeholder">
+                        <label>ภูมิลำเนา</label>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 60%;">
+                                <span>เชียงใหม่ 60%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 30%; ">
+                                <span>เชียงราย 30%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="10"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 10%;">
+                                <span>พะเยา 10%</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
+                    <div class="col-xs-6 col-sm-4 placeholder">
+                        <label>สถานที่ทำงาน</label>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 60%;">
+                                <span>เชียงใหม่ 60%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 30%; ">
+                                <span>เชียงราย 30%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="10"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 10%;">
+                                <span>พะเยา 10%</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
+                    <div class="col-xs-6 col-sm-4 placeholder">
+                        <label>อาชีพ</label>
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 60%;">
+                                <span>เชียงใหม่ 60%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 30%; ">
+                                <span>เชียงราย 30%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 10%;">
+                                <span>พะเยา 10%</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
+
+
                 </div>
 
                 <h2 class="sub-header">Section title</h2>
