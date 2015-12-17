@@ -16,17 +16,20 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin/auth/signin',function(){
-   return view('admin.auth.signin');
+Route::get('/admin/auth/signin', function () {
+    return view('admin.auth.signin');
 });
 
-Route::post('/admin/auth/signin',function(){
+Route::post('/admin/auth/signin', function () {
     $login = \Input::get('login');
     //TODO : เพิ่มขั้นตอนการ login ตรงนี้ สำหรับ ผู้ดูแลระบบ
     //return $login;
     return redirect('/admin/index');
 });
 
-Route::get('/admin/index',function(){
-   return view('admin.index');
+Route::get('/admin', function () {
+    return redirect('/admin/index');
+});
+Route::get('/admin/index', function () {
+    return view('admin.index');
 });
