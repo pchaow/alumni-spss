@@ -16,6 +16,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/auth/signin',function(){
-   return view('auth.signin');
+Route::get('/admin/auth/signin',function(){
+   return view('admin.auth.signin');
+});
+
+Route::post('/admin/auth/signin',function(){
+    $login = \Input::get('login');
+    //TODO : เพิ่มขั้นตอนการ login ตรงนี้ สำหรับ ผู้ดูแลระบบ
+    return redirect('/admin/index');
+});
+
+Route::get('/admin/index',function(){
+   return view('admin.index');
 });
