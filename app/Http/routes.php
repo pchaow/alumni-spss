@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/auth/signin',function(){
+   return view('auth.signin');
+});
