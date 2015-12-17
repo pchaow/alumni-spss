@@ -20,6 +20,18 @@
 </head>
 
 <body>
-    @yield('content')
+
+@include('admin.navbar')
+
+@yield('sublayout')
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/bower/jquery/dist/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/bower/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="/bower/holderjs/holder.min.js"></script>
 </body>
 </html>
