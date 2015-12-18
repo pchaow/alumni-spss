@@ -30,17 +30,15 @@ Route::post('/admin/auth/signin', function () {
     $user = User::where('username', $login['username'])->first();
 
     if ($user != null) {
-        if (\Hash::check($login['password'], $user->password)) {
-            \Auth::login($user);
-            return redirect('/admin/index');
+        $usertype = $user->usertype()->first();
+        if ($usertype->name == "ADMIN") {
+            if (\Hash::check($login['password'], $user->password)) {
+                \Auth::login($user);
+                return redirect('/admin/index');
+            }
         }
-
-        return redirect('/admin/auth/signin');
-
-    } else {
-        return redirect('/admin/auth/signin');
     }
-
+    return redirect('/admin/auth/signin');
 
 });
 
