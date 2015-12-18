@@ -11,6 +11,8 @@
 |
 */
 
+use App\Models\User;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,9 +24,24 @@ Route::get('/admin/auth/signin', function () {
 
 Route::post('/admin/auth/signin', function () {
     $login = \Input::get('login');
-    //TODO : เพิ่มขั้นตอนการ login ตรงนี้ สำหรับ ผู้ดูแลระบบ
-    //return $login;
-    return redirect('/admin/index');
+
+    //$login['password'] = \Hash::make($login['password']);
+
+    $user = User::where('username', $login['username'])->first();
+
+    if ($user != null) {
+        if (\Hash::check($login['password'], $user->password)) {
+            \Auth::login($user);
+            return redirect('/admin/index');
+        }
+
+        return redirect('/admin/auth/signin');
+
+    } else {
+        return redirect('/admin/auth/signin');
+    }
+
+
 });
 
 Route::get('/admin', function () {
