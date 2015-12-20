@@ -11,6 +11,7 @@
                     <li><a href="#">Export</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
+                    <li><a class="header" href="#">ผู้ดูแลระบบ</a></li>
                     <li><a href="">Nav item</a></li>
                     <li><a href="">Nav item again</a></li>
                     <li><a href="">One more nav</a></li>
