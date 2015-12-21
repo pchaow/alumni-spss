@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>SAS : SPASs Alumni System</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
