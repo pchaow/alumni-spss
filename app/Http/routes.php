@@ -42,6 +42,11 @@ Route::post('/admin/auth/signin', function () {
 
 });
 
+Route::get('/admin/auth/logout',function(){
+    \Auth::logout();
+    return redirect('/');
+});
+
 Route::get('/admin', function () {
     return redirect('/admin/index');
 });
