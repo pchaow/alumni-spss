@@ -14,7 +14,7 @@
 use App\Models\User;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.signin');
 });
 
 
@@ -38,7 +38,7 @@ Route::post('/admin/auth/signin', function () {
             }
         }
     }
-    return redirect('/admin/auth/signin');
+    return redirect('/');
 
 });
 
