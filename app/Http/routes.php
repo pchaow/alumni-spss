@@ -53,3 +53,7 @@ Route::get('/admin', function () {
 Route::get('/admin/index', function () {
     return view('admin.index');
 });
+
+Route::get('/admin/insert', function () {
+    return view('admin.data.insert');
+});
