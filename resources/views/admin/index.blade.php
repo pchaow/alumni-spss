@@ -10,30 +10,30 @@
     </div>
     <!-- /.row -->
     <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <a href="#">
-                <div class="panel panel-red">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-cloud-upload fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">Import</div>
-                                <!--div>New Comments!</div-->
-                            </div>
-                        </div>
-                    </div>
+      <div class="col-lg-3 col-md-6">
+          <a href="#">
+              <div class="panel panel-red">
+                  <div class="panel-heading">
+                      <div class="row">
+                          <div class="col-xs-3">
+                              <i class="fa fa-cloud-upload fa-5x"></i>
+                          </div>
+                          <div class="col-xs-9 text-right">
+                              <h3>Import</h3>
+                              <!--div>New Comments!</div-->
+                          </div>
+                      </div>
+                  </div>
 
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
+                  <div class="panel-footer">
+                      <span class="pull-left">View Details</span>
+                      <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                      <div class="clearfix"></div>
+                  </div>
 
-                </div>
-            </a>
-        </div>
+              </div>
+          </a>
+      </div>
         <div class="col-lg-3 col-md-6">
             <a href="#">
                 <div class="panel panel-green">
@@ -43,7 +43,7 @@
                                 <i class="fa fa-search fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">Search</div>
+                                <h3>Search</h3>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                                 <i class="fa fa-bar-chart fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">Report</div>
+                                <h3>Report</h3>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                                 <i class="fa fa-facebook-official fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">FB Page</div>
+                                <h3>FB Page</h3>
                                 <!--div>New Comments!</div-->
                             </div>
                         </div>
