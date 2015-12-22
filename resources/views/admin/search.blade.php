@@ -101,13 +101,22 @@
             </div>
         </div>
     </div>
-
+    <?php $i = 10; $s = 1; ?>
     <div class="row">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <i class="fa fa-file-text-o"></i> ผลลัพธ์การค้นหา
             </div>
             <div class="panel-body">
+                <div class="row" style="padding-bottom: 10px;">
+                    <div class="col-lg-1">
+                        <button class="btn btn-success"><i class="fa fa-cloud-download"></i> ส่งออกเป็น Excel</button>
+                    </div>
+                    <div class="col-lg-11" style="text-align: center;">
+                        พบข้อมูลทั้งหมดจำนวน {{$i}} รายการ
+
+                    </div>
+                </div>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
@@ -115,46 +124,24 @@
                         <th>ชื่อ นามสกุล</th>
                         <th>สาขาวิชาที่สำเร็จการศึกษา</th>
                         <th>ระดับการศึกษาที่สำเร็จ</th>
+                        <th>จัดการ</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>5XXXXXX</td>
-                        <td>นายกอไก่ ใจดี</td>
-                        <td>รัฐศาสตร์</td>
-                        <td>ปริญญาโท</td>
-                    </tr>
-                    <tr>
-                        <td>5XXXXXX</td>
-                        <td>นายกอไก่ ใจดี</td>
-                        <td>รัฐศาสตร์</td>
-                        <td>ปริญญาโท</td>
-                    </tr> <tr>
-                        <td>5XXXXXX</td>
-                        <td>นายกอไก่ ใจดี</td>
-                        <td>รัฐศาสตร์</td>
-                        <td>ปริญญาโท</td>
-                    </tr> <tr>
-                        <td>5XXXXXX</td>
-                        <td>นายกอไก่ ใจดี</td>
-                        <td>รัฐศาสตร์</td>
-                        <td>ปริญญาโท</td>
-                    </tr> <tr>
-                        <td>5XXXXXX</td>
-                        <td>นายกอไก่ ใจดี</td>
-                        <td>รัฐศาสตร์</td>
-                        <td>ปริญญาโท</td>
-                    </tr> <tr>
-                        <td>5XXXXXX</td>
-                        <td>นายกอไก่ ใจดี</td>
-                        <td>รัฐศาสตร์</td>
-                        <td>ปริญญาโท</td>
-                    </tr> <tr>
-                        <td>5XXXXXX</td>
-                        <td>นายกอไก่ ใจดี</td>
-                        <td>รัฐศาสตร์</td>
-                        <td>ปริญญาโท</td>
-                    </tr>
+                    <?php $i = 10; $s = 1; ?>
+                    @for($s=0;$s<$i;$s++)
+                        <tr>
+                            <td>5XXXXXX</td>
+                            <td>นายกอไก่ ใจดี</td>
+                            <td>รัฐศาสตร์</td>
+                            <td>ปริญญาโท</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn btn-primary" >View</button>
+                                <button type="button" class="btn btn-default">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    @endfor
                     </tbody>
                 </table>
             </div>
