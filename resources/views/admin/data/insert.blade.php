@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Forms</h1>
+            <h1 class="page-header">เพิ่มข้อมูลศิษย์เก่า</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -12,14 +12,15 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    1. ข้อมูลสมาชิก
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form role="form">
+            <form role="form">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        ข้อมูลส่วนตัวศิษย์เก่า
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+
 
                                 <div class="row">
                                     <div class="form-group col-lg-4">
@@ -49,7 +50,6 @@
                                     </div>
                                 </div>
 
-
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>วัน/เดือน/ปี เกิด</label>
@@ -58,6 +58,31 @@
 
                                     <div class="form-group col-lg-6">
                                         <label>GPA</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>ระดับการศึกษา</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-6">
+                                        <label>คณะ</label>
+                                        <input class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>สาขาวิชา</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-6">
+                                        <label>หลักสูตร</label>
                                         <input class="form-control">
                                     </div>
 
@@ -108,269 +133,230 @@
                                 </div>
 
                                 <div class="row">
+
+                                    <div class="form-group col-lg-3">
+                                        <label>โทรศัพท์บ้าน</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>โทรศัพท์มือถือ</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>E-Mail</label>
+                                        <input class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        ข้อมูลการทำงานศิษย์เก่า
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>สถานที่ทำงาน</label>
+                                    <input class="form-control">
+                                </div>
+
+                                <div class="row">
                                     <div class="form-group col-lg-6">
+                                        <div class="col-lg-6" style="padding-left: 0px">
+                                            <label>เลขที่</label>
+                                            <input class="form-control">
+                                        </div>
+                                        <div class="col-lg-6" style="padding-right: 0px">
+                                            <label>หมู่</label>
+                                            <input class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-6">
+                                        <div class="col-lg-6" style="padding-left: 0px">
+                                            <label>อาคาร</label>
+                                            <input class="form-control">
+                                        </div>
+                                        <div class="col-lg-6" style="padding-right: 0px">
+                                            <label>ชั้น</label>
+                                            <input class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-3">
+                                        <label>ซอย</label>
+                                        <select class="form-control"></select>
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>ถนน</label>
+                                        <select class="form-control"></select>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>ตำบล</label>
+                                        <select class="form-control"></select>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>อำเภอ</label>
+                                        <input class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group col-lg-3">
+                                        <label>จังหวัด</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>รหัสไปรษณี</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group col-lg-3">
                                         <label>โทรศัพท์</label>
                                         <input class="form-control">
                                     </div>
 
+                                    <div class="form-group col-lg-3">
+                                        <label>โทรสาร</label>
+                                        <input class="form-control">
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group col-lg-3">
+                                        <label>E-Mail ที่ทำงาน</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>หน่วยงานที่ทำ</label>
+                                        <select class="form-control">
+                                            <option>รัฐบาล</option>
+                                            <option>เอกชน</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>ตำแหน่ง</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>เงินเดือน</label>
+                                        <input type="number" class="form-control">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
                                     <div class="form-group col-lg-6">
-                                        <label>E-Mail</label>
+                                        <label>ประเภทงาน</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>สถานะการทำงาน</label>
+                                        <select class="form-control">
+                                            <option>ทำงานแล้ว</option>
+                                            <option>ยังไม่ได้ทำงาน</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>สาเหตุที่ไม่มีงานทำ</label>
                                         <input class="form-control">
                                     </div>
 
                                 </div>
 
-                                <div class="form-group">
-                                    <label>GPA</label>
-                                    <input class="form-control">
-                                </div>
 
-                                <div class="form-group">
-                                    <label>Text Input with Placeholder</label>
-                                    <input class="form-control" placeholder="Enter text">
-                                </div>
-                                <div class="form-group">
-                                    <label>Static Control</label>
+                            </div>
 
-                                    <p class="form-control-static">email@example.com</p>
-                                </div>
-                                <div class="form-group">
-                                    <label>File input</label>
-                                    <input type="file">
-                                </div>
-                                <div class="form-group">
-                                    <label>Text area</label>
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>Checkboxes</label>
-
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Checkbox 1
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Checkbox 2
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Checkbox 3
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Inline Checkboxes</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">1
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">2
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">3
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Radio Buttons</label>
-
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                                   checked="">Radio 1
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2"
-                                                   value="option2">Radio 2
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios3"
-                                                   value="option3">Radio 3
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Inline Radio Buttons</label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1"
-                                               value="option1" checked="">1
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2"
-                                               value="option2">2
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3"
-                                               value="option3">3
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Selects</label>
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Multiple Selects</label>
-                                    <select multiple="" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-default">Submit Button</button>
-                                <button type="reset" class="btn btn-default">Reset Button</button>
-                            </form>
                         </div>
-
+                        <!-- /.row (nested) -->
                     </div>
-                    <!-- /.row (nested) -->
+                    <!-- /.panel-body -->
                 </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Basic Form Elements
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form role="form">
-                                <div class="form-group">
-                                    <label>Text Input</label>
-                                    <input class="form-control">
+                <!-- /.panel -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        ข้อมูลอื่นๆ
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>นำความรู้ที่เรียนมาประยุกต์ใช้กับงานที่ทำ</label>
+                                        <input class="form-control">
+                                    </div>
 
-                                    <p class="help-block">Example block-level help text here.</p>
-                                </div>
-                                <div class="form-group">
-                                    <label>Text Input with Placeholder</label>
-                                    <input class="form-control" placeholder="Enter text">
-                                </div>
-                                <div class="form-group">
-                                    <label>Static Control</label>
+                                    <div class="form-group col-lg-6">
+                                        <label>ปัญหาในการทำงาน</label>
+                                        <input class="form-control">
+                                    </div>
 
-                                    <p class="form-control-static">email@example.com</p>
                                 </div>
-                                <div class="form-group">
-                                    <label>File input</label>
-                                    <input type="file">
-                                </div>
-                                <div class="form-group">
-                                    <label>Text area</label>
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>Checkboxes</label>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>งานตรงกับสายที่เรียนมา</label>
+                                        <select class="form-control">
+                                            <option>ตรง</option>
+                                            <option>ไม่ตรง</option>
+                                        </select>
+                                    </div>
 
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Checkbox 1
-                                        </label>
+                                    <div class="form-group col-lg-6">
+                                        <label>ความสามารถพิเศษที่ช่วยในการทำงาน</label>
+                                        <input class="form-control">
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Checkbox 2
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Checkbox 3
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Inline Checkboxes</label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">1
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">2
-                                    </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox">3
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Radio Buttons</label>
 
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                                   checked="">Radio 1
-                                        </label>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>ระยะเวลาที่ได้งานทำ</label>
+                                        <input class="form-control">
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2"
-                                                   value="option2">Radio 2
-                                        </label>
+
+                                    <div class="form-group col-lg-6">
+                                        <label>ปัญหาในการทำงาน</label>
+                                        <input class="form-control">
                                     </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios3"
-                                                   value="option3">Radio 3
-                                        </label>
-                                    </div>
+
                                 </div>
-                                <div class="form-group">
-                                    <label>Inline Radio Buttons</label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1"
-                                               value="option1" checked="">1
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2"
-                                               value="option2">2
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3"
-                                               value="option3">3
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Selects</label>
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Multiple Selects</label>
-                                    <select multiple="" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-default">Submit Button</button>
-                                <button type="reset" class="btn btn-default">Reset Button</button>
-                            </form>
+
+                            </div>
+
                         </div>
-
+                        <!-- /.row (nested) -->
                     </div>
-                    <!-- /.row (nested) -->
+                    <!-- /.panel-body -->
                 </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
+                <!-- /.panel -->
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">เพิ่มข้อมูล</button>
+                    <button type="submit" class="btn btn-default">ล้างข้อมูล</button>
+                </div>
+            </form>
+
+
         </div>
         <!-- /.col-lg-12 -->
     </div>
