@@ -87,7 +87,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> เพิ่มข้อมูลศิษย์เก่า<span class="fa-plus-circle"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> เพิ่มข้อมูลศิษย์เก่า<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="/admin/insert">เพิ่มใหม่</a>
