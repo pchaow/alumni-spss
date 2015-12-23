@@ -61,3 +61,18 @@ Route::get('/admin/search', function () {
 Route::get('/admin/insert', function () {
     return view('admin.data.insert');
 });
+
+
+
+///// User //////
+
+Route::get('/user', function () {
+    return redirect('/user/index');
+});
+Route::get('/user/index', function () {
+    return view('user.index');
+});
+
+Route::get('/user/edit', function () {
+    return view('user.profile.edit');
+});
