@@ -79,7 +79,7 @@
                             Welcome, User Name
                         </li>
                         <li>
-                            <a href="/admin/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="/user/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 
                         <li>

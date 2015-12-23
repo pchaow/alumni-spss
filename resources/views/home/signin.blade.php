@@ -56,7 +56,7 @@
                 ศิษย์เก่า
             </div>
             <div class="panel-body">
-                <form action="#" method="post" class="form-signin">
+                <form action="/user/index" method="get" class="form-signin">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>รหัสประจำตัวประชาชน</label>

@@ -20,24 +20,6 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-
-
-                                <div class="row">
-                                    <div class="form-group col-lg-4">
-                                        <label>คำนำหน้าชื่อ</label>
-                                        <input class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-lg-4">
-                                        <label>ชื่อ</label>
-                                        <input class="form-control">
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <label>นามสกุล</label>
-                                        <input class="form-control">
-
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>รหัสบัตรประชาชน</label>
@@ -50,43 +32,31 @@
                                     </div>
                                 </div>
 
+
                                 <div class="row">
-                                    <div class="form-group col-lg-6">
+                                    <div class="form-group col-lg-3">
+                                        <label>คำนำหน้าชื่อ</label>
+                                        <select class="form-control">
+                                            <option>นาย</option>
+                                            <option>นางสาว</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>ชื่อ</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>นามสกุล</label>
+                                        <input class="form-control">
+
+                                    </div>
+                                    <div class="form-group col-lg-3">
                                         <label>วัน/เดือน/ปี เกิด</label>
                                         <input type="date" class="form-control">
                                     </div>
-
-                                    <div class="form-group col-lg-6">
-                                        <label>GPA</label>
-                                        <input class="form-control">
-                                    </div>
-
                                 </div>
 
-                                <div class="row">
-                                    <div class="form-group col-lg-6">
-                                        <label>ระดับการศึกษา</label>
-                                        <input class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-lg-6">
-                                        <label>คณะ</label>
-                                        <input class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group col-lg-6">
-                                        <label>สาขาวิชา</label>
-                                        <input class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-lg-6">
-                                        <label>หลักสูตร</label>
-                                        <input class="form-control">
-                                    </div>
-
-                                </div>
 
                                 <div class="row">
                                     <div class="form-group col-lg-6">
@@ -148,7 +118,38 @@
                                         <label>E-Mail</label>
                                         <input class="form-control">
                                     </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <label>GPA</label>
+                                        <input class="form-control">
+                                    </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>ระดับการศึกษา</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-6">
+                                        <label>คณะ</label>
+                                        <input class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>สาขาวิชา</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-lg-6">
+                                        <label>หลักสูตร</label>
+                                        <input class="form-control">
+                                    </div>
+
+                                </div>
+
                             </div>
 
                         </div>
@@ -341,6 +342,11 @@
 
                                 </div>
 
+                                <div class="form-group" align="center">
+                                    <button type="submit" class="btn btn-primary">เพิ่มข้อมูล</button>
+                                    <button type="submit" class="btn btn-default">ล้างข้อมูล</button>
+                                </div>
+
                             </div>
 
                         </div>
@@ -350,10 +356,7 @@
                 </div>
                 <!-- /.panel -->
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-success">เพิ่มข้อมูล</button>
-                    <button type="submit" class="btn btn-default">ล้างข้อมูล</button>
-                </div>
+
             </form>
 
 
