@@ -25,11 +25,12 @@
                             <div class="form-group">
                                 <label>ปีที่เข้าศึกษา</label>
                                 <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>ไม่ระบุ</option>
+                                    <option>2557</option>
+                                    <option>2556</option>
+                                    <option>2555</option>
+                                    <option>2554</option>
+                                    <option>2553</option>
                                 </select>
                             </div>
                         </div>
@@ -37,23 +38,22 @@
                             <div class="form-group">
                                 <label>ระดับการศึกษาที่สำเร็จ</label>
                                 <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>ไม่ระบุ</option>
+                                    <option>ปริญญาตรี</option>
+                                    <option>ปริญญาโท</option>
+                                    <option>ปริญญาเอก</option>
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <div class="form-group">
-                                <label>สาขาวิชาที่สำเร็จการศึกษา</label>
+                                <label>หลักสูตรที่สำเร็จการศึกษา</label>
                                 <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>ไม่ระบุ</option>
+                                    <option>รัฐศาสตรบัณฑิต (ร.บ.)</option>
+                                    <option>ศิลปศาสตรบัณฑิต (ศศ.บ.) สาขาวิชาพัฒนาสังคม</option>
+                                    <option>หลักสูตรรัฐประศาสนศาสตรมหาบัณฑิต (รป.ม.) สาขาวิชานโยบายสาธารณะ</option>
                                 </select>
                             </div>
                         </div>

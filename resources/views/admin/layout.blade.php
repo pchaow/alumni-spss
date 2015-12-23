@@ -76,7 +76,12 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
-                            Welcome, User Name
+                            ยินดีต้อนรับ,
+                            @if(Auth::user())
+                                คุณ{{Auth::user()->firstname}} {{Auth::user()->lastname}}
+                            @else
+                                คุณผู้ใช้ มหาวิทยาลัย
+                            @endif
                         </li>
                         <li>
                             <a href="/admin/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
@@ -87,7 +92,8 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa  fa-pencil-square fa-fw"></i> เพิ่มข้อมูลศิษย์เก่า<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa  fa-pencil-square fa-fw"></i> เพิ่มข้อมูลศิษย์เก่า<span
+                                        class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="/admin/insert">เพิ่มใหม่</a>
@@ -100,7 +106,8 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ<span
+                                        class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">รายงาน 1</a>
