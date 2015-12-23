@@ -35,8 +35,8 @@ class UserTableSeeder extends Seeder
         $adminUser->national_id = "0000000000000";
         $adminUser->birthdate = \Carbon\Carbon::createFromDate(2000,1,1)->toDateString();
         $adminUser->email = "admin@admin.com";
-        $adminUser->firstname = "admin";
-        $adminUser->lastname = "admin";
+        $adminUser->firstname = "ชลติพันธ์";
+        $adminUser->lastname = "เปล่งวิทยา";
 
         $adminType->users()->save($adminUser);
 
