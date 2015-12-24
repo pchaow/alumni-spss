@@ -90,21 +90,6 @@
                         <li>
                             <a href="/admin/search"><i class="fa fa-search fa-fw"></i> ค้นหาศิษย์เก่า</a>
                         </li>
-
-                        <li>
-                            <a href="#"><i class="fa  fa-pencil-square fa-fw"></i> เพิ่มข้อมูลศิษย์เก่า<span
-                                        class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/admin/insert">เพิ่มใหม่</a>
-                                </li>
-                                <li>
-                                    <a href="#">นำเข้าไฟล์ เอ็กเซล</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ<span
                                         class="fa arrow"></span></a>
@@ -119,7 +104,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-cloud-upload fa-fw"></i> นำเข้า</a>
+                            <a href="/admin/import"><i class="fa fa-cloud-upload fa-fw"></i> นำเข้า</a>
                         </li>
                     </ul>
                 </div>

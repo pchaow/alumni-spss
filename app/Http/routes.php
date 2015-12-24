@@ -64,6 +64,10 @@ Route::group(['prefix' => 'admin'], function () {
         return view('admin.data.insert');
     });
 
+    Route::get('/import',function(){
+        return view('admin.import');
+    });
+
 });
 
 
