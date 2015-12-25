@@ -18,8 +18,6 @@ class CreateUsersTable extends Migration
             $t->timestamps();
         });
 
-
-
         Schema::create('users',function(Blueprint $t){
             $t->increments('id');
             $t->string('username')->unique();
