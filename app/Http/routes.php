@@ -84,6 +84,9 @@ Route::group(['prefix'=>'user'],function(){
     Route::get('/edit', function () {
         return view('user.profile.edit');
     });
+    Route::get('/search', function () {
+        return view('user.search');
+    });
 });
 
 /*

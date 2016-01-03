@@ -81,7 +81,9 @@
                         <li>
                             <a href="/user/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-
+                        <li>
+                            <a href="/user/search"><i class="fa fa-search fa-fw"></i> ค้นหา</a>
+                        </li>
                         <li>
                             <a href="/user/edit"><i class="fa fa-edit fa-fw"></i> แก้ไขข้อมูลส่วนตัว</a>
                         </li>
