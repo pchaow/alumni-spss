@@ -89,6 +89,10 @@ Route::group(['prefix'=>'user'],function(){
     });
 });
 
+Route::get('/test_excel', 'TestExcelController@test_excel');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
