@@ -89,7 +89,10 @@ Route::group(['prefix'=>'user'],function(){
     });
 });
 
-Route::get('/test_excel', 'TestExcelController@test_excel');
+Route::get('/test_export_excel', 'TestExcelController@test_export_excel');
+
+
+Route::get('/test_import_excel', 'TestExcelController@test_import_excel');
 
 
 
