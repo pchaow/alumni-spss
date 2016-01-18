@@ -35,6 +35,21 @@ class CreateUsersTable extends Migration
             $t->foreign('usertype_id')->references('id')->on('usertypes');
 
         });
+
+        Schema::create('alumni',function(Blueprint $t){
+            $t->increments('id');
+            $t->string('university');
+            $t->string('faculty');
+            $t->string('branch');
+            $t->string('name_title');
+            $t->string('firstname');
+            $t->string('lastname');
+            $t->timestamps();
+
+        });
+
+
+
     }
 
     /**
@@ -46,5 +61,6 @@ class CreateUsersTable extends Migration
     {
         Schema::drop('users');
         Schema::drop('usertypes');
+        Schema::drop('alumni');
     }
 }
