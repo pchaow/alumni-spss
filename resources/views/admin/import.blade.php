@@ -12,11 +12,6 @@
 
     <div class="row">
         <div class="col-lg-12">
-            @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
-            @endif
             <form role="form" action="<?php echo url('admin/import_excel')?>" method="POST"
                   enctype="multipart/form-data" runat="server">
                 <div class="panel panel-default">
