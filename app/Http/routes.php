@@ -70,7 +70,13 @@ Route::group(['prefix' => 'admin'], function () {
         return view('admin.import');
     });
 
+    Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
+
+
 });
+
+
+
 
 Route::group(['prefix'=>'user'],function(){
 
