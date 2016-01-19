@@ -52,24 +52,11 @@ class TestExcelController extends Controller
     public function test_import_excel()
     {
 
-        $dataTest = Excel::load(storage_path('file_excel') . '/testdata.xls', function ($reader) {
+        $dataTest = Excel::load(storage_path('file_excel') . '/Data1.xlsx', function ($reader) {
         })->get();
-        //dd( $dataTest[0][0]);
+        dd( $dataTest[0]);
         $test = 0;
-        foreach ($dataTest[0] as $data) {
-            //return $data->university;
-            $input = new Alumni();
-            $input->university = $data->university;
-            $input->faculty = $data->faculty;
-            $input->branch = $data->branch;
-            $input->name_title = $data->name_title;
-            $input->firstname = $data->firstname;
-            $input->lastname = $data->lastname;
-
-            $input->save();
-        }
 
 
-        return $input;
     }
 }

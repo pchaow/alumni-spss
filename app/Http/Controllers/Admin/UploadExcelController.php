@@ -60,18 +60,19 @@ class UploadExcelController extends Controller
             $filename = $file->getClientOriginalName();
             $ext = $file->getClientOriginalExtension();
 
-            if ($ext == "xls") {
+            if ($ext == "xls" || $ext == "xlsx") {
                 if ($file->isValid()) {
                     $file->move($destinationPath, $filename);
 
                     $dataTest = Excel::load(storage_path('file_excel') . '/' . $filename, function ($reader) {
                     })->get();
-                    //dd( $dataTest[0][0]);
+                   dd($dataTest[0]);
                     $test = 0;
                     foreach ($dataTest[0] as $data) {
-                        //return $data->university;
+                        //return $data;
+
                         $input = new Alumni();
-                        $input->university = $data->university;
+                        $input->yearofgraduation = $data->yearofgraduation;
                         $input->faculty = $data->faculty;
                         $input->branch = $data->branch;
                         $input->name_title = $data->name_title;
