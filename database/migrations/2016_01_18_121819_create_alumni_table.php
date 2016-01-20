@@ -22,6 +22,7 @@ class CreateAlumniTable extends Migration
             $t->string('lastname');
             $t->timestamps();
 
+
         });
 
     }
