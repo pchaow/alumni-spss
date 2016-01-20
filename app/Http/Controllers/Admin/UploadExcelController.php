@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Alumni;
+use App\Models\Workplace;
 use App\User;
 use Illuminate\Support\Facades\App;
 use Excel;
@@ -66,42 +67,58 @@ class UploadExcelController extends Controller
 
                     $dataTest = Excel::load(storage_path('file_excel') . '/' . $filename, function ($reader) {
                     })->get();
-                  // dd($dataTest[0]);
+                  //dd($dataTest[0]);
                     $test = 0;
                     foreach ($dataTest[0] as $data) {
                         //return $data;
 
                         /**ข้อมูลส่วนตัว**/
-                        $input = new Alumni();
-                        $input->year_of_graduation = $data->year_of_graduation;
-                        $input->national_id = $data->faculty;
-                        $input->student_id = $data->branch;
-                        $input->title = $data->title;
-                        $input->firstname = $data->firstname;
-                        $input->lastname = $data->lastname;
-                        $input->birthdate = $data->birthdate;
-                        $input->gpa = $data->gpa;
-                        $input->house_no = $data->house_no;
-                        $input->moo = $data->moo;
-                        $input->soi = $data->soi;
-                        $input->road = $data->road;
-                        $input->district = $data->district;
-                        $input->amphur = $data->amphur;
-                        $input->province = $data->province;
-                        $input->phone = $data->phone;
-                        $input->zipcode = $data->zipcode;
-                        $input->email = $data->email;
-                        $input->education = $data->education;
-                        $input->faculty = $data->faculty;
-                        $input->branch = $data->branch;
-                        $input->firstname = $data->firstname;
-                        $input->course = $data->course;
+                        $input_profile = new Alumni();
+                        $input_profile->year_of_graduation = $data->year_of_graduation;
+                        $input_profile->national_id = $data->faculty;
+                        $input_profile->student_id = $data->branch;
+                        $input_profile->title = $data->title;
+                        $input_profile->firstname = $data->firstname;
+                        $input_profile->lastname = $data->lastname;
+                        $input_profile->birthdate = $data->birthdate;
+                        $input_profile->gpa = $data->gpa;
+                        $input_profile->house_no = $data->house_no;
+                        $input_profile->moo = $data->moo;
+                        $input_profile->soi = $data->soi;
+                        $input_profile->road = $data->road;
+                        $input_profile->district = $data->district;
+                        $input_profile->amphur = $data->amphur;
+                        $input_profile->province = $data->province;
+                        $input_profile->phone = $data->phone;
+                        $input_profile->zipcode = $data->zipcode;
+                        $input_profile->email = $data->email;
+                        $input_profile->education = $data->education;
+                        $input_profile->faculty = $data->faculty;
+                        $input_profile->branch = $data->branch;
+                        $input_profile->firstname = $data->firstname;
+                        $input_profile->course = $data->course;
+                        $input_profile->save();
                         /////////////////
 
+                        $input_workplace = new Workplace();
+                        $input_workplace->office = $data->office;
+                        $input_workplace->number_office = $data->number_office;
+                        $input_workplace->moo_office = $data->moo_office;
+                        $input_workplace->building_office = $data->building_office;
+                        $input_workplace->class_office = $data->class_office;
+                        $input_workplace->soi_office = $data->soi_office;
+                        $input_workplace->road_office = $data->road_office;
+                        $input_workplace->amphur_office = $data->amphur_office;
+                        $input_workplace->district_office = $data->district_office;
+                        $input_workplace->province_office = $data->province_office;
+                        $input_workplace->zipcode_office = $data->zipcode_office;
+                        $input_workplace->phone_office = $data->phone_office;
+                        $input_workplace->fax_office = $data->fax_office;
+                        $input_workplace->email_office = $data->email_office;
+                        $input_workplace->salary = $data->salary;
+                        $input_workplace->alumni()->associate($input_profile);
+                        $input_workplace->save();
 
-
-
-                        $input->save();
                     }
 
                     return redirect('admin/import')->with('status', 'Import Success!!');

@@ -8,5 +8,9 @@ class Alumni extends Model
 {
     protected $table = 'alumni';
 
-    protected $fillable = array('university','faculty','branch','name_title','firstname','lastname');
+    public function workplace()
+    {
+        return $this->hasMany('app\Models\workplace','alumni_id');
+    }
+
 }
