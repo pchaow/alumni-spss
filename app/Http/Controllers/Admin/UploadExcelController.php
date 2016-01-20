@@ -66,18 +66,40 @@ class UploadExcelController extends Controller
 
                     $dataTest = Excel::load(storage_path('file_excel') . '/' . $filename, function ($reader) {
                     })->get();
-                   dd($dataTest[0]);
+                  // dd($dataTest[0]);
                     $test = 0;
                     foreach ($dataTest[0] as $data) {
                         //return $data;
 
+                        /**ข้อมูลส่วนตัว**/
                         $input = new Alumni();
-                        $input->yearofgraduation = $data->yearofgraduation;
-                        $input->faculty = $data->faculty;
-                        $input->branch = $data->branch;
-                        $input->name_title = $data->name_title;
+                        $input->year_of_graduation = $data->year_of_graduation;
+                        $input->national_id = $data->faculty;
+                        $input->student_id = $data->branch;
+                        $input->title = $data->title;
                         $input->firstname = $data->firstname;
                         $input->lastname = $data->lastname;
+                        $input->birthdate = $data->birthdate;
+                        $input->gpa = $data->gpa;
+                        $input->house_no = $data->house_no;
+                        $input->moo = $data->moo;
+                        $input->soi = $data->soi;
+                        $input->road = $data->road;
+                        $input->district = $data->district;
+                        $input->amphur = $data->amphur;
+                        $input->province = $data->province;
+                        $input->phone = $data->phone;
+                        $input->zipcode = $data->zipcode;
+                        $input->email = $data->email;
+                        $input->education = $data->education;
+                        $input->faculty = $data->faculty;
+                        $input->branch = $data->branch;
+                        $input->firstname = $data->firstname;
+                        $input->course = $data->course;
+                        /////////////////
+
+
+
 
                         $input->save();
                     }

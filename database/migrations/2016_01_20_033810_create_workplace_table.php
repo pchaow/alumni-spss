@@ -16,10 +16,10 @@ class CreateWorkplaceTable extends Migration
             $t->increments('id');
             $t->string('office');
             $t->string('number_office');
-            $t->string('swine_office');
+            $t->string('moo_office');
             $t->string('building_office');
             $t->string('class_office');
-            $t->string('alley_office');
+            $t->string('soi_office');
             $t->string('road_office');
             $t->string('amphur_office');
             $t->string('district_office');
