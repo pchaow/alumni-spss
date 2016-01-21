@@ -34,7 +34,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6">
-            <a href="#">
+            <a href="/admin/stats">
                 <div class="panel panel-yellow">
                     <div class="panel-heading">
                         <div class="row">
@@ -108,8 +108,8 @@
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-12">
-            @include('admin.panels.summary_by_branch')
-            @include('admin.panels.count_by_branch')
+             @include('admin.panels.summary_by_branch')
+             @include('admin.panels.count_by_branch')
         </div>
         
     </div>

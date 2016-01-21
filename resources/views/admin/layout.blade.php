@@ -91,16 +91,8 @@
                             <a href="/admin/search"><i class="fa fa-search fa-fw"></i> ค้นหาศิษย์เก่า</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ<span
-                                        class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">รายงาน 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">รายงาน 2</a>
-                                </li>
-                            </ul>
+                            <a href="/admin/stats"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ</a>
+
                             <!-- /.nav-second-level -->
                         </li>
                         <li>

@@ -72,6 +72,10 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.import');
         });
 
+        Route::get('/stats', function () {
+            return view('admin.stats');
+        });
+
         Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
 
 

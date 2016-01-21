@@ -26,7 +26,7 @@
 
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label>ปีที่เข้าศึกษา</label>
+                                    <label>ปีที่จบการศึกษา</label>
                                     <select name="year_of_graduation" id="year_of_graduation" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         <option value="2558">2558</option>

@@ -21,13 +21,18 @@ $result = DB::select($sql);
             </tr>
             </thead>
             <tbody>
-
+            <?php $sum = 0; ?>
             @foreach($result as $r)
-                <tr>
-                    <td>{{$r->branch}}</td>
-                    <td>{{$r->amount}}</td>
-                </tr>
+                    <?php $sum = $sum + $r->amount; ?>
+                        <tr>
+                            <td>{{$r->branch}}</td>
+                            <td>{{$r->amount}}</td>
+                        </tr>
             @endforeach
+                    <tr class="success">
+                        <td >รวม</td>
+                        <td>{{$sum}}</td>
+                    </tr>
             </tbody>
         </table>
     </div>
