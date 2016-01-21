@@ -12,8 +12,8 @@ class AddKey extends Migration
      */
     public function up()
     {
-        Schema::table('alumni', function (Blueprint $t) {
-            $t->integer('questionnaire_id');
+        Schema::table('questionnaire', function (Blueprint $t) {
+            $t->integer('alumni_id');
            // $t->foreign('questionnaire_id')->references('id')->on('questionnaire');
         });
 
@@ -30,8 +30,8 @@ class AddKey extends Migration
      */
     public function down()
     {
-        Schema::table('alumni', function (Blueprint $t) {
-            $t->dropColumn('questionnaire_id');
+        Schema::table('questionnaire', function (Blueprint $t) {
+            $t->dropColumn('alumni_id');
             //$t->dropForeign('questionnaire_id')->references('id')->on('questionnaire');
         });
 

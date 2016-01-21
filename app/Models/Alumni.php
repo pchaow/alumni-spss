@@ -10,7 +10,7 @@ class Alumni extends Model
 
     public function workplace()
     {
-        return $this->hasMany('app\Models\workplace','alumni_id');
+        return $this->belongsTo('app\Models\workplace');
     }
 
 }
