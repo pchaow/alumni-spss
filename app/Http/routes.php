@@ -61,9 +61,8 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.index');
         });
 
-        Route::get('/search', function () {
-            return view('admin.search');
-        });
+        Route::get('/search', 'Admin\SearchAlumniController@get_index');
+        Route::post('/search', 'Admin\SearchAlumniController@search_alumni');
 
         Route::get('/insert', function () {
             return view('admin.data.insert');

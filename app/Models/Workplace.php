@@ -11,6 +11,6 @@ class Workplace extends Model
 
     public function alumni()
     {
-        return $this->belongsTo('app\Models\Alumni');
+        return $this->belongsTo('App\Models\Alumni');
     }
 }
