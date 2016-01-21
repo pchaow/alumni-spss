@@ -12308,7 +12308,7 @@
 		 *        "columnDefs": [ {
 		 *          "targets": [ 0 ],
 		 *          "data": null,
-		 *          "defaultContent": "Click to profile"
+		 *          "defaultContent": "Click to edit"
 		 *        } ]
 		 *      } );
 		 *    } );

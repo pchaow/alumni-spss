@@ -35,6 +35,10 @@ class CreateUsersTable extends Migration
             $t->foreign('usertype_id')->references('id')->on('usertypes');
 
         });
+
+
+
+
     }
 
     /**

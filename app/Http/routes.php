@@ -2,89 +2,104 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Routes File
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
+| Here is where you will register all of the routes in an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
 */
-
+use Illuminate\Support\Facades\Input;
 use App\Models\User;
 
-Route::get('/', function () {
-    return view('home.signin');
-});
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/auth/signin', function () {
-        return view('admin.auth.signin');
+
+    Route::get('/', function () {
+        return view('home.signin');
     });
 
-    Route::post('/auth/signin', function () {
-        $login = \Input::get('login');
 
-        //$login['password'] = \Hash::make($login['password']);
+    Route::group(['prefix' => 'admin'], function () {
 
-        $user = User::where('username', $login['username'])->first();
+        Route::get('/auth/signin', function () {
+            return view('admin.auth.signin');
+        });
 
-        if ($user != null) {
-            $usertype = $user->usertype()->first();
-            if ($usertype->name == "ADMIN") {
-                if (\Hash::check($login['password'], $user->password)) {
-                    \Auth::login($user);
-                    return redirect('/admin/index');
+        Route::post('/auth/signin', function () {
+            $login = Input::get('login');
+
+            //$login['password'] = \Hash::make($login['password']);
+
+            $user = User::where('username', $login['username'])->first();
+
+            if ($user != null) {
+                $usertype = $user->usertype()->first();
+                if ($usertype->name == "ADMIN") {
+                    if (\Hash::check($login['password'], $user->password)) {
+                        \Auth::login($user);
+                        return redirect('/admin/index');
+                    }
                 }
             }
-        }
-        return redirect('/');
+            return redirect('/');
+
+        });
+
+        Route::get('/auth/logout', function () {
+            \Auth::logout();
+            return redirect('/');
+        });
+
+        Route::get('/', function () {
+            return redirect('/admin/index');
+        });
+
+        Route::get('/index', function () {
+            return view('admin.index');
+        });
+
+        Route::get('/search', function () {
+            return view('admin.search');
+        });
+
+        Route::get('/insert', function () {
+            return view('admin.data.insert');
+        });
+
+        Route::get('/import', function () {
+            return view('admin.import');
+        });
+
+        Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
+
 
     });
 
-    Route::get('/auth/logout', function () {
-        \Auth::logout();
-        return redirect('/');
+
+    Route::group(['prefix' => 'user'], function () {
+
+        Route::get('/', function () {
+            return redirect('/user/index');
+        });
+        Route::get('/index', function () {
+            return view('user.index');
+        });
+
+        Route::get('/edit', function () {
+            return view('user.profile.edit');
+        });
+        Route::get('/search', function () {
+            return view('user.search');
+        });
     });
 
-    Route::get('/', function () {
-        return redirect('/admin/index');
-    });
+    Route::get('/test_export_excel', 'TestExcelController@test_export_excel');
 
-    Route::get('/index', function () {
-        return view('admin.index');
-    });
 
-    Route::get('/search', function () {
-        return view('admin.search');
-    });
+    Route::get('/test_import_excel', 'TestExcelController@test_import_excel');
 
-    Route::get('/insert', function () {
-        return view('admin.data.insert');
-    });
-
-    Route::get('/import',function(){
-        return view('admin.import');
-    });
 
 });
-
-
-Route::group(['prefix'=>'user'],function(){
-    ///// User //////
-
-    Route::get('/', function () {
-        return redirect('/user/index');
-    });
-    Route::get('/index', function () {
-        return view('user.index');
-    });
-
-    Route::get('/edit', function () {
-        return view('user.profile.edit');
-    });
-});
-
-
-

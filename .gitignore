@@ -3,6 +3,5 @@
 Homestead.yaml
 Homestead.json
 .env
-.idea
-conf/
-auth.json
+/.idea
+/conf
