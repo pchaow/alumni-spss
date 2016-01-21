@@ -75,8 +75,8 @@ class UploadExcelController extends Controller
                         /**ข้อมูลส่วนตัว**/
                         $input_profile = new Alumni();
                         $input_profile->year_of_graduation = $data->year_of_graduation;
-                        $input_profile->national_id = $data->faculty;
-                        $input_profile->student_id = $data->branch;
+                        $input_profile->national_id = $data->national_id;
+                        $input_profile->student_id = $data->student_id;
                         $input_profile->title = $data->title;
                         $input_profile->firstname = $data->firstname;
                         $input_profile->lastname = $data->lastname;
