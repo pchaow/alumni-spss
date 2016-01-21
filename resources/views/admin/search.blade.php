@@ -127,8 +127,9 @@
                     <tr>
                         <th>รหัสนิสิต</th>
                         <th>ชื่อ นามสกุล</th>
-                        <th>หลักสูตรที่สำเร็จการศึกษา</th>
                         <th>ระดับการศึกษาที่สำเร็จ</th>
+                        <th>หลักสูตรที่สำเร็จการศึกษา</th>
+
                         <th>จัดการ</th>
                     </tr>
                     </thead>
@@ -141,9 +142,9 @@
                             <tr>
                                 <td>' . $r["student_id"] . '</td>
                                 <td>' . $r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"] . '</td>
+                                <td>' . $r["education"] . '</td>
                                  <td>' . $r["course"] . '</td>
-                                 <td>' . $r["education"] . '</td>
-                                <td style="text-align: center;">
+                                <td>
                                         <button type="button" class="btn btn-primary" >View</button>
                                         <button type="button" class="btn btn-default">Edit</button>
                                         <button type="button" class="btn btn-danger">Delete</button>
