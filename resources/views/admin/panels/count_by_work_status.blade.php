@@ -1,7 +1,7 @@
 <?php
 
 
-$sql = "SELECT count(*) as `amount` , `alumni`.`branch` as `branch` , `alumni`.`year_of_graduation` as `yearGrad` FROM `alumni` group by `alumni`.`branch`, `alumni`.`year_of_graduation`";
+$sql = "SELECT count(*) as `amount` , `alumni`.`branch` as `branch` , `alumni`.`year_of_graduation` as `yearGrad` , `questionnaire`.`functional_status` as `work_status` FROM `alumni` JOIN `Questionnaire` On alumni.id = questionnaire.alumni_id group by `alumni`.`branch`, `alumni`.`year_of_graduation`, `questionnaire`.`functional_status`";
 
 $result = DB::select($sql);
 
@@ -13,7 +13,7 @@ $yearGradGroup = collect($result)->groupBy('yearGrad');
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ตารางสรุปจำนวนศิษย์เก่าแยกตามสาขาและปีที่จบการศึกษา
+        <i class="fa fa-bar-chart-o fa-fw"></i> ตารางสรุปจำนวนศิษย์เก่าตามสถานะการทำงานแยกตามสาขาและปีที่จบการศึกษา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -23,6 +23,7 @@ $yearGradGroup = collect($result)->groupBy('yearGrad');
             <tr>
                 <th>ปีที่จบการศึกษา</th>
                 <th>สาขา</th>
+                <th>สถานะการทำงาน</th>
                 <th>จำนวนศิษย์เก่า</th>
             </tr>
             </thead>
@@ -31,15 +32,16 @@ $yearGradGroup = collect($result)->groupBy('yearGrad');
             ​@foreach($yearGradGroup as $key => $value)
                 <?php
                 $firstRow = true;
-                $sum = 0;
+
                 ?>
                 @foreach($value as $subValue)
                     <tr>
-                        <?php $sum = $sum + $subValue->amount; ?>
+
                         @if($firstRow)
                             <td rowspan="{{count($value)}}">{{$key}}</td>
                         @endif
                         <td>{{$subValue->branch}}</td>
+                            <td>{{$subValue->work_status}}</td>
                         <td>{{$subValue->amount}}</td>
                     </tr>
                     <?php
@@ -47,10 +49,7 @@ $yearGradGroup = collect($result)->groupBy('yearGrad');
                     ?>
                 @endforeach
 
-                <tr class="success">
-                    <td colspan="2" style="text-align: right">รวม</td>
-                    <td>{{$sum}}</td>
-                </tr>
+            
             @endforeach
             </tbody>
         </table>

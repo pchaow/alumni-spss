@@ -1,19 +1,25 @@
 <?php
 
 
-$sql = "SELECT count(*) as `amount` , `alumni`.`branch` as `branch` , `alumni`.`year_of_graduation` as `yearGrad` FROM `alumni` group by `alumni`.`branch`, `alumni`.`year_of_graduation`";
+$sql = "SELECT count(*) as `amount` , `alumni`.`branch` as `branch` , `workplace`.`province_office` as `province`
+
+FROM
+`alumni`
+JOIN
+`workplace`
+ON alumni.id=workplace.alumni_id
+group by `alumni`.`branch`, `workplace`.`province_office`";
 
 $result = DB::select($sql);
 
-$yearGradGroup = collect($result)->groupBy('yearGrad');
+$provinces = collect($result)->groupBy('province');
 
-
-//dd($yearGradGroup);
+//dd($provinces);
 ?>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ตารางสรุปจำนวนศิษย์เก่าแยกตามสาขาและปีที่จบการศึกษา
+        <i class="fa fa-bar-chart-o fa-fw"></i> ตารางสรุปจำนวนศิษย์เก่าแยกตามสาขาและจังหวัดตามสถานที่ทำงาน
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -21,14 +27,14 @@ $yearGradGroup = collect($result)->groupBy('yearGrad');
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>
-                <th>ปีที่จบการศึกษา</th>
+                <th>จังหวัด</th>
                 <th>สาขา</th>
                 <th>จำนวนศิษย์เก่า</th>
             </tr>
             </thead>
             <tbody>
 
-            ​@foreach($yearGradGroup as $key => $value)
+            ​@foreach($provinces as $key => $value)
                 <?php
                 $firstRow = true;
                 $sum = 0;
