@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Workplace extends Model
+class Questionnaire extends Model
 {
-    protected $table = 'workplace';
+    protected $table = 'questionnaire';
 
 
     public function alumni()

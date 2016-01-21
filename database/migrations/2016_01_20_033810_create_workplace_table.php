@@ -14,21 +14,21 @@ class CreateWorkplaceTable extends Migration
     {
         Schema::create('workplace',function(Blueprint $t){
             $t->increments('id');
-            $t->string('office');
-            $t->string('number_office');
-            $t->string('moo_office');
-            $t->string('building_office');
-            $t->string('class_office');
-            $t->string('soi_office');
-            $t->string('road_office');
-            $t->string('amphur_office');
-            $t->string('district_office');
-            $t->string('province_office');
-            $t->string('zipcode_office');
-            $t->string('phone_office');
-            $t->string('fax_office');
-            $t->string('email_office');
-            $t->string('salary');
+            $t->string('office')->nullable();
+            $t->string('number_office')->nullable();
+            $t->string('moo_office')->nullable();
+            $t->string('building_office')->nullable();
+            $t->string('class_office')->nullable();
+            $t->string('soi_office')->nullable();
+            $t->string('road_office')->nullable();
+            $t->string('amphur_office')->nullable();
+            $t->string('district_office')->nullable();
+            $t->string('province_office')->nullable();
+            $t->string('zipcode_office')->nullable();
+            $t->string('phone_office')->nullable();
+            $t->string('fax_office')->nullable();
+            $t->string('email_office')->nullable();
+            $t->string('salary')->nullable();
             $t->timestamps();
 
         });
