@@ -109,7 +109,7 @@
 
         </div>
     </div>
-    <?php $i = 10; $s = 1; ?>
+    <?php $i = count($data_alumni); $s = 1; ?>
     <div class="row">
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -121,7 +121,7 @@
                         <button class="btn btn-success"><i class="fa fa-cloud-download"></i> ส่งออกเป็น Excel</button>
                     </div>
                     <div class="col-lg-11" style="text-align: center;">
-                        พบข้อมูลทั้งหมดจำนวน {{$i}} รายการ
+                        ในหน้านี้พบข้อมูลทั้งหมดจำนวน {{$i}} รายการ
 
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if($data_alumni != "")
+                    @if(count($data_alumni) != 0)
                         <?php
                         foreach ($data_alumni as $r) {
 
@@ -156,11 +156,13 @@
                         }
                         ?>
                     @else
-                        <tr> <td>ไม่พอข้อมูล</td> </tr>
+                        <tr> <td colspan="5" align="center">ไม่พอข้อมูล</td> </tr>
                     @endif
                     </tbody>
 
                 </table>
+                <div align="center">{!! $data_alumni->render() !!}</div>
+
             </div>
         </div>
     </div>

@@ -16,13 +16,15 @@ class SearchAlumniController extends Controller
 
     public function get_index()
     {
-        $data_alumni = Alumni::with('workplace', 'questionnaire')->get();
+        $data_alumni = Alumni::with('workplace', 'questionnaire')->paginate(15);
         return view('admin.search')->with('data_alumni', $data_alumni);;
 
     }
 
     public function search_alumni(Request $request)
     {
+
+       // return Input::all();
         $year_of_graduation = Input::get("year_of_graduation");
         $education = Input::get("education");
         $course = Input::get("course");
@@ -30,6 +32,7 @@ class SearchAlumniController extends Controller
         $student_id = Input::get("student_id");
         $firstname = Input::get("firstname");
         $lastname = Input::get("lastname");
+
 
         $data_alumni = Alumni::with('workplace', 'questionnaire')
             ->where(function ($q) use ($year_of_graduation, $education, $course, $title, $student_id, $firstname, $lastname) {
@@ -43,10 +46,10 @@ class SearchAlumniController extends Controller
                     ;
             })
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(15);
 
        // dd($data_alumni);
-
+        //return Input::all();
         return view('admin/search')->with('data_alumni', $data_alumni);
 
 
