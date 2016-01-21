@@ -26,7 +26,7 @@
 
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label>ปีที่เข้าศึกษา</label>
+                                    <label>ปีที่สำเร็จการศึกษา</label>
                                     <select name="year_of_graduation" id="year_of_graduation" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         <option value="2558">2558</option>
@@ -55,11 +55,8 @@
                                     <label>หลักสูตรที่สำเร็จการศึกษา</label>
                                     <select name="course" id="course" class="form-control">
                                         <option value="">ไม่ระบุ</option>
-                                        <option value="">รัฐศาสตรบัณฑิต (ร.บ.)</option>
-                                        <option value="">ศิลปศาสตรบัณฑิต (ศศ.บ.) สาขาวิชาพัฒนาสังคม</option>
-                                        <option value="">หลักสูตรรัฐประศาสนศาสตรมหาบัณฑิต (รป.ม.)
-                                            สาขาวิชานโยบายสาธารณะ
-                                        </option>
+                                        <option value="รัฐศาสตรบัณฑิต">รัฐศาสตรบัณฑิต (ร.บ.)</option>
+                                        <option value="ศิลปศาสตรบัณฑิต สาขาวิชาพัฒนาสังคม">ศิลปศาสตรบัณฑิต (ศศ.บ.) สาขาวิชาพัฒนาสังคม</option>
                                     </select>
                                 </div>
                             </div>
@@ -84,13 +81,13 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>ชื่อ</label>
-                                    <input name="firstname" id="firstname" class="form-control">
+                                    <input name="firstname" id="firstname" class="form-control" >
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>นามสกุล</label>
-                                    <input name="lastname" id="lastname" class="form-control">
+                                    <input name="lastname" id="lastname" class="form-control" >
                                 </div>
                             </div>
 
@@ -130,7 +127,7 @@
                     <tr>
                         <th>รหัสนิสิต</th>
                         <th>ชื่อ นามสกุล</th>
-                        <th>สาขาวิชาที่สำเร็จการศึกษา</th>
+                        <th>หลักสูตรที่สำเร็จการศึกษา</th>
                         <th>ระดับการศึกษาที่สำเร็จ</th>
                         <th>จัดการ</th>
                     </tr>
@@ -144,7 +141,7 @@
                             <tr>
                                 <td>' . $r["student_id"] . '</td>
                                 <td>' . $r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"] . '</td>
-                                 <td>' . $r["faculty"] . '</td>
+                                 <td>' . $r["course"] . '</td>
                                  <td>' . $r["education"] . '</td>
                                 <td style="text-align: center;">
                                         <button type="button" class="btn btn-primary" >View</button>
