@@ -33,6 +33,7 @@
                 </div>
             </a>
         </div>
+
         <div class="col-lg-3 col-md-6">
             <a href="/admin/stats">
                 <div class="panel panel-yellow">
@@ -107,11 +108,17 @@
     </div>
     <!-- /.row -->
     <div class="row">
-        <div class="col-lg-12">
-             @include('admin.panels.summary_by_branch')
-             @include('admin.panels.count_by_branch')
+
+        <div class="col-lg-8">
+            @include('admin.panels.summary_by_branch')
+            @include('admin.panels.count_by_branch')
         </div>
-        
+        <div class="col-lg-4">
+            <div class="fb-page"
+                 data-href="https://www.facebook.com/%E0%B8%A3%E0%B8%B1%E0%B8%90%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-217829844912090/"
+                 data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
+                 data-show-facepile="true"></div>
+        </div>
     </div>
     <!-- /.row -->
 

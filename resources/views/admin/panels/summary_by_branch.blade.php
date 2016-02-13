@@ -1,7 +1,7 @@
 <?php
 
 
-$sql = "SELECT count(*) as `amount` , `alumni`.`branch` as `branch`  FROM `alumni` group by `alumni`.`branch`";
+$sql = "SELECT count(*) as `amount` , `alumni`.`branch` as `branch`  FROM `alumni` where `education` = 'ปริญญาตรี' group by `alumni`.`branch`";
 
 $result = DB::select($sql);
 ?>

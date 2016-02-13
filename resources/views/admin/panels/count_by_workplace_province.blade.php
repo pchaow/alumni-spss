@@ -72,18 +72,16 @@ $lava->BarChart('WorkplaceProvinceCount', $population, [
 
 <div class="panel panel-default">
 
-    <div id="count_by_workplace_province_graph_panel" style="height: 1000px;"></div>
-
-    <?php
-    echo $lava->render('BarChart', 'WorkplaceProvinceCount', 'count_by_workplace_province_graph_panel');
-    ?>
-
-
     <div class="panel-heading">
         <i class="fa fa-bar-chart-o fa-fw"></i> ตารางสรุปจำนวนศิษย์เก่าแยกตามสาขาและจังหวัดตามสถานที่ทำงาน
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
+        <div id="count_by_workplace_province_graph_panel" style="height: 1000px;"></div>
+
+        <?php
+        echo $lava->render('BarChart', 'WorkplaceProvinceCount', 'count_by_workplace_province_graph_panel');
+        ?>
 
         <table class="table table-bordered table-hover table-striped">
             <thead>

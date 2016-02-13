@@ -9,32 +9,32 @@ $yearGradGroup = collect($result)->groupBy('yearGrad');
 
 $array = $yearGradGroup->toArray();
 
-$resultArray = [];
+$resultArray1 = [];
 foreach ($array as $key => $value) {
     $obj = [];
     foreach ($value as $data) {
         $obj['year'] = $key;
         $obj[$data->branch] = $data->amount;
     }
-    $resultArray[] = $obj;
+    $resultArray1[] = $obj;
 }
 
-//dd($resultArray);
+//dd($resultArray1);
 
-$lava = new \Khill\Lavacharts\Lavacharts(); // See note below for Laravel
+$lava1 = new \Khill\Lavacharts\Lavacharts(); // See note below for Laravel
 
-$population = $lava->DataTable();
+$population1 = $lava1->DataTable();
 
-$population = $population
+$population1 = $population1
         ->addStringColumn('ปีที่จบการศึกษา')
         ->addNumberColumn("รัฐศาสตร์")
         ->addNumberColumn("พัฒนาสังคม")
         ->setDateTimeFormat('Y');
 
-foreach ($resultArray as $value) {
-    $population = $population->addRow([$value['year'], $value['รัฐศาสตร์'], $value['พัฒนาสังคม']]);
+foreach ($resultArray1 as $value) {
+    $population1 = $population1->addRow([$value['year'], $value['รัฐศาสตร์'], $value['พัฒนาสังคม']]);
 }
-$lava->ColumnChart('BranchCountYear', $population, [
+$lava1->ColumnChart('BranchCountYear', $population1, [
         'title' => 'จำนวนนิสิตที่จบการศึกษาแยกตามสาขาและปีที่จบ'
 ]);
 ?>
@@ -48,9 +48,8 @@ $lava->ColumnChart('BranchCountYear', $population, [
         <div id="count_by_branch_graph_panel" style="height: 500px;"></div>
 
         <?php
-        echo $lava->render('ColumnChart', 'BranchCountYear', 'count_by_branch_graph_panel');
+        echo $lava1->render('ColumnChart', 'BranchCountYear', 'count_by_branch_graph_panel');
         ?>
-
 
         <table class="table table-bordered table-hover table-striped">
             <thead>
