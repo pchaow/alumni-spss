@@ -23,7 +23,20 @@
                 <div class="panel-body" style="">
                     <form class="form">
                         <div class="row">
-
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label>ปีที่เข้าศึกษา</label>
+                                    <select name="year_of_graduation" id="year_of_education" class="form-control">
+                                        <option value="">ไม่ระบุ</option>
+                                        <option value="2558">2558</option>
+                                        <option value="2557">2557</option>
+                                        <option value="2556">2556</option>
+                                        <option value="2555">2555</option>
+                                        <option value="2554">2554</option>
+                                        <option value="2553">2553</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
                                     <label>ปีที่สำเร็จการศึกษา</label>
@@ -60,18 +73,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="form-group">
-                                    <label>เพศ</label>
-                                    <select name="title" id="title" class="form-control">
-                                        <option value="">ไม่ระบุ</option>
-                                        <option value="ชาย">ชาย</option>
-                                        <option value="หญิง">หญิง</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>รหัสนิสิต</label>
