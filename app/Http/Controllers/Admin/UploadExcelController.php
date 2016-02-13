@@ -119,8 +119,6 @@ class UploadExcelController extends Controller
                             $input_workplace->alumni()->associate($input_profile);
                             $input_workplace->save();
                         }
-
-
                         /**ข้อมูลแบบสอบถาม**/
 
                         $input_questionnaire = new Questionnaire();
@@ -144,8 +142,6 @@ class UploadExcelController extends Controller
                             $input_questionnaire->alumni()->associate($input_profile);
                             $input_questionnaire->save();
                         }
-
-
                     }
 
                     return redirect('admin/import')->with('status', 'Import Success!!');
