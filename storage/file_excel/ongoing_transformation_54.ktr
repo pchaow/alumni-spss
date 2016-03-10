@@ -1359,7 +1359,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe40;&#xe25;&#xe02;&#xe17;&#xe35;&#xe48;&#xe15;&#xe31;&#xe49;&#xe07;</name>
-        <rename>QuestionWorkplaceNp</rename>
+        <rename>QuestionWorkplaceNo</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
