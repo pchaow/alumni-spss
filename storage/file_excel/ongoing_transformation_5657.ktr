@@ -69,13 +69,14 @@
   <created_date>2016&#x2f;03&#x2f;13 13&#x3a;45&#x3a;47.973</created_date>
   <modified_user>-</modified_user>
   <modified_date>2016&#x2f;03&#x2f;13 13&#x3a;45&#x3a;47.973</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
   <hop> <from>Microsoft Excel Input</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Microsoft Excel Writer</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Microsoft Excel Input</name>
@@ -104,7 +105,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Chontipan&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;original_copy_5657.xlsx</name>
+      <name>C&#x3a;&#x5c;Users&#x5c;Admin&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;original_copy_5657.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -113,7 +114,7 @@
     <fields>
       <field>
         <name>&#xe1b;&#xe35;&#xe17;&#xe35;&#xe48;&#xe08;&#xe1a;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -125,7 +126,7 @@
       </field>
       <field>
         <name>02700_Student56.UNIV_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -137,7 +138,7 @@
       </field>
       <field>
         <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe1a;&#xe31;&#xe15;&#xe23;&#xe1b;&#xe23;&#xe30;&#xe0a;&#xe32;&#xe0a;&#xe19;</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -149,7 +150,7 @@
       </field>
       <field>
         <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe19;&#xe34;&#xe2a;&#xe34;&#xe15;</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -197,7 +198,7 @@
       </field>
       <field>
         <name>GENDER_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -209,7 +210,7 @@
       </field>
       <field>
         <name>&#xe27;&#xe31;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;&#xe1b;&#xe35;&#xe40;&#xe01;&#xe34;&#xe14;</name>
-        <type>Date</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -221,7 +222,7 @@
       </field>
       <field>
         <name>PROVINCE_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -233,7 +234,7 @@
       </field>
       <field>
         <name>LEV_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -245,7 +246,7 @@
       </field>
       <field>
         <name>CURR_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -257,7 +258,7 @@
       </field>
       <field>
         <name>FAC_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -281,7 +282,7 @@
       </field>
       <field>
         <name>PROGRAM_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -293,7 +294,7 @@
       </field>
       <field>
         <name>GPA</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -377,7 +378,7 @@
       </field>
       <field>
         <name>&#xe08;&#xe31;&#xe07;&#xe2b;&#xe27;&#xe31;&#xe14;</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -401,7 +402,7 @@
       </field>
       <field>
         <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe44;&#xe1b;&#xe23;&#xe29;&#xe13;&#xe35;&#xe22;&#xe4c;</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -497,7 +498,7 @@
       </field>
       <field>
         <name>QN_YEAR</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -509,7 +510,7 @@
       </field>
       <field>
         <name>02700_Questionaire56_2.CITIZEN_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -521,7 +522,7 @@
       </field>
       <field>
         <name>02700_Questionaire56_2.UNIV_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -533,7 +534,7 @@
       </field>
       <field>
         <name>QN_WORK_STATUS</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -545,7 +546,7 @@
       </field>
       <field>
         <name>QN_OCCUP_TYPE</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -569,7 +570,7 @@
       </field>
       <field>
         <name>QN_TALENT</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -593,7 +594,7 @@
       </field>
       <field>
         <name>QN_POSTYPE_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -605,7 +606,7 @@
       </field>
       <field>
         <name>QN_POS_ID</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -629,7 +630,7 @@
       </field>
       <field>
         <name>&#xe40;&#xe25;&#xe02;&#xe17;&#xe35;&#xe48;</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -641,7 +642,7 @@
       </field>
       <field>
         <name>&#xe2b;&#xe21;&#xe39;&#xe48;_1</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -737,7 +738,7 @@
       </field>
       <field>
         <name>QN_WORK_PROVINCE</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -749,7 +750,7 @@
       </field>
       <field>
         <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe44;&#xe1b;&#xe23;&#xe29;&#xe13;&#xe35;&#xe22;&#xe4c;_1</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -797,7 +798,7 @@
       </field>
       <field>
         <name>&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -809,7 +810,7 @@
       </field>
       <field>
         <name>QN_WORK_SATISFY</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -833,7 +834,7 @@
       </field>
       <field>
         <name>All_Ans56.QN_TIME_FINDWORK</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -845,7 +846,7 @@
       </field>
       <field>
         <name>QN_MATCH_EDU</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -857,7 +858,7 @@
       </field>
       <field>
         <name>QN_APPLY_EDU</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -917,7 +918,7 @@
       </field>
       <field>
         <name>QN_REQUIRE_EDU</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1025,7 +1026,7 @@
       </field>
       <field>
         <name>QN_ADDPROGRAM1</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1037,7 +1038,7 @@
       </field>
       <field>
         <name>QN_ADDPROGRAM2</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1049,7 +1050,7 @@
       </field>
       <field>
         <name>QN_ADDPROGRAM3</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1061,7 +1062,7 @@
       </field>
       <field>
         <name>QN_ADDPROGRAM4</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1073,7 +1074,7 @@
       </field>
       <field>
         <name>QN_ADDPROGRAM5</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1085,7 +1086,7 @@
       </field>
       <field>
         <name>QN_ADDPROGRAM6</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1363,7 +1364,1290 @@
     <spreadsheet_type>POI</spreadsheet_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>272</xloc>
+      <xloc>128</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Microsoft Excel Writer</name>
+    <type>TypeExitExcelWriterStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>C&#x3a;&#x5c;Users&#x5c;Admin&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;output_56_57</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Sheet1</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by/>
+      <splitevery>0</splitevery>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <sheet_enabled>N</sheet_enabled>
+      <filename>template.xls</filename>
+      <sheetname/>
+    </template>
+    <fields>
+      <field>
+        <name>yearOfGraduation</name>
+        <type>String</type>
+        <format/>
+        <title>yearOfGraduation</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>02700_Student56.UNIV_ID</name>
+        <type>String</type>
+        <format/>
+        <title>02700_Student56.UNIV_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>personal_id</name>
+        <type>String</type>
+        <format/>
+        <title>personal_id</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>student_id</name>
+        <type>String</type>
+        <format/>
+        <title>student_id</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>title</name>
+        <type>String</type>
+        <format/>
+        <title>title</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>firstname</name>
+        <type>String</type>
+        <format/>
+        <title>firstname</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>lastname</name>
+        <type>String</type>
+        <format/>
+        <title>lastname</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>GENDER_ID</name>
+        <type>String</type>
+        <format/>
+        <title>GENDER_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>birthdate</name>
+        <type>String</type>
+        <format/>
+        <title>birthdate</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>PROVINCE_ID</name>
+        <type>String</type>
+        <format/>
+        <title>PROVINCE_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>LEV_ID</name>
+        <type>String</type>
+        <format/>
+        <title>LEV_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>CURR_ID</name>
+        <type>String</type>
+        <format/>
+        <title>CURR_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>FAC_ID</name>
+        <type>String</type>
+        <format/>
+        <title>FAC_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>ISCED_ID</name>
+        <type>String</type>
+        <format/>
+        <title>ISCED_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>PROGRAM_ID</name>
+        <type>String</type>
+        <format/>
+        <title>PROGRAM_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>gpa</name>
+        <type>String</type>
+        <format/>
+        <title>gpa</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseNo</name>
+        <type>String</type>
+        <format/>
+        <title>houseNo</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseMo</name>
+        <type>String</type>
+        <format/>
+        <title>houseMo</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseSoi</name>
+        <type>String</type>
+        <format/>
+        <title>houseSoi</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseRoad</name>
+        <type>String</type>
+        <format/>
+        <title>houseRoad</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseDistrict</name>
+        <type>String</type>
+        <format/>
+        <title>houseDistrict</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseAmphur</name>
+        <type>String</type>
+        <format/>
+        <title>houseAmphur</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseProvince</name>
+        <type>String</type>
+        <format/>
+        <title>houseProvince</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>telephone</name>
+        <type>String</type>
+        <format/>
+        <title>telephone</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>houseZipno</name>
+        <type>String</type>
+        <format/>
+        <title>houseZipno</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>RACE</name>
+        <type>String</type>
+        <format/>
+        <title>RACE</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>RELIGION</name>
+        <type>String</type>
+        <format/>
+        <title>RELIGION</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>email</name>
+        <type>String</type>
+        <format/>
+        <title>email</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>degree</name>
+        <type>String</type>
+        <format/>
+        <title>degree</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>faculty</name>
+        <type>String</type>
+        <format/>
+        <title>faculty</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>branch</name>
+        <type>String</type>
+        <format/>
+        <title>branch</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>course</name>
+        <type>String</type>
+        <format/>
+        <title>course</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_YEAR</name>
+        <type>String</type>
+        <format/>
+        <title>QN_YEAR</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>02700_Questionaire56_2.CITIZEN_ID</name>
+        <type>String</type>
+        <format/>
+        <title>02700_Questionaire56_2.CITIZEN_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>02700_Questionaire56_2.UNIV_ID</name>
+        <type>String</type>
+        <format/>
+        <title>02700_Questionaire56_2.UNIV_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_WORK_STATUS</name>
+        <type>String</type>
+        <format/>
+        <title>QN_WORK_STATUS</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_OCCUP_TYPE</name>
+        <type>String</type>
+        <format/>
+        <title>QN_OCCUP_TYPE</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>NotusedWork</name>
+        <type>String</type>
+        <format/>
+        <title>NotusedWork</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_TALENT</name>
+        <type>String</type>
+        <format/>
+        <title>QN_TALENT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_TALENT_TXT</name>
+        <type>String</type>
+        <format/>
+        <title>QN_TALENT_TXT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_POSTYPE_ID</name>
+        <type>String</type>
+        <format/>
+        <title>QN_POSTYPE_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_POS_ID</name>
+        <type>String</type>
+        <format/>
+        <title>QN_POS_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceName</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceName</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceNo</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceNo</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceMo</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceMo</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceBuildingName</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceBuildingName</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceBuildingFloor</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceBuildingFloor</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceSoi</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceSoi</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceRoad</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceRoad</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceDistrict</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceDistrict</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceAmphur</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceAmphur</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceProvince</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceProvince</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_WORK_PROVINCE</name>
+        <type>String</type>
+        <format/>
+        <title>QN_WORK_PROVINCE</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceZipno</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceZipno</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplacePhoneno</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplacePhoneno</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceFaxno</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceFaxno</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceEmail</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceEmail</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceSalary</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceSalary</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_WORK_SATISFY</name>
+        <type>String</type>
+        <format/>
+        <title>QN_WORK_SATISFY</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_WORK_SATISFY_TXT</name>
+        <type>String</type>
+        <format/>
+        <title>QN_WORK_SATISFY_TXT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>All_Ans56.QN_TIME_FINDWORK</name>
+        <type>String</type>
+        <format/>
+        <title>All_Ans56.QN_TIME_FINDWORK</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_MATCH_EDU</name>
+        <type>String</type>
+        <format/>
+        <title>QN_MATCH_EDU</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_APPLY_EDU</name>
+        <type>String</type>
+        <format/>
+        <title>QN_APPLY_EDU</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>All_Ans56.QN_CAUSE_NOWORK</name>
+        <type>String</type>
+        <format/>
+        <title>All_Ans56.QN_CAUSE_NOWORK</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_CAUSE_NOWORK_TXT</name>
+        <type>String</type>
+        <format/>
+        <title>QN_CAUSE_NOWORK_TXT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>All_Ans56.QN_PROB_FINDWORK</name>
+        <type>String</type>
+        <format/>
+        <title>All_Ans56.QN_PROB_FINDWORK</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_PROB_FINDWORK_TXT</name>
+        <type>String</type>
+        <format/>
+        <title>QN_PROB_FINDWORK_TXT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_REQUIRE_EDU</name>
+        <type>String</type>
+        <format/>
+        <title>QN_REQUIRE_EDU</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_LEVEL_EDU</name>
+        <type>String</type>
+        <format/>
+        <title>QN_LEVEL_EDU</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_PROGRAM_EDU</name>
+        <type>String</type>
+        <format/>
+        <title>QN_PROGRAM_EDU</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_PROGRAM_EDU_ID</name>
+        <type>String</type>
+        <format/>
+        <title>QN_PROGRAM_EDU_ID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_TYPE_UNIV</name>
+        <type>String</type>
+        <format/>
+        <title>QN_TYPE_UNIV</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_CAUSE_EDU</name>
+        <type>String</type>
+        <format/>
+        <title>QN_CAUSE_EDU</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_CAUSE_EDU_TXT</name>
+        <type>String</type>
+        <format/>
+        <title>QN_CAUSE_EDU_TXT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>All_Ans56.QN_PROB_EDU</name>
+        <type>String</type>
+        <format/>
+        <title>All_Ans56.QN_PROB_EDU</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_PROB_EDU_TXT</name>
+        <type>String</type>
+        <format/>
+        <title>QN_PROB_EDU_TXT</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_ADDPROGRAM1</name>
+        <type>String</type>
+        <format/>
+        <title>QN_ADDPROGRAM1</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_ADDPROGRAM2</name>
+        <type>String</type>
+        <format/>
+        <title>QN_ADDPROGRAM2</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_ADDPROGRAM3</name>
+        <type>String</type>
+        <format/>
+        <title>QN_ADDPROGRAM3</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_ADDPROGRAM4</name>
+        <type>String</type>
+        <format/>
+        <title>QN_ADDPROGRAM4</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_ADDPROGRAM5</name>
+        <type>String</type>
+        <format/>
+        <title>QN_ADDPROGRAM5</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_ADDPROGRAM6</name>
+        <type>String</type>
+        <format/>
+        <title>QN_ADDPROGRAM6</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_ADDPROGRAM7</name>
+        <type>String</type>
+        <format/>
+        <title>QN_ADDPROGRAM7</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_COMMENT_PROGRAM</name>
+        <type>String</type>
+        <format/>
+        <title>QN_COMMENT_PROGRAM</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_COMMENT_LEARN</name>
+        <type>String</type>
+        <format/>
+        <title>QN_COMMENT_LEARN</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QN_COMMENT_ACTIVITY</name>
+        <type>String</type>
+        <format/>
+        <title>QN_COMMENT_ACTIVITY</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceApplyKnowledge</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceApplyKnowledge</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionReasonOfGetHigherEducation</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionReasonOfGetHigherEducation</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionReasonNotGetWork</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionReasonNotGetWork</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceDirectBranch</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceDirectBranch</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionProblemOfGetHigherEducation</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionProblemOfGetHigherEducation</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionBranchOfHigherEducation</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionBranchOfHigherEducation</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionGetHigherEducation</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionGetHigherEducation</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplacePersonalSkill</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplacePersonalSkill</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkFindingDuration</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkFindingDuration</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionFindingJobProblem</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionFindingJobProblem</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceType</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceType</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceSatisfy</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceSatisfy</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkStatus</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkStatus</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceWorkPosition</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceWorkPosition</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceWorkMasterType</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceWorkMasterType</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceWorkType</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceWorkType</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>352</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1787,7 +3071,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>EMAIL</name>
-        <rename>EMAIL</rename>
+        <rename>email</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1937,7 +3221,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe2d;&#xe32;&#xe0a;&#xe35;&#xe1e;</name>
-        <rename>NotusedJob</rename>
+        <rename>NotusedWork</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -2207,7 +3491,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe42;&#xe17;&#xe23;&#xe2a;&#xe32;&#xe23;</name>
-        <rename>QuestionWorkplacePhoneno2</rename>
+        <rename>QuestionWorkplaceFaxno</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -2732,7 +4016,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe1b;&#xe31;&#xe0d;&#xe2b;&#xe32;&#xe43;&#xe19;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe15;&#xe48;&#xe2d;</name>
-        <rename>QuestionFindingJobProblem</rename>
+        <rename>QuestionProblemOfGetHigherEducation</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -2777,7 +4061,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe04;&#xe27;&#xe32;&#xe21;&#xe2a;&#xe32;&#xe21;&#xe32;&#xe23;&#xe16;&#xe1e;&#xe34;&#xe40;&#xe28;&#xe29;&#xe17;&#xe35;&#xe48;&#xe0a;&#xe48;&#xe27;&#xe22;&#xe43;&#xe19;&#xe01;&#xe32;&#xe23;&#xe17;&#xe33;&#xe07;&#xe32;&#xe19;</name>
-        <rename>&#xe04;&#xe27;&#xe32;&#xe21;&#xe2a;&#xe32;&#xe21;&#xe32;&#xe23;&#xe16;&#xe1e;&#xe34;&#xe40;&#xe28;&#xe29;&#xe17;&#xe35;&#xe48;&#xe0a;&#xe48;&#xe27;&#xe22;&#xe43;&#xe19;&#xe01;&#xe32;&#xe23;&#xe17;&#xe33;&#xe07;&#xe32;&#xe19;</rename>
+        <rename>QuestionWorkplacePersonalSkill</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -2837,7 +4121,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe04;&#xe27;&#xe32;&#xe21;&#xe1e;&#xe36;&#xe07;&#xe1e;&#xe2d;&#xe43;&#xe08;&#xe15;&#xe48;&#xe2d;&#xe07;&#xe32;&#xe19;&#xe17;&#xe35;&#xe48;&#xe17;&#xe33;</name>
-        <rename>QuestionWorkplaceSatify</rename>
+        <rename>QuestionWorkplaceSatisfy</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -2913,8 +4197,8 @@
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>480</xloc>
-      <yloc>304</yloc>
+      <xloc>208</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

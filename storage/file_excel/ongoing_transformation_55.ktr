@@ -105,7 +105,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Chontipan&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;original_copy_55.xlsx</name>
+      <name>C&#x3a;&#x5c;Users&#x5c;Admin&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;original_copy_55.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1013,18 +1013,6 @@
         <group/>
       </field>
       <field>
-        <name>&#xe1e;&#xe2d;&#xe43;&#xe08;&#xe43;&#xe19;&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
         <name>&#xe02;&#xe49;&#xe2d;&#xe40;&#xe2a;&#xe19;&#xe2d;&#xe41;&#xe19;&#xe30;&#xe40;&#xe01;&#xe35;&#xe48;&#xe22;&#xe27;&#xe01;&#xe31;&#xe1a;&#xe2a;&#xe16;&#xe32;&#xe1a;&#xe31;&#xe19;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;</name>
         <type>String</type>
         <length>-1</length>
@@ -1097,7 +1085,7 @@
         <group/>
       </field>
       <field>
-        <name>&#xe1e;&#xe2d;&#xe43;&#xe08;&#xe43;&#xe19;&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;_1</name>
+        <name>&#xe1e;&#xe2d;&#xe43;&#xe08;&#xe43;&#xe19;&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1419,7 +1407,7 @@
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Chontipan&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;test_output_55</name>
+      <name>C&#x3a;&#x5c;Users&#x5c;Admin&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;output_55</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -1925,10 +1913,10 @@
         <hyperlinkField/>
       </field>
       <field>
-        <name>NotUsePersonalSkill</name>
+        <name>QuestionWorkplacePersonalSkill</name>
         <type>String</type>
         <format/>
-        <title>NotUsePersonalSkill</title>
+        <title>QuestionWorkplacePersonalSkill</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2345,18 +2333,6 @@
         <hyperlinkField/>
       </field>
       <field>
-        <name>NotUseSalarySatisfy</name>
-        <type>String</type>
-        <format/>
-        <title>NotUseSalarySatisfy</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
         <name>NotUsedUniSuggestion</name>
         <type>String</type>
         <format/>
@@ -2584,6 +2560,114 @@
         <formula>N</formula>
         <hyperlinkField/>
       </field>
+      <field>
+        <name>QuestionReasonNotGetWork</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionReasonNotGetWork</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionProblemOfGetHigherEducation</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionProblemOfGetHigherEducation</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionReasonNotGetWorkOther</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionReasonNotGetWorkOther</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkFindingDuration</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkFindingDuration</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionFindingJobProblem</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionFindingJobProblem</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceType</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceType</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceWorkPosition</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceWorkPosition</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceWorkMasterType</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceWorkMasterType</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>QuestionWorkplaceWorkType</name>
+        <type>String</type>
+        <format/>
+        <title>QuestionWorkplaceWorkType</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -2604,7 +2688,419 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>        <select_unspecified>N</select_unspecified>
+    <fields>      <field>        <name>&#xe1b;&#xe35;&#xe17;&#xe35;&#xe48;&#xe08;&#xe1a;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Student55_UNIV_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe1a;&#xe31;&#xe15;&#xe23;&#xe1b;&#xe23;&#xe30;&#xe0a;&#xe32;&#xe0a;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe19;&#xe34;&#xe2a;&#xe34;&#xe15;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe04;&#xe33;&#xe19;&#xe33;&#xe2b;&#xe19;&#xe49;&#xe32;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe0a;&#xe37;&#xe48;&#xe2d;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2a;&#xe01;&#xe38;&#xe25;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GENDER_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe27;&#xe31;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;&#xe1b;&#xe35;&#xe40;&#xe01;&#xe34;&#xe14;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PROVINCE_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>LEV_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CURR_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>FAC_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ISCED_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PROGRAM_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GPA</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe1a;&#xe49;&#xe32;&#xe19;&#xe40;&#xe25;&#xe02;&#xe17;&#xe35;&#xe48; 19  &#xe2b;&#xe21;&#xe39;&#xe48;2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2b;&#xe21;&#xe39;&#xe48;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe0b;&#xe2d;&#xe22;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe16;&#xe19;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe15;&#xe33;&#xe1a;&#xe25;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2d;&#xe33;&#xe40;&#xe20;&#xe2d;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe08;&#xe31;&#xe07;&#xe2b;&#xe27;&#xe31;&#xe14;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>STD_PROVINCE_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe44;&#xe1b;&#xe23;&#xe29;&#xe13;&#xe35;&#xe22;&#xe4c;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe42;&#xe17;&#xe23;&#xe28;&#xe31;&#xe1e;&#xe17;&#xe4c;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>RACE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>RELIGION</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EMAIL</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe23;&#xe30;&#xe14;&#xe31;&#xe1a;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe1b;&#xe23;&#xe34;&#xe0d;&#xe0d;&#xe32;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe04;&#xe13;&#xe30;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2a;&#xe32;&#xe02;&#xe32;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_YEAR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>02700_Questionaire55_CITIZEN_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>02700_Questionaire55_UNIV_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_WORK_STATUS</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_OCCUP_TYPE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_OCCUP_TYPE_TXT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_TALENT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe04;&#xe27;&#xe32;&#xe21;&#xe2a;&#xe32;&#xe21;&#xe32;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe15;&#xe31;&#xe27;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_POSTYPE_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_POS_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe17;&#xe35;&#xe48;&#xe17;&#xe33;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe40;&#xe25;&#xe02;&#xe17;&#xe35;&#xe48;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2b;&#xe21;&#xe39;&#xe48;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2d;&#xe32;&#xe04;&#xe32;&#xe23;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe0a;&#xe31;&#xe49;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe0b;&#xe2d;&#xe22;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe16;&#xe19;&#xe19;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe15;&#xe33;&#xe1a;&#xe25;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2d;&#xe33;&#xe40;&#xe20;&#xe2d;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe08;&#xe31;&#xe07;&#xe2b;&#xe27;&#xe31;&#xe14;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_WORK_PROVINCE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe44;&#xe1b;&#xe23;&#xe29;&#xe13;&#xe35;&#xe22;&#xe4c;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe42;&#xe17;&#xe23;&#xe28;&#xe31;&#xe1e;&#xe17;&#xe4c;_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe42;&#xe17;&#xe23;&#xe28;&#xe31;&#xe1e;&#xe17;&#xe4c;_2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Email &#xe17;&#xe35;&#xe48;&#xe17;&#xe33;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_WORK_SATISFY</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_WORK_SATISFY_TXT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>All_Ans55_QN_TIME_FINDWORK</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_MATCH_EDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_APPLY_EDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>All_Ans55_QN_CAUSE_NOWORK</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_CAUSE_NOWORK_TXT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>All_Ans55_QN_PROB_FINDWORK</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_PROB_FINDWORK_TXT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_REQUIRE_EDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_LEVEL_EDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_PROGRAM_EDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_PROGRAM_EDU_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_TYPE_UNIV</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_CAUSE_EDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>All_Ans55_QN_PROB_EDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe02;&#xe49;&#xe2d;&#xe40;&#xe2a;&#xe19;&#xe2d;&#xe41;&#xe19;&#xe30;&#xe40;&#xe01;&#xe35;&#xe48;&#xe22;&#xe27;&#xe01;&#xe31;&#xe1a;&#xe2a;&#xe16;&#xe32;&#xe1a;&#xe31;&#xe19;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_ADDPROGRAM1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_ADDPROGRAM2</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_ADDPROGRAM3</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_ADDPROGRAM4</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>QN_ADDPROGRAM5</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe1e;&#xe2d;&#xe43;&#xe08;&#xe43;&#xe19;&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe02;&#xe49;&#xe2d;&#xe40;&#xe2a;&#xe2d;&#xe19;&#xe41;&#xe19;&#xe30;&#xe40;&#xe01;&#xe35;&#xe48;&#xe22;&#xe27;&#xe01;&#xe31;&#xe1a;&#xe2a;&#xe16;&#xe32;&#xe1a;&#xe31;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe02;&#xe49;&#xe2d;&#xe40;&#xe2a;&#xe19;&#xe2d;&#xe41;&#xe19;&#xe30;&#xe40;&#xe01;&#xe35;&#xe48;&#xe22;&#xe27;&#xe01;&#xe31;&#xe1a;&#xe2a;&#xe32;&#xe02;&#xe32;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe02;&#xe49;&#xe2d;&#xe40;&#xe2a;&#xe19;&#xe2d;&#xe41;&#xe19;&#xe30;&#xe40;&#xe01;&#xe35;&#xe48;&#xe22;&#xe27;&#xe01;&#xe31;&#xe1a;&#xe01;&#xe32;&#xe23;&#xe2a;&#xe2d;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe02;&#xe49;&#xe2d;&#xe40;&#xe2a;&#xe19;&#xe2d;&#xe41;&#xe19;&#xe30;&#xe43;&#xe19;&#xe01;&#xe32;&#xe23;&#xe08;&#xe31;&#xe14;&#xe01;&#xe34;&#xe08;&#xe01;&#xe23;&#xe23;&#xe21;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2a;&#xe16;&#xe32;&#xe19;&#xe30;&#xe01;&#xe32;&#xe23;&#xe17;&#xe33;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe07;&#xe32;&#xe19;&#xe15;&#xe23;&#xe07;&#xe01;&#xe31;&#xe1a;&#xe2a;&#xe32;&#xe02;&#xe32;&#xe17;&#xe35;&#xe48;&#xe40;&#xe23;&#xe35;&#xe22;&#xe19;&#xe21;&#xe32;&#xe2b;&#xe23;&#xe37;&#xe2d;&#xe44;&#xe21;&#xe48;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe04;&#xe27;&#xe32;&#xe21;&#xe23;&#xe39;&#xe49;&#xe17;&#xe35;&#xe48;&#xe40;&#xe23;&#xe35;&#xe22;&#xe19;&#xe44;&#xe1b;&#xe43;&#xe0a;&#xe49;&#xe43;&#xe19;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe15;&#xe48;&#xe2d;&#xe2b;&#xe23;&#xe37;&#xe2d;&#xe44;&#xe21;&#xe48;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2a;&#xe32;&#xe02;&#xe32;&#xe17;&#xe35;&#xe48;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe15;&#xe48;&#xe2d;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe15;&#xe48;&#xe2d;&#xe43;&#xe19;&#xe14;&#xe49;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe40;&#xe2b;&#xe15;&#xe38;&#xe1c;&#xe25;&#xe17;&#xe35;&#xe48;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe15;&#xe48;&#xe2d;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2a;&#xe32;&#xe40;&#xe2b;&#xe15;&#xe38;&#xe17;&#xe35;&#xe48;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe15;&#xe48;&#xe2d;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2a;&#xe32;&#xe40;&#xe2b;&#xe15;&#xe38;&#xe17;&#xe35;&#xe48;&#xe2b;&#xe32;&#xe07;&#xe32;&#xe19;&#xe17;&#xe33;&#xe44;&#xe21;&#xe48;&#xe44;&#xe14;&#xe49;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe1b;&#xe31;&#xe0d;&#xe2b;&#xe32;&#xe43;&#xe19;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;&#xe15;&#xe48;&#xe2d;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2a;&#xe32;&#xe40;&#xe2b;&#xe15;&#xe38;&#xe17;&#xe35;&#xe48;&#xe22;&#xe31;&#xe07;&#xe44;&#xe21;&#xe48;&#xe17;&#xe33;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe23;&#xe30;&#xe22;&#xe30;&#xe40;&#xe27;&#xe25;&#xe32;&#xe43;&#xe19;&#xe01;&#xe32;&#xe23;&#xe2b;&#xe32;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe1b;&#xe31;&#xe0d;&#xe2b;&#xe32;&#xe43;&#xe19;&#xe01;&#xe32;&#xe23;&#xe2b;&#xe32;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe2b;&#xe19;&#xe48;&#xe27;&#xe22;&#xe07;&#xe32;&#xe19;&#xe17;&#xe35;&#xe48;&#xe17;&#xe33;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe15;&#xe33;&#xe41;&#xe2b;&#xe19;&#xe48;&#xe07;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe1b;&#xe23;&#xe30;&#xe40;&#xe20;&#xe17;&#xe07;&#xe32;&#xe19;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>&#xe1b;&#xe23;&#xe30;&#xe40;&#xe20;&#xe17;&#xe07;&#xe32;&#xe19;&#xe17;&#xe35;&#xe48;&#xe17;&#xe33; </name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>Y</select_unspecified>
       <meta>        <name>&#xe1b;&#xe35;&#xe17;&#xe35;&#xe48;&#xe08;&#xe1a;&#xe01;&#xe32;&#xe23;&#xe28;&#xe36;&#xe01;&#xe29;&#xe32;</name>
         <rename>yearOfGraduation</rename>
         <type>None</type>
@@ -3206,7 +3702,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe04;&#xe27;&#xe32;&#xe21;&#xe2a;&#xe32;&#xe21;&#xe32;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe15;&#xe31;&#xe27;</name>
-        <rename>NotUsePersonalSkill</rename>
+        <rename>QuestionWorkplacePersonalSkill</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -3731,7 +4227,7 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>&#xe1e;&#xe2d;&#xe43;&#xe08;&#xe43;&#xe19;&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;</name>
-        <rename>NotUseSalarySatisfy</rename>
+        <rename>QuestionWorkplaceSatisfy</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -3822,21 +4318,6 @@
         <storage_type/>
       </meta>      <meta>        <name>QN_ADDPROGRAM5</name>
         <rename>QN_ADDPROGRAM5</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>&#xe1e;&#xe2d;&#xe43;&#xe08;&#xe43;&#xe19;&#xe40;&#xe07;&#xe34;&#xe19;&#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;_1</name>
-        <rename>QuestionWorkplaceSatisfy</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>

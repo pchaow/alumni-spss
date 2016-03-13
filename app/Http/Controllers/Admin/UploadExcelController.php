@@ -72,34 +72,34 @@ class UploadExcelController extends Controller
 
                         /**ข้อมูลส่วนตัว**/
                         $input_profile = new Alumni();
-                        $input_profile->year_of_graduation = $data->year_of_graduation;
-                        $input_profile->national_id = $data->national_id;
+                        $input_profile->yearOfGraduation = $data->yearOfGraduation;
+                        $input_profile->personal_id = $data->personal_id;
                         $input_profile->student_id = $data->student_id;
                         $input_profile->title = $data->title;
                         $input_profile->firstname = $data->firstname;
                         $input_profile->lastname = $data->lastname;
                         $input_profile->birthdate = $data->birthdate;
                         $input_profile->gpa = $data->gpa;
-                        $input_profile->house_no = $data->house_no;
-                        $input_profile->moo = $data->moo;
-                        $input_profile->soi = $data->soi;
-                        $input_profile->road = $data->road;
-                        $input_profile->district = $data->district;
-                        $input_profile->amphur = $data->amphur;
-                        $input_profile->province = $data->province;
-                        $input_profile->phone = $data->phone;
-                        $input_profile->zipcode = $data->zipcode;
+                        $input_profile->houseNo = $data->houseNo;
+                        $input_profile->houseMo = $data->houseMo;
+                        $input_profile->housesoi = $data->housesoi;
+                        $input_profile->houseRoad = $data->houseRoad;
+                        $input_profile->houseDistrict = $data->houseDistrict;
+                        $input_profile->houseAmphur= $data->houseAmphur;
+                        $input_profile->houseProvince = $data->houseProvince;
+                        $input_profile->telephone= $data->telephone;
+                        $input_profile->houseZipno = $data->houseZipno;
                         $input_profile->email = $data->email;
-                        $input_profile->education = $data->education;
+                        $input_profile->degree = $data->degree;
                         $input_profile->faculty = $data->faculty;
                         $input_profile->branch = $data->branch;
-                        $input_profile->firstname = $data->firstname;
+                        $input_profile->plan = $data->plan;
                         $input_profile->course = $data->course;
                         $input_profile->save();
                         /////////////////
 
                         /**ข้อมูลสถานที่ทำงาน**/
-                        $input_workplace = new Workplace();
+                      /*  $input_workplace = new Workplace();
                         $input_workplace->office = $data->office;
                         $input_workplace->number_office = $data->number_office;
                         $input_workplace->moo_office = $data->moo_office;
@@ -118,26 +118,70 @@ class UploadExcelController extends Controller
                         if ($input_profile != null) {
                             $input_workplace->alumni()->associate($input_profile);
                             $input_workplace->save();
-                        }
+                        }*/
+
                         /**ข้อมูลแบบสอบถาม**/
 
-                        $input_questionnaire = new Questionnaire();
-                        $input_questionnaire->the_knowledge_that_students_applied_to_work_done = $data->the_knowledge_that_students_applied_to_work_done;
-                        $input_questionnaire->reasons_to_study = $data->reasons_to_study;
-                        $input_questionnaire->the_reason_is_that_no_jobs = $data->the_reason_is_that_no_jobs;
-                        $input_questionnaire->work_directly_with_the_subject_matter = $data->work_directly_with_the_subject_matter;
-                        $input_questionnaire->issues_in_education = $data->issues_in_education;
-                        $input_questionnaire->field_of_study = $data->field_of_study;
-                        $input_questionnaire->to_study_or_not = $data->to_study_or_not;
-                        $input_questionnaire->talent_helps_to_work = $data->talent_helps_to_work;
-                        $input_questionnaire->time_to_get_the_job_done = $data->time_to_get_the_job_done;
-                        $input_questionnaire->difficulties_in_finding_jobs = $data->difficulties_in_finding_jobs;
-                        $input_questionnaire->agencies = $data->agencies;
-                        $input_questionnaire->satisfaction_with_the_work_done = $data->satisfaction_with_the_work_done;
-                        $input_questionnaire->functional_status = $data->functional_status;
-                        $input_questionnaire->position = $data->position;
-                        $input_questionnaire->category = $data->category;
-                        $input_questionnaire->types_of_work = $data->types_of_work;
+                        $input_questionnaire = new Questionnaires();
+                        $input_questionnaire->QuestionWorkStatus = $data->QuestionWorkStatus;
+                        $input_questionnaire->QuestionWorkplaceWorkType = $data->QuestionWorkplaceWorkType;
+                        $input_questionnaire->QuestionWorkplaceWorkOtherType = $data->QuestionWorkplaceWorkOtherType;
+                        $input_questionnaire->QuestionWorkplacePersonalSkill = $data->QuestionWorkplacePersonalSkill;
+                        $input_questionnaire->QuestionWorkplaceWorkSkill = $data->QuestionWorkplaceWorkSkill;
+                        $input_questionnaire->QuestionWorkplaceWorkOtherSkill = $data->QuestionWorkplaceWorkOtherSkill;
+                        $input_questionnaire->QuestionWorkplaceWorkPositionType = $data->QuestionWorkplaceWorkPositionType;
+                        $input_questionnaire->QuestionWorkplaceWorkPosition = $data->QuestionWorkplaceWorkPosition;
+                        $input_questionnaire->QuestionWorkplaceName = $data->QuestionWorkplaceName;
+                        $input_questionnaire->QuestionWorkplaceNo = $data->QuestionWorkplaceNo;
+                        $input_questionnaire->QuestionWorkplaceMo = $data->QuestionWorkplaceMo;
+                        $input_questionnaire->QuestionWorkplaceBuildingName= $data->QuestionWorkplaceBuildingName;
+                        $input_questionnaire->QuestionWorkplaceBuildingFloor= $data->QuestionWorkplaceBuildingFloor;
+                        $input_questionnaire->QuestionWorkplaceSoi= $data->QuestionWorkplaceSoi;
+                        $input_questionnaire->QuestionWorkplaceRoad= $data->QuestionWorkplaceRoad;
+                        $input_questionnaire->QuestionWorkplaceDistrict= $data->QuestionWorkplaceDistrict;
+                        $input_questionnaire->QuestionWorkplaceAmphur= $data->QuestionWorkplaceAmphur;
+                        $input_questionnaire->QuestionWorkplaceProvince= $data->QuestionWorkplaceProvince;
+                        $input_questionnaire->QuestionWorkplaceZipno= $data->QuestionWorkplaceZipno;
+                        $input_questionnaire->QuestionWorkplacePhoneno= $data->QuestionWorkplacePhoneno;
+                        $input_questionnaire->QuestionWorkplacePhoneno1= $data->QuestionWorkplacePhoneno1;
+                        $input_questionnaire->QuestionWorkplaceFaxno= $data->QuestionWorkplaceFaxno;
+                        $input_questionnaire->QuestionWorkplaceEmail= $data->QuestionWorkplaceEmail;
+                        $input_questionnaire->QuestionWorkplaceSalary= $data->QuestionWorkplaceSalary;
+                        $input_questionnaire->QuestionWorkStatus= $data->QuestionWorkStatus;
+                        $input_questionnaire->QuestionWorkplaceSatify= $data->QuestionWorkplaceSatify;
+                        $input_questionnaire->QuestionWorkplaceOtherSatisfy= $data->QuestionWorkplaceOtherSatisfy;
+                        $input_questionnaire->QuestionWorkFindingDuration= $data->QuestionWorkFindingDuration;
+                        $input_questionnaire->QuestionWorkplaceDirectBranch= $data->QuestionWorkplaceDirectBranch;
+                        $input_questionnaire->QuestionWorkplaceApplyKnowledge= $data->QuestionWorkplaceApplyKnowledge;
+                        $input_questionnaire->QuestionReasonNotGetWork= $data->QuestionReasonNotGetWork;
+                        $input_questionnaire->QuestionReasonNotGetWorkOther= $data->QuestionReasonNotGetWorkOther;
+                        $input_questionnaire->QuestionFindingJobProblem= $data->QuestionFindingJobProblem;
+                        $input_questionnaire->QuestionFindingJobProblemOther= $data->QuestionFindingJobProblemOther;
+                        $input_questionnaire->QuestionGetHigherEducation= $data->QuestionGetHigherEducation;
+                        $input_questionnaire->QuestionDegreeOfHigherEducation= $data->QuestionDegreeOfHigherEducation;
+                        $input_questionnaire->QuestionBranchOfHigherEducation= $data->QuestionBranchOfHigherEducation;
+                        $input_questionnaire->QuestionBranchOfHigherEducationOther= $data->QuestionBranchOfHigherEducationOther;
+                        $input_questionnaire->QuestionSchoolTypeOfHigherEducation= $data->QuestionSchoolTypeOfHigherEducation;
+                        $input_questionnaire->QuestionReasonOfGetHigherEducation= $data->QuestionReasonOfGetHigherEducation;
+                        $input_questionnaire->QuestionReasonOfGetHigherEducationOther= $data->QuestionReasonOfGetHigherEducationOther;
+                        $input_questionnaire->QuestionProblemOfGetHigherEducation= $data->QuestionProblemOfGetHigherEducation;
+                        $input_questionnaire->QuestionProblemOfGetHigherEducationOther= $data->QuestionProblemOfGetHigherEducationOther;
+                        $input_questionnaire->QuestionWorkplaceType= $data->QuestionWorkplaceType;
+                        $input_questionnaire->QuestionWorkplaceWorkMasterType= $data->QuestionWorkplaceWorkMasterType;
+                        $input_questionnaire->QuestionSubjectForJob1= $data->QuestionSubjectForJob1;
+                        $input_questionnaire->QuestionSubjectForJob2= $data->QuestionSubjectForJob2;
+                        $input_questionnaire->QuestionSubjectForJob3= $data->QuestionSubjectForJob3;
+                        $input_questionnaire->QuestionSubjectForJob4= $data->QuestionSubjectForJob4;
+                        $input_questionnaire->QuestionSubjectForJob5= $data->QuestionSubjectForJob5;
+                        $input_questionnaire->QuestionSubjectForJob6= $data->QuestionSubjectForJob6;
+                        $input_questionnaire->QuestionSubjectForJobOther= $data->QuestionSubjectForJobOther;
+                        $input_questionnaire->QuestionCourseSuggestion= $data->QuestionCourseSuggestion;
+                        $input_questionnaire->QuestionTeachingSuggestion= $data->QuestionTeachingSuggestion;
+                        $input_questionnaire->QuestionStudentActivitySuggestion= $data->QuestionStudentActivitySuggestion;
+                        $input_questionnaire->QuestionCourseSuggestion= $data->QuestionCourseSuggestion;
+                        $input_questionnaire->QuestionTeachingSuggestion= $data->QuestionTeachingSuggestion;
+                        $input_questionnaire->QuestionActivitySuggestion= $data->QuestionActivitySuggestion;                  
+
                         if ($input_profile != null) {
                             $input_questionnaire->alumni()->associate($input_profile);
                             $input_questionnaire->save();
