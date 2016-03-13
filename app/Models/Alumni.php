@@ -8,11 +8,11 @@ class Alumni extends Model
 {
     protected $table = 'alumni';
 
-    public function workplace()
+  /*  public function workplace()
     {
         return $this->hasMany('App\Models\Workplace','alumni_id');
-    }
-    public function questionnaire()
+    }*/
+    public function questionnaires()
     {
         return $this->hasMany('App\Models\Questionnaire','alumni_id');
     }

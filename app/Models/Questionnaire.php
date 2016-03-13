@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Questionnaire extends Model
+class Questionnaires extends Model
 {
-    protected $table = 'questionnaire';
+    protected $table = 'questionnaires';
 
 
     public function alumni()

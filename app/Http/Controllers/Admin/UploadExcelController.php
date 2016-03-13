@@ -82,7 +82,7 @@ class UploadExcelController extends Controller
                         $input_profile->gpa = $data->gpa;
                         $input_profile->houseNo = $data->houseNo;
                         $input_profile->houseMo = $data->houseMo;
-                        $input_profile->housesoi = $data->housesoi;
+                        $input_profile->houseSoi = $data->houseSoi;
                         $input_profile->houseRoad = $data->houseRoad;
                         $input_profile->houseDistrict = $data->houseDistrict;
                         $input_profile->houseAmphur= $data->houseAmphur;
@@ -180,7 +180,7 @@ class UploadExcelController extends Controller
                         $input_questionnaire->QuestionStudentActivitySuggestion= $data->QuestionStudentActivitySuggestion;
                         $input_questionnaire->QuestionCourseSuggestion= $data->QuestionCourseSuggestion;
                         $input_questionnaire->QuestionTeachingSuggestion= $data->QuestionTeachingSuggestion;
-                        $input_questionnaire->QuestionActivitySuggestion= $data->QuestionActivitySuggestion;                  
+                        $input_questionnaire->QuestionActivitySuggestion= $data->QuestionActivitySuggestion;
 
                         if ($input_profile != null) {
                             $input_questionnaire->alumni()->associate($input_profile);
