@@ -1396,7 +1396,7 @@
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
       <name>C&#x3a;&#x5c;Users&#x5c;Admin&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;output_56_57</name>
-      <extention>xls</extention>
+      <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
       <add_date>N</add_date>

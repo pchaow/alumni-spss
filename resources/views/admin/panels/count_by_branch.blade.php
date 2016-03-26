@@ -1,7 +1,11 @@
 <?php
 
 
-$sql = "SELECT count(*) as `amount` , `alumni`.`branch` as `branch` , `alumni`.`year_of_graduation` as `yearGrad` FROM `alumni` WHERE `education` = 'ปริญญาตรี' group by `alumni`.`branch`, `alumni`.`year_of_graduation`";
+$sql = "SELECT count(*) as `amount` ,
+`alumni`.`branch` as `branch`
+, `alumni`.`yearofgraduation` as `yearGrad`
+FROM `alumni` WHERE `degree` = 'ปริญญาตรี'
+group by `alumni`.`branch`, `alumni`.`yearofgraduation`";
 
 $result = DB::select($sql);
 
@@ -19,7 +23,7 @@ foreach ($array as $key => $value) {
     $resultArray1[] = $obj;
 }
 
-//dd($resultArray1);
+dd($resultArray1);
 //
 //$lava1 = new \Khill\Lavacharts\Lavacharts(); // See note below for Laravel
 //
