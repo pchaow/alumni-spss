@@ -20,23 +20,25 @@ foreach ($array as $key => $value) {
 }
 
 //dd($resultArray1);
+//
+//$lava1 = new \Khill\Lavacharts\Lavacharts(); // See note below for Laravel
+//
+//$population1 = $lava1->DataTable();
+//
+//$population1 = $population1
+//        ->addStringColumn('ปีที่จบการศึกษา')
+//        ->addNumberColumn("รัฐศาสตร์")
+//        ->addNumberColumn("พัฒนาสังคม")
+//        ->setDateTimeFormat('Y');
+//
+//foreach ($resultArray1 as $value) {
+//    $population1 = $population1->addRow([$value['year'], $value['รัฐศาสตร์'], $value['พัฒนาสังคม']]);
+//}
+//$lava1->ColumnChart('BranchCountYear', $population1, [
+//        'title' => 'จำนวนนิสิตที่จบการศึกษาแยกตามสาขาและปีที่จบ'
+//]);
 
-$lava1 = new \Khill\Lavacharts\Lavacharts(); // See note below for Laravel
 
-$population1 = $lava1->DataTable();
-
-$population1 = $population1
-        ->addStringColumn('ปีที่จบการศึกษา')
-        ->addNumberColumn("รัฐศาสตร์")
-        ->addNumberColumn("พัฒนาสังคม")
-        ->setDateTimeFormat('Y');
-
-foreach ($resultArray1 as $value) {
-    $population1 = $population1->addRow([$value['year'], $value['รัฐศาสตร์'], $value['พัฒนาสังคม']]);
-}
-$lava1->ColumnChart('BranchCountYear', $population1, [
-        'title' => 'จำนวนนิสิตที่จบการศึกษาแยกตามสาขาและปีที่จบ'
-]);
 ?>
 
 <div class="panel panel-default">
@@ -47,9 +49,34 @@ $lava1->ColumnChart('BranchCountYear', $population1, [
     <div class="panel-body">
         <div id="count_by_branch_graph_panel" style="height: 500px;"></div>
 
-        <?php
-        echo $lava1->render('ColumnChart', 'BranchCountYear', 'count_by_branch_graph_panel');
-        ?>
+        <script>
+            $(function () {
+                $('#count_by_branch_graph_panel').highcharts({
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: 'Fruit Consumption'
+                    },
+                    xAxis: {
+                        categories: ['Apples', 'Bananas', 'Oranges']
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Fruit eaten'
+                        }
+                    },
+                    series: [{
+                        name: 'Jane',
+                        data: [1, 0, 4]
+                    }, {
+                        name: 'John',
+                        data: [5, 7, 3]
+                    }]
+                });
+            });
+
+        </script>
 
         <table class="table table-bordered table-hover table-striped">
             <thead>
