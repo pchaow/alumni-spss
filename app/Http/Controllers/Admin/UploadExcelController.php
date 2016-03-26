@@ -147,7 +147,6 @@ class UploadExcelController extends Controller
                         $input_questionnaire->QuestionWorkplaceFaxno= $data->QuestionWorkplaceFaxno;
                         $input_questionnaire->QuestionWorkplaceEmail= $data->QuestionWorkplaceEmail;
                         $input_questionnaire->QuestionWorkplaceSalary= $data->QuestionWorkplaceSalary;
-                        $input_questionnaire->QuestionWorkStatus= $data->QuestionWorkStatus;
                         $input_questionnaire->QuestionWorkplaceSatify= $data->QuestionWorkplaceSatify;
                         $input_questionnaire->QuestionWorkplaceOtherSatisfy= $data->QuestionWorkplaceOtherSatisfy;
                         $input_questionnaire->QuestionWorkFindingDuration= $data->QuestionWorkFindingDuration;
@@ -175,8 +174,6 @@ class UploadExcelController extends Controller
                         $input_questionnaire->QuestionSubjectForJob5= $data->QuestionSubjectForJob5;
                         $input_questionnaire->QuestionSubjectForJob6= $data->QuestionSubjectForJob6;
                         $input_questionnaire->QuestionSubjectForJobOther= $data->QuestionSubjectForJobOther;
-                        $input_questionnaire->QuestionCourseSuggestion= $data->QuestionCourseSuggestion;
-                        $input_questionnaire->QuestionTeachingSuggestion= $data->QuestionTeachingSuggestion;
                         $input_questionnaire->QuestionStudentActivitySuggestion= $data->QuestionStudentActivitySuggestion;
                         $input_questionnaire->QuestionCourseSuggestion= $data->QuestionCourseSuggestion;
                         $input_questionnaire->QuestionTeachingSuggestion= $data->QuestionTeachingSuggestion;
