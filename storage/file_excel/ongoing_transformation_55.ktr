@@ -76,7 +76,8 @@
   </notepads>
   <order>
   <hop> <from>Microsoft Excel Input</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Microsoft Excel Writer</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Microsoft Excel Writer</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Microsoft Excel Input</name>
@@ -105,7 +106,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Admin&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;original_copy_55.xlsx</name>
+      <name>C&#x3a;&#x5c;Users&#x5c;Chontipan&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;original_copy_55.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1407,7 +1408,7 @@
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Admin&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;output_55</name>
+      <name>C&#x3a;&#x5c;Users&#x5c;Chontipan&#x5c;Documents&#x5c;GitHub&#x5c;alumni-spss&#x5c;storage&#x5c;file_excel&#x5c;output_55</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -4648,8 +4649,56 @@
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>448</xloc>
-      <yloc>368</yloc>
+      <xloc>320</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Microsoft Excel Writer</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>branch</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>&#xe23;&#xe31;&#xe10;&#xe28;&#xe32;&#xe2a;&#xe15;&#xe23;&#xe4c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>branch</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe2a;&#xe31;&#xe07;&#xe04;&#xe21;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>branch</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>&#xe19;&#xe42;&#xe22;&#xe1a;&#xe32;&#xe22;&#xe2a;&#xe32;&#xe18;&#xe32;&#xe23;&#xe13;&#xe30;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

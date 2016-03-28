@@ -4,43 +4,72 @@
 $sql = "SELECT count(*) as `amount` ,
 `alumni`.`branch` as `branch`
 , `alumni`.`yearofgraduation` as `yearGrad`
-FROM `alumni` WHERE `degree` = 'ปริญญาตรี'
-group by `alumni`.`branch`, `alumni`.`yearofgraduation`";
+FROM `alumni`
+group by `alumni`.`branch`, `alumni`.`yearofgraduation`"  ;
 
 $result = DB::select($sql);
 
 $yearGradGroup = collect($result)->groupBy('yearGrad');
+//dd($yearGradGroup);
 
 $array = $yearGradGroup->toArray();
 
+$yearsofgrad=[];
+
 $resultArray1 = [];
+
 foreach ($array as $key => $value) {
+$yearsofgrad[] = $key;
     $obj = [];
+
     foreach ($value as $data) {
+
         $obj['year'] = $key;
         $obj[$data->branch] = $data->amount;
     }
     $resultArray1[] = $obj;
+
 }
 
-dd($resultArray1);
-//
-//$lava1 = new \Khill\Lavacharts\Lavacharts(); // See note below for Laravel
-//
-//$population1 = $lava1->DataTable();
-//
-//$population1 = $population1
-//        ->addStringColumn('ปีที่จบการศึกษา')
-//        ->addNumberColumn("รัฐศาสตร์")
-//        ->addNumberColumn("พัฒนาสังคม")
-//        ->setDateTimeFormat('Y');
-//
-//foreach ($resultArray1 as $value) {
-//    $population1 = $population1->addRow([$value['year'], $value['รัฐศาสตร์'], $value['พัฒนาสังคม']]);
-//}
-//$lava1->ColumnChart('BranchCountYear', $population1, [
-//        'title' => 'จำนวนนิสิตที่จบการศึกษาแยกตามสาขาและปีที่จบ'
-//]);
+$arrvalueofgraduates = [];
+
+$branchGradGroup = collect($result)->groupBy('branch');
+//dd($branchGradGroup);
+foreach ($branchGradGroup as $key=>$value) {
+  $valueofgraduates = new stdClass();
+  $arrvalueofgradyear=[];
+//print_r($value);
+ $valueofgraduates->name=$key;
+ //dd($value);
+  foreach ($value as $key) {
+    //print_r($key->amount);
+    $arrvalueofgradyear[] = $key->amount;
+    //print_r($arrvalueofgradyear);
+  }
+    $valueofgraduates->data=$arrvalueofgradyear;
+    //
+
+    //var_dump($valueofgraduates);
+    $arrvalueofgraduates[] = $valueofgraduates;
+    //dd($arrvalueofgraduates);
+
+}
+
+//dd($arrvalueofgraduates);
+
+/*
+series: [{
+    name: 'Jane',
+    data: [1, 0, 4]
+}, {
+    name: 'John',
+    data: [5, 7, 3]
+}]*/
+
+//print_r($yearsofgrad);
+
+//print_r($arrvalueofgraduates);
+//dd($resultArray1);
 
 
 ?>
@@ -54,29 +83,28 @@ dd($resultArray1);
         <div id="count_by_branch_graph_panel" style="height: 500px;"></div>
 
         <script>
+            var yearsofgrad = <?php echo json_encode($yearsofgrad); ?>;
+            //['ss', 'Bananas', 'Oranges'];
+
             $(function () {
                 $('#count_by_branch_graph_panel').highcharts({
                     chart: {
                         type: 'bar'
                     },
                     title: {
-                        text: 'Fruit Consumption'
+                        text: 'ตารางสรุปจำนวนศิษย์เก่าแยกตามสาขาและปีที่จบการศึกษา'
                     },
                     xAxis: {
-                        categories: ['Apples', 'Bananas', 'Oranges']
+
+                        categories: yearsofgrad
+
                     },
                     yAxis: {
                         title: {
-                            text: 'Fruit eaten'
+                            text: 'จำนวนบัณฑิต(คน)'
                         }
                     },
-                    series: [{
-                        name: 'Jane',
-                        data: [1, 0, 4]
-                    }, {
-                        name: 'John',
-                        data: [5, 7, 3]
-                    }]
+                    series: <?PHP echo json_encode($arrvalueofgraduates);?>
                 });
             });
 
@@ -87,7 +115,7 @@ dd($resultArray1);
             <tr>
                 <th>ปีที่จบการศึกษา</th>
                 <th>สาขา</th>
-                <th>จำนวนศิษย์เก่า</th>
+                <th>จำนวนศิษย์เก่า(คน)</th>
             </tr>
             </thead>
             <tbody>
