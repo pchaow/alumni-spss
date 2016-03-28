@@ -33,7 +33,8 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-default navbar-static-top" role="navigation"
+     style="margin-bottom: 0; background-color:#8B1C62;">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -41,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">SAS : SPSS Alumni System</a>
+        <a class="navbar-brand" href="/user/index" style="color: white;">SAS : SPSS Alumni System</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -62,18 +63,18 @@
                         <label>รหัสประจำตัวประชาชน</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" class="form-control" placeholder="รหัสประจำตัวปรชาชน 13 หลัก">
+                            <input type="text" name="person_id" class="form-control" placeholder="รหัสประจำตัวประชาชน 13 หลัก">
                         </div>
-                        <p class="help-block">Example block-level help text here.</p>
+                        <p class="help-block"></p>
                     </div>
 
                     <div class="form-group">
-                        <label>วันเกิด</label>
+                        <label>รหัสนิสิต</label>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                            <input type="date" class="form-control" placeholder="วันเกิด">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" name="student_id" class="form-control" placeholder="รหัสนิสิต">
                         </div>
-                        <p class="help-block">Example block-level help text here.</p>
+                        <p class="help-block"></p>
                     </div>
 
                     <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>

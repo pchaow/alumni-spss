@@ -26,7 +26,7 @@
                             <div class="col-lg-2">
                                 <div class="form-group">
                                     <label>ปีที่เข้าศึกษา</label>
-                                    <select name="year_of_graduation" id="year_of_education" class="form-control">
+                                    <select name="education_year" id="year_of_education" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         <option value="2558">2558</option>
                                         <option value="2557">2557</option>
@@ -69,7 +69,9 @@
                                     <select name="course" id="course" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         <option value="รัฐศาสตรบัณฑิต">รัฐศาสตรบัณฑิต (ร.บ.)</option>
-                                        <option value="ศิลปศาสตรบัณฑิต สาขาวิชาพัฒนาสังคม">ศิลปศาสตรบัณฑิต (ศศ.บ.) สาขาวิชาพัฒนาสังคม</option>
+                                        <option value="ศิลปศาสตรบัณฑิต สาขาวิชาพัฒนาสังคม">ศิลปศาสตรบัณฑิต (ศศ.บ.)
+                                            สาขาวิชาพัฒนาสังคม
+                                        </option>
                                     </select>
                                 </div>
                             </div>
@@ -82,13 +84,13 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>ชื่อ</label>
-                                    <input name="firstname" id="firstname" class="form-control" >
+                                    <input name="firstname" id="firstname" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>นามสกุล</label>
-                                    <input name="lastname" id="lastname" class="form-control" >
+                                    <input name="lastname" id="lastname" class="form-control">
                                 </div>
                             </div>
 
@@ -136,26 +138,24 @@
                     </thead>
                     <tbody>
                     @if(count($data_alumni) != 0)
-                        <?php
-                        foreach ($data_alumni as $r) {
+                        @foreach ($data_alumni as $r)
 
-                            print '
                             <tr>
-                                <td>' . $r["student_id"] . '</td>
-                                <td>' . $r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"] . '</td>
-                                <td>' . $r["education"] . '</td>
-                                 <td>' . $r["course"] . '</td>
+                                <td>{{$r["student_id"]}}</td>
+                                <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
+                                <td>{{$r["education"] }}</td>
+                                <td>{{$r["course"]}}</td>
                                 <td>
-                                        <button type="button" class="btn btn-primary" >View</button>
-                                        <button type="button" class="btn btn-default">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    <a type="button" href="/admin/profile/{{$r->id}}" class="btn btn-primary">View</a>
+                                    <button type="button" class="btn btn-default">Edit</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
-                            ';
-                        }
-                        ?>
+                        @endforeach
                     @else
-                        <tr> <td colspan="5" align="center">ไม่พอข้อมูล</td> </tr>
+                        <tr>
+                            <td colspan="5" align="center">ไม่พอข้อมูล</td>
+                        </tr>
                     @endif
                     </tbody>
 

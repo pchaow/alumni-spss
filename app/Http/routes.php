@@ -61,8 +61,10 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.index');
         });
 
-        Route::get('/profile', function () {
-            return view('admin.view_profile');
+        Route::get('/profile/{id}', function ($id) {
+            $alumni = \App\Models\Alumni::find($id);
+            return view('admin.view_profile')
+                ->with('alumni',$alumni);
         });
 
         Route::get('/search', 'Admin\SearchAlumniController@get_index');

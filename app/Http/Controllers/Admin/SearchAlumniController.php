@@ -25,7 +25,7 @@ class SearchAlumniController extends Controller
     {
 
         // return Input::all();
-        $educationYear = substr(Input::get("year_of_education"), -2);
+        $educationYear = substr(Input::get("education_year"), -2);
         $year_of_graduation = Input::get("year_of_graduation");
         $education = Input::get("education");
         $course = Input::get("course");
@@ -34,18 +34,18 @@ class SearchAlumniController extends Controller
         $firstname = Input::get("firstname");
         $lastname = Input::get("lastname");
 
-
         $data_alumni = Alumni::with('workplace', 'questionnaire')
             ->where(function ($q) use ($educationYear, $year_of_graduation, $education, $course, $title, $student_id, $firstname, $lastname) {
                 return $q
                     ->where('student_id', 'LIKE', "$educationYear%")
-                    ->where('year_of_graduation', 'LIKE', "%$year_of_graduation%")
-                    ->where('education', 'LIKE', "%$education%")
-                    ->where('course', 'LIKE', "%$course%")
-                    ->where('title', 'LIKE', "%$title%")
-                    ->where('student_id', 'LIKE', "%$student_id%")
-                    ->where('firstname', 'LIKE', "%$firstname%")
-                    ->where('lastname', 'LIKE', "%$lastname%");
+//                    ->where('year_of_graduation', 'LIKE', "%$year_of_graduation%")
+//                    ->where('education', 'LIKE', "%$education%")
+//                    ->where('course', 'LIKE', "%$course%")
+//                    ->where('title', 'LIKE', "%$title%")
+//                    ->where('student_id', 'LIKE', "%$student_id%")
+//                    ->where('firstname', 'LIKE', "%$firstname%")
+//                    ->where('lastname', 'LIKE', "%$lastname%")
+                    ;
             })
             ->orderBy('created_at', 'desc')
             ->paginate(15);
