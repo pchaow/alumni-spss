@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Alumni;
 use App\Models\Questionnaire;
-use App\Models\Workplace;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
@@ -14,7 +13,7 @@ use Illuminate\Support\Facades\Input;
 use Validator;
 use App\Http\Controllers\Controller;
 
-class UploadExcelController extends Controller
+class UploadexcelController extends Controller
 {
 
     public function test_export_excel()
@@ -32,9 +31,9 @@ class UploadExcelController extends Controller
             array('ฉอฉิ่ง', 'ใจดี', '6666666'),
         );
 
-        Excel::create('Laravel Excel', function ($excel) use ($data, $head) {
+        excel::create('Laravel excel', function ($excel) use ($data, $head) {
 
-            $excel->sheet('Excel sheet', function ($sheet) use ($data, $head) {
+            $excel->sheet('excel sheet', function ($sheet) use ($data, $head) {
 
 
                 $sheet->prependRow(1, $head);
@@ -44,7 +43,7 @@ class UploadExcelController extends Controller
 
 
             });
-            // Our first sheet
+            // our first sheet
 
         })->export('xls');
     }
@@ -54,97 +53,114 @@ class UploadExcelController extends Controller
     {
 
         $file = $request->file('file_excel');
-        $destinationPath = storage_path() . '/file_excel';
+        $destinationpath = storage_path() . '/file_excel';
 
-        if ($request->hasFile('file_excel')) {
-            $filename = $file->getClientOriginalName();
-            $ext = $file->getClientOriginalExtension();
+        if ($request->hasfile('file_excel')) {
+            $filename = $file->getClientoriginalname();
+            $ext = $file->getClientoriginalextension();
 
             if ($ext == "xls" || $ext == "xlsx") {
                 if ($file->isValid()) {
-                    $file->move($destinationPath, $filename);
+                    $file->move($destinationpath, $filename);
 
-                    $dataTest = Excel::load(storage_path('file_excel') . '/' . $filename, function ($reader) {
+                    $datatest = excel::load(storage_path('file_excel') . '/' . $filename, function ($reader) {
                     })->get();
-                    //dd($dataTest[0]);
-
-                    foreach ($dataTest[0] as $data) {
-
+                    //dd($datatest[0]);
+                    foreach ($datatest as $data) {
                         /**ข้อมูลส่วนตัว**/
-                        $input_profile = new Alumni();
-                        $input_profile->year_of_graduation = $data->year_of_graduation;
-                        $input_profile->national_id = $data->national_id;
+                        //$data = $datatest[0];
+                        $input_profile = new alumni();
+                        $input_profile->yearofgraduation = $data->yearofgraduation;
+                        $input_profile->personal_id = $data->personal_id;
                         $input_profile->student_id = $data->student_id;
                         $input_profile->title = $data->title;
                         $input_profile->firstname = $data->firstname;
                         $input_profile->lastname = $data->lastname;
                         $input_profile->birthdate = $data->birthdate;
                         $input_profile->gpa = $data->gpa;
-                        $input_profile->house_no = $data->house_no;
-                        $input_profile->moo = $data->moo;
-                        $input_profile->soi = $data->soi;
-                        $input_profile->road = $data->road;
-                        $input_profile->district = $data->district;
-                        $input_profile->amphur = $data->amphur;
-                        $input_profile->province = $data->province;
-                        $input_profile->phone = $data->phone;
-                        $input_profile->zipcode = $data->zipcode;
+                        $input_profile->houseno = $data->houseno;
+                        $input_profile->housemo = $data->housemo;
+                        $input_profile->housesoi = $data->housesoi;
+                        $input_profile->houseroad = $data->houseroad;
+                        $input_profile->housedistrict = $data->housedistrict;
+                        $input_profile->houseamphur= $data->houseamphur;
+                        $input_profile->houseprovince = $data->houseprovince;
+                        $input_profile->telephone= $data->telephone;
+                        $input_profile->housezipno = $data->housezipno;
                         $input_profile->email = $data->email;
-                        $input_profile->education = $data->education;
+                        $input_profile->degree = $data->degree;
                         $input_profile->faculty = $data->faculty;
                         $input_profile->branch = $data->branch;
-                        $input_profile->firstname = $data->firstname;
+                        $input_profile->plan = $data->plan;
                         $input_profile->course = $data->course;
                         $input_profile->save();
                         /////////////////
 
-                        /**ข้อมูลสถานที่ทำงาน**/
-                        $input_workplace = new Workplace();
-                        $input_workplace->office = $data->office;
-                        $input_workplace->number_office = $data->number_office;
-                        $input_workplace->moo_office = $data->moo_office;
-                        $input_workplace->building_office = $data->building_office;
-                        $input_workplace->class_office = $data->class_office;
-                        $input_workplace->soi_office = $data->soi_office;
-                        $input_workplace->road_office = $data->road_office;
-                        $input_workplace->amphur_office = $data->amphur_office;
-                        $input_workplace->district_office = $data->district_office;
-                        $input_workplace->province_office = $data->province_office;
-                        $input_workplace->zipcode_office = $data->zipcode_office;
-                        $input_workplace->phone_office = $data->phone_office;
-                        $input_workplace->fax_office = $data->fax_office;
-                        $input_workplace->email_office = $data->email_office;
-                        $input_workplace->salary = $data->salary;
-                        if ($input_profile != null) {
-                            $input_workplace->alumni()->associate($input_profile);
-                            $input_workplace->save();
-                        }
                         /**ข้อมูลแบบสอบถาม**/
+                        $input_questionnaire = new questionnaire();
+                        $input_questionnaire->questionworkstatus = $data->questionworkstatus;
+                        $input_questionnaire->questionworkplaceworktype = $data->questionworkplaceworktype;
+                        $input_questionnaire->questionworkplaceworkothertype = $data->questionworkplaceworkothertype;
+                        $input_questionnaire->questionworkplacepersonalskill = $data->questionworkplacepersonalskill;
+                        $input_questionnaire->questionworkplaceworkskill = $data->questionworkplaceworkskill;
+                        $input_questionnaire->questionworkplaceworkotherskill = $data->questionworkplaceworkotherskill;
+                        $input_questionnaire->questionworkplaceworkpositiontype = $data->questionworkplaceworkpositiontype;
+                        $input_questionnaire->questionworkplaceworkposition = $data->questionworkplaceworkposition;
+                        $input_questionnaire->questionworkplacename = $data->questionworkplacename;
+                        $input_questionnaire->questionworkplaceno = $data->questionworkplaceno;
+                        $input_questionnaire->questionworkplaceMo = $data->questionworkplaceMo;
+                        $input_questionnaire->questionworkplacebuildingname= $data->questionworkplacebuildingname;
+                        $input_questionnaire->questionworkplacebuildingfloor= $data->questionworkplacebuildingfloor;
+                        $input_questionnaire->questionworkplacesoi= $data->questionworkplacesoi;
+                        $input_questionnaire->questionworkplaceRoad= $data->questionworkplaceroad;
+                        $input_questionnaire->questionworkplacedistrict= $data->questionworkplacedistrict;
+                        $input_questionnaire->questionworkplaceamphur= $data->questionworkplaceamphur;
+                        $input_questionnaire->questionworkplaceprovince= $data->questionworkplaceprovince;
+                        $input_questionnaire->questionworkplacezipno= $data->questionworkplacezipno;
+                        $input_questionnaire->questionworkplacephoneno= $data->questionworkplacephoneno;
+                        $input_questionnaire->questionworkplacephoneno1= $data->questionworkplacephoneno1;
+                        $input_questionnaire->questionworkplacefaxno= $data->questionworkplacefaxno;
+                        $input_questionnaire->questionworkplaceemail= $data->questionworkplaceemail;
+                        $input_questionnaire->questionworkplacesalary= $data->questionworkplacesalary;
+                        $input_questionnaire->questionworkplacesatify= $data->questionworkplacesatify;
+                        $input_questionnaire->questionworkplaceothersatisfy= $data->questionworkplaceothersatisfy;
+                        $input_questionnaire->questionworkfindingduration= $data->questionworkfindingduration;
+                        $input_questionnaire->questionworkplacedirectbranch= $data->questionworkplacedirectbranch;
+                        $input_questionnaire->questionworkplaceapplyKnowledge= $data->questionworkplaceapplyKnowledge;
+                        $input_questionnaire->questionreasonnotgetwork= $data->questionreasonnotgetwork;
+                        $input_questionnaire->questionreasonnotgetworkother= $data->questionreasonnotgetworkother;
+                        $input_questionnaire->questionfindingjobproblem= $data->questionfindingjobproblem;
+                        $input_questionnaire->questionfindingjobproblemother= $data->questionfindingjobproblemother;
+                        $input_questionnaire->questiongethighereducation= $data->questiongethighereducation;
+                        $input_questionnaire->questiondegreeofhighereducation= $data->questiondegreeofhighereducation;
+                        $input_questionnaire->questionbranchofhighereducation= $data->questionbranchofhighereducation;
+                        $input_questionnaire->questionbranchofhighereducationother= $data->questionbranchofhighereducationother;
+                        $input_questionnaire->questionschooltypeofhighereducation= $data->questionschooltypeofhighereducation;
+                        $input_questionnaire->questionreasonofgethighereducation= $data->questionreasonofgethighereducation;
+                        $input_questionnaire->questionreasonofgethighereducationother= $data->questionreasonofgethighereducationother;
+                        $input_questionnaire->questionproblemofgethighereducation= $data->questionproblemofgethighereducation;
+                        $input_questionnaire->questionproblemofgethighereducationother= $data->questionproblemofgethighereducationother;
+                        $input_questionnaire->questionworkplacetype= $data->questionworkplacetype;
+                        $input_questionnaire->questionworkplaceworkMastertype= $data->questionworkplaceworkmastertype;
+                        $input_questionnaire->questionsubjectforjob1= $data->questionsubjectforjob1;
+                        $input_questionnaire->questionsubjectforjob2= $data->questionsubjectforjob2;
+                        $input_questionnaire->questionsubjectforjob3= $data->questionsubjectforjob3;
+                        $input_questionnaire->questionsubjectforjob4= $data->questionsubjectforjob4;
+                        $input_questionnaire->questionsubjectforjob5= $data->questionsubjectforjob5;
+                        $input_questionnaire->questionsubjectforjob6= $data->questionsubjectforjob6;
+                        $input_questionnaire->questionsubjectforjobother= $data->questionsubjectforjobother;
+                        $input_questionnaire->questionstudentactivitysuggestion= $data->questionstudentactivitysuggestion;
+                        $input_questionnaire->questionCoursesuggestion= $data->questioncoursesuggestion;
+                        $input_questionnaire->questionteachingsuggestion= $data->questionteachingsuggestion;
+                        $input_questionnaire->questionactivitysuggestion= $data->questionactivitysuggestion;
 
-                        $input_questionnaire = new Questionnaire();
-                        $input_questionnaire->the_knowledge_that_students_applied_to_work_done = $data->the_knowledge_that_students_applied_to_work_done;
-                        $input_questionnaire->reasons_to_study = $data->reasons_to_study;
-                        $input_questionnaire->the_reason_is_that_no_jobs = $data->the_reason_is_that_no_jobs;
-                        $input_questionnaire->work_directly_with_the_subject_matter = $data->work_directly_with_the_subject_matter;
-                        $input_questionnaire->issues_in_education = $data->issues_in_education;
-                        $input_questionnaire->field_of_study = $data->field_of_study;
-                        $input_questionnaire->to_study_or_not = $data->to_study_or_not;
-                        $input_questionnaire->talent_helps_to_work = $data->talent_helps_to_work;
-                        $input_questionnaire->time_to_get_the_job_done = $data->time_to_get_the_job_done;
-                        $input_questionnaire->difficulties_in_finding_jobs = $data->difficulties_in_finding_jobs;
-                        $input_questionnaire->agencies = $data->agencies;
-                        $input_questionnaire->satisfaction_with_the_work_done = $data->satisfaction_with_the_work_done;
-                        $input_questionnaire->functional_status = $data->functional_status;
-                        $input_questionnaire->position = $data->position;
-                        $input_questionnaire->category = $data->category;
-                        $input_questionnaire->types_of_work = $data->types_of_work;
                         if ($input_profile != null) {
                             $input_questionnaire->alumni()->associate($input_profile);
                             $input_questionnaire->save();
                         }
-                    }
+                  }
 
-                    return redirect('admin/import')->with('status', 'Import Success!!');
+                    return redirect('admin/import')->with('status', 'Import success!!');
 
                 } else {
                     return redirect()->back()->with('status', 'file is valid');

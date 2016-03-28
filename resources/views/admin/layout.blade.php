@@ -29,7 +29,30 @@
     <!-- Custom Fonts -->
     <link href="/bower/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+
+
     @yield('css')
+
+            <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/bower/jquery/dist/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/bower/jquery/dist/jquery.min.js"><\/script>')</script>
+    <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="/bower/holderjs/holder.min.js"></script>
+
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/bower/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/bower/raphael/raphael-min.js"></script>
+    <script src="/bower/morrisjs/morris.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/bower/highcharts/highcharts.js"></script>
+    <script src="/bower/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
 
 
 </head>
@@ -110,8 +133,9 @@
                         </li>
                     </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
-            </div>
+              
+
+
             <!-- /.navbar-static-side -->
         </nav>
         <div id="page-wrapper">
@@ -124,26 +148,8 @@
     </div>
     <!-- /#wrapper -->
 </div>
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/bower/jquery/dist/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/bower/jquery/dist/jquery.min.js"><\/script>')</script>
-<script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="/bower/holderjs/holder.min.js"></script>
 
 
-<!-- Metis Menu Plugin JavaScript -->
-<script src="/bower/metisMenu/dist/metisMenu.min.js"></script>
-
-<!-- Morris Charts JavaScript -->
-<script src="/bower/raphael/raphael-min.js"></script>
-<script src="/bower/morrisjs/morris.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/bower/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
-@yield('javascript')
 
 
 </body>
