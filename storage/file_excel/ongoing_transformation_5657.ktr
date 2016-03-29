@@ -192,7 +192,7 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>&#x23;</format>
         <currency/>
         <decimal/>
         <group/>
@@ -1496,7 +1496,7 @@
       <field>
         <name>personal_id</name>
         <type>String</type>
-        <format>General</format>
+        <format/>
         <title>personal_id</title>
         <titleStyleCell/>
         <styleCell/>
