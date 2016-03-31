@@ -82,8 +82,30 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.stats');
         });
 
-        Route::get('/stat_by_work_status', function () {
+        Route::get('/stat_work_direct_branch', function () {
+            return view('admin.stat_work_direct_branch');
+        });
+
+        Route::get('/stat_by_work_direct_branch_by_year', function () {
+            return view('admin.stat_by_work_direct_branch_by_year');
+        });
+
+        Route::get('/stat_by_work_direct_branch_by_branch', function () {
+            return view('admin.stat_by_work_direct_branch_by_branch');
+        });
+
+
+        Route::get('/stat_work_status', function () {
             return view('admin.stat_work_status');
+        });
+
+
+        Route::get('/stat_work_status_by_year', function () {
+            return view('admin.stat_work_status_by_year');
+        });
+
+        Route::get('/stat_work_status_by_branch', function () {
+            return view('admin.stat_work_status_by_branch');
         });
 
         Route::get('/stat_by_degree', function () {

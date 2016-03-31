@@ -76,7 +76,7 @@ series: [{
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> แผนภูมิสรุปจำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา
+        <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -92,7 +92,7 @@ series: [{
                         type: 'column'
                     },
                     title: {
-                        text: 'แผนภูมิสรุปจำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา'
+                        text: 'จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา'
                     },
                     xAxis: {
 
@@ -117,7 +117,7 @@ series: [{
             });
 
         </script>
-
+        <h3>จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา</h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>

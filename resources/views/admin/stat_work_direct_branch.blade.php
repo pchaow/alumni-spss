@@ -3,7 +3,7 @@
 <ol class="breadcrumb">
   <li><a href="../admin">หน้าหลัก</a></li>
   <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li class="active">สถิติสถานะการมีงานทำ</li>
+  <li class="active">สถิติการทำงานตรงสายงาน</li>
 </ol>
 
 <?php
@@ -35,7 +35,7 @@ $arrBranch = collect($branch)->toArray();
   <br>
 </div>
 <div>
-<h4><u>สถิติสถานะการมีงานทำ</u></h4>
+<h4><u>สถิติการทำงานตรงสายงาน</u></h4>
 </div>
  <div id="byyear">
   <table  class="table table-bordered table-hover table-striped">
@@ -48,7 +48,7 @@ $arrBranch = collect($branch)->toArray();
         @foreach ($arryearOfGraduation as $key=>$value)
           <tr>
             <td>
-          <a href="/admin/stat_work_status_by_year?year=<?php echo $value->yearOfGraduation;?>">- <?php echo $value->yearOfGraduation;?></a>
+          <a href="/admin/stat_by_work_direct_branch_by_year?year=<?php echo $value->yearOfGraduation;?>">- <?php echo $value->yearOfGraduation;?></a>
         </td>
           </tr>
         @endforeach
@@ -70,7 +70,7 @@ $arrBranch = collect($branch)->toArray();
         @foreach ($arrBranch as $key=>$value)
           <tr>
             <td>
-          <a href="/admin/stat_work_status_by_branch?branch=<?php echo $value->branch;?>">- <?php echo $value->branch;?></a>
+          <a href="/admin/stat_by_work_direct_branch_by_branch?branch=<?php echo $value->branch;?>">- <?php echo $value->branch;?></a>
         </td>
           </tr>
         @endforeach

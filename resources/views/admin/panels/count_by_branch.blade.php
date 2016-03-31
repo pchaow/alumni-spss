@@ -44,9 +44,6 @@ foreach ($yearGradGroup as $key=>$value) {
 
  //dd($value);
 $i=0;
-
-
-
         foreach ($arrBranch as $Branchvalue) {
           foreach ($value as $key) {
 
@@ -91,7 +88,7 @@ series: [{
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> แผนภูมิสรุปจำนวนบัณฑิตตามสาขาวิชา แยกตามปีที่จบการศึกษา
+        <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตตามสาขาวิชา แยกตามปีที่จบการศึกษา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -107,7 +104,7 @@ series: [{
                         type: 'column'
                     },
                     title: {
-                        text: 'แผนภูมิสรุปจำนวนบัณฑิตตามสาขาวิชา แยกตามปีที่จบการศึกษา'
+                        text: 'จำนวนบัณฑิตตามสาขาวิชา แยกตามปีที่จบการศึกษา'
                     },
                     xAxis: {
 
@@ -122,8 +119,7 @@ series: [{
 
 
 
-                    },plotOptions: {
-            column: {
+                    },plotOptions: {  column: {
                 dataLabels: {
                     enabled: true
                 }
@@ -135,7 +131,7 @@ series: [{
             });
 
         </script>
-
+        <h3>จำนวนบัณฑิตตามสาขาวิชา แยกตามปีที่จบการศึกษา</h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>
