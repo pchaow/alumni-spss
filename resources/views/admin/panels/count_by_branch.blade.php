@@ -1,5 +1,23 @@
 <?php
 
+$sql = "SELECT  distinct `alumni`.`branch` as `branch`
+FROM alumni
+order by branch ASC";
+
+$result = DB::select($sql);
+
+$Branchgroup = DB::table('alumni')->select('branch')->distinct()->get();
+$Branchgroup = collect($result)->toArray();
+$arrBranch=[];
+foreach ($Branchgroup as $key => $value) {
+  $arrBranch[]=$value->branch;
+}
+
+//dd($arrBranch);
+//print_r($arrYear);
+
+
+
 
 $sql = "SELECT count(*) as `amount` ,
 `alumni`.`branch` as `branch`
@@ -11,40 +29,37 @@ $result = DB::select($sql);
 
 $yearGradGroup = collect($result)->groupBy('yearGrad');
 //dd($yearGradGroup);
+$branchGradGroup = collect($result)->groupBy('branch');
 
-$array = $yearGradGroup->toArray();
-
-$yearsofgrad=[];
-
-$resultArray1 = [];
-
-foreach ($array as $key => $value) {
-$yearsofgrad[] = $key;
-    $obj = [];
-
-    foreach ($value as $data) {
-
-        $obj['year'] = $key;
-        $obj[$data->branch] = $data->amount;
-    }
-    $resultArray1[] = $obj;
-
-}
+$array = $yearGradGroup ->toArray();
 
 $arrvalueofgraduates = [];
 
-$branchGradGroup = collect($result)->groupBy('branch');
 //dd($branchGradGroup);
-foreach ($branchGradGroup as $key=>$value) {
+foreach ($yearGradGroup as $key=>$value) {
   $valueofgraduates = new stdClass();
+
+  $valueofgraduates->name=$key;
   $arrvalueofgradyear=[];
-//print_r($value);
- $valueofgraduates->name=$key;
+
  //dd($value);
-  foreach ($value as $key) {
-    //print_r($key->amount);
-    $arrvalueofgradyear[] = $key->amount;
-    //print_r($arrvalueofgradyear);
+$i=0;
+
+
+
+        foreach ($arrBranch as $Branchvalue) {
+          foreach ($value as $key) {
+
+          if($key->branch==$Branchvalue){
+                 $arrvalueofgradyear[$i] = $key->amount;
+                 break;
+          }else{
+            $arrvalueofgradyear[$i]=0;
+          }
+          //print_r($arrvalueofgradyear);
+      }
+
+      $i++;
   }
     $valueofgraduates->data=$arrvalueofgradyear;
     //
@@ -76,34 +91,45 @@ series: [{
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ตารางสรุปจำนวนศิษย์เก่าแยกตามสาขาและปีที่จบการศึกษา
+        <i class="fa fa-bar-chart-o fa-fw"></i> แผนภูมิสรุปจำนวนบัณฑิตตามสาขาวิชา แยกตามปีที่จบการศึกษา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
         <div id="count_by_branch_graph_panel" style="height: 500px;"></div>
 
         <script>
-            var yearsofgrad = <?php echo json_encode($yearsofgrad); ?>;
+
             //['ss', 'Bananas', 'Oranges'];
 
             $(function () {
                 $('#count_by_branch_graph_panel').highcharts({
                     chart: {
-                        type: 'bar'
+                        type: 'column'
                     },
                     title: {
-                        text: 'ตารางสรุปจำนวนศิษย์เก่าแยกตามสาขาและปีที่จบการศึกษา'
+                        text: 'แผนภูมิสรุปจำนวนบัณฑิตตามสาขาวิชา แยกตามปีที่จบการศึกษา'
                     },
                     xAxis: {
 
-                        categories: yearsofgrad
+                        categories: <?PHP echo json_encode($arrBranch); ?>
 
                     },
                     yAxis: {
                         title: {
                             text: 'จำนวนบัณฑิต(คน)'
                         }
-                    },
+
+
+
+
+                    },plotOptions: {
+            column: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        }
+                    ,
                     series: <?PHP echo json_encode($arrvalueofgraduates);?>
                 });
             });
@@ -113,14 +139,14 @@ series: [{
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>
+                <th>สาขาวิชา</th>
                 <th>ปีที่จบการศึกษา</th>
-                <th>สาขา</th>
-                <th>จำนวนศิษย์เก่า(คน)</th>
+                <th>จำนวนบัณฑิต(คน)</th>
             </tr>
             </thead>
             <tbody>
 
-            ​@foreach($yearGradGroup as $key => $value)
+            ​@foreach($branchGradGroup as $key => $value)
                 <?php
                 $firstRow = true;
                 $sum = 0;
@@ -131,7 +157,7 @@ series: [{
                         @if($firstRow)
                             <td rowspan="{{count($value)}}">{{$key}}</td>
                         @endif
-                        <td>{{$subValue->branch}}</td>
+                        <td>{{$subValue->yearGrad}}</td>
                         <td>{{$subValue->amount}}</td>
                     </tr>
                     <?php

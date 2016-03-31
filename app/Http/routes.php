@@ -82,6 +82,28 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.stats');
         });
 
+        Route::get('/stat_by_work_status', function () {
+            return view('admin.stat_work_status');
+        });
+
+        Route::get('/stat_by_degree', function () {
+            return view('admin.stat_by_degree');
+        });
+
+        Route::get('/stat_by_branch', function () {
+            return view('admin.stat_by_branch');
+        });
+
+        Route::get('/stat_by_yearofgraduation', function () {
+            return view('admin.stat_by_yearofgraduation');
+        });
+
+        Route::get('/stat_by_graduates', function () {
+            return view('admin.stat_by_graduates');
+        });
+
+
+
         Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
 
 
