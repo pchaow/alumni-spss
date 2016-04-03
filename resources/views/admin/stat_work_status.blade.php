@@ -3,7 +3,7 @@
 <ol class="breadcrumb">
   <li><a href="../admin">หน้าหลัก</a></li>
   <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li class="active">สถานะการมีงานทำ</li>
+  <li class="active">สถานะการทำงาน</li>
 </ol>
 
 <?php
@@ -40,7 +40,7 @@ $arrBranch = collect($branch)->toArray();
       </div>
 
 </div>
-<h4><u>สถิติสถานะการมีงานทำ</u></h4>
+<h4><u>สถิติสถานะการทำงาน</u></h4>
 <div class="panel panel-success"  id="byyear" >
     <div class="panel-heading">
         <i class="fa fa-calendar"></i> ปีที่จบการศึกษา

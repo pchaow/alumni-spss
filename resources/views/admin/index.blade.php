@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="panel-footer">
-                        <span class="pull-left">นำเข้าข้อมูลศิษย์เก่า</span>
+                        <span class="pull-left">นำเข้าข้อมูลบัณฑิต</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #d9534f;"></i></span>
                         <div class="clearfix"></div>
                     </div>

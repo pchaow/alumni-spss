@@ -28,17 +28,22 @@
               </tr>
               <tr>
                 <td>
-              <a href="/admin/stat_work_status_by_branch_year_menu">- ภาพรวมสภาวะการมีงานทำ</a>
+              <a href="/admin/stat_work_status_by_branch_year_menu">- ภาวะการมีงานทำ ตามสาขาวิชาและปีการศึกษา</a>
                 </td>
               </tr>
               <tr>
                 <td>
-              <a href="/admin/stat_work_status">&nbsp;&nbsp;&nbsp;&nbsp;- สถานะการมีงานทำ</a>
+              <a href="/admin/stat_workplace_type_menu">- ประเภทงานบัณฑิต ตามสาขาวิชาและปีการศึกษา</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+              <a href="/admin/stat_work_status">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมสถานะการทำงาน</a>
             </td>
               </tr>
               <tr>
                 <td>
-              <a href="/admin/stat_work_direct_branch">&nbsp;&nbsp;&nbsp;&nbsp;- ทำงานตรงสายงาน</a>
+              <a href="/admin/stat_work_direct_branch">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมทำงานตรงสายงาน</a>
             </td>
               </tr>
           </tbody>

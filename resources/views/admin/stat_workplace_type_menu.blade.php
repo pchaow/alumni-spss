@@ -4,11 +4,11 @@
 <ol class="breadcrumb">
   <li><a href="../admin">หน้าหลัก</a></li>
   <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li><a href="/admin/stat_work_status_by_branch_year_menu">ภาวะการมีงานทำ</a></li>
+  <li><a href="/admin/stat_workplace_type_menu">ประเภทงานบัณฑิต</a></li>
     <li class="active">เลือกสาขาวิชา และปีที่จบการศึกษา</li>
 </ol>
 
-<form action="/admin/stat_by_work_status_by_branch_year" method="get">
+<form action="/admin/stat_by_workplace_type" method="get">
 
   <div class="panel panel-primary">
       <div class="panel-heading">

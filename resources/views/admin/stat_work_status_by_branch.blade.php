@@ -6,7 +6,7 @@ $major = $_GET['branch'];
 <ol class="breadcrumb">
   <li><a href="../admin">หน้าหลัก</a></li>
   <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li><a href="../admin/stat_work_status">สถิติสถานะการมีงานทำ</a></li>
+  <li><a href="../admin/stat_work_status">สถานะการทำงาน</a></li>
   <li class="active">สาขาวิชา{{$major}}</li>
 </ol>
 

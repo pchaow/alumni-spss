@@ -137,8 +137,12 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/stat_by_work_direct_branch_by_branch', function () {
             return view('admin.stat_by_work_direct_branch_by_branch');
         });
-
-
+        Route::get('/stat_by_workplace_type', function () {
+            return view('admin.stat_by_workplace_type');
+        });
+        Route::get('/stat_workplace_type_menu', function () {
+            return view('admin.stat_workplace_type_menu');
+        });
 
         Route::get('/stat_work_status_by_branch_year_menu', function () {
           return view('admin.stat_work_status_by_branch_year_menu');

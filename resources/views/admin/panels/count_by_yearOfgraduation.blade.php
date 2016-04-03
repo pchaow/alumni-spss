@@ -107,11 +107,7 @@ series: [{
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
             shared: true
         },
-        plotOptions: {
-            column: {
-                stacking: 'percent'
-            }
-        },
+        
                     series: <?PHP echo json_encode($arrvalueofgraduates);?>
                 });
             });

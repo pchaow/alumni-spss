@@ -121,7 +121,7 @@
                         </li>
 
                         <li>
-                            <a href="/admin/search"><i class="fa fa-search fa-fw"></i> ค้นหาศิษย์เก่า</a>
+                            <a href="/admin/search"><i class="fa fa-search fa-fw"></i> ค้นหาบัณฑิต</a>
                         </li>
                         <li>
                             <a href="/admin/stats"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ</a>
@@ -129,11 +129,11 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="/admin/import"><i class="fa fa-cloud-upload fa-fw"></i> นำเข้า</a>
+                            <a href="/admin/import"><i class="fa fa-cloud-upload fa-fw"></i> นำเข้าข้อมูล</a>
                         </li>
                     </ul>
                 </div>
-              
+
 
 
             <!-- /.navbar-static-side -->

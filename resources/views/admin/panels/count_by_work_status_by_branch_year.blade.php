@@ -19,7 +19,7 @@ $arrvalueofworkstatus = [];
 $arrofworkstatus = [];
 $workstatusGroup = collect($result)->groupBy('workstatus');
 //dd($workstatusGroup);
-$cs= array("#00CC66", "#CCFF66", "#99FFFF", "#FFCCFF",'#CCFFCC');
+$cs= array("#00CC66", "#CCFF66", "#99FFFF", "pink",'#CCFFCC');
 $i=0;
 foreach ($workstatusGroup as $key=>$value) {
 
