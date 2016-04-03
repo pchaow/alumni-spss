@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">ข้อมูลศิษย์เก่า</h1>
+            <h1 class="page-header">ข้อมูลบัณฑิต</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -11,7 +11,7 @@
     <div class="row">
 
         <div class="col-lg-8">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <i class="fa fa-user fa-fw"></i> ข้อมูลส่วนตัว
                 </div>
@@ -41,20 +41,22 @@
 
                         <div class="form-group">
                             <label for="">ระดับ</label>
-                            {{$alumni->education}}
+                            {{$alumni->degree}}
                         </div>
 
                         <div class="form-group">
                             <label for="">ภูมิลำเนา</label>
-                            {{$alumni->amphur}} {{$alumni->province}}
+                            {{$alumni->houseAmphur}} {{$alumni->houseProvince}}
                         </div>
                         <div class="form-group">
                             <label for="">สถานที่ทำงาน</label>
                             <?php
-                                $lastestWorkplace = $alumni->workplace()->orderBy('created_at')->first();
+                                $lastestWorkplace = $alumni->questionnaires()->orderBy('created_at')->first();
+                                //dd($lastestWorkplace);
                             ?>
-                            {{$lastestWorkplace->office}} จังหวัด{{$lastestWorkplace->province_office}}
+                            {{$lastestWorkplace->QuestionWorkplaceName}} {{$lastestWorkplace->QuestionWorkplaceProvince}}
                         </div>
+
                     </form>
                 </div>
                 <!-- /.panel-body -->

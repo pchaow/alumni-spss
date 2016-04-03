@@ -13,7 +13,7 @@
         <!-- /.col-lg-12 -->
     </div>
     <div class="row">
-        <div class="panel panel-green">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <i class="fa fa-search"></i> เงื่อนไขการค้นหา
             </div>
@@ -109,7 +109,7 @@
 
         </div>
     </div>
-    <?php $i = count($data_alumni); $s = 1; ?>
+    <?php $i = $data_alumni_all; $s = 1; ?>
     <div class="row">
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -121,7 +121,7 @@
                         <button class="btn btn-success"><i class="fa fa-cloud-download"></i> ส่งออกเป็น Excel</button>
                     </div>
                     <div class="col-lg-11" style="text-align: center;">
-                        ในหน้านี้พบข้อมูลทั้งหมดจำนวน {{$i}} รายการ
+                        พบข้อมูลทั้งหมดจำนวน {{$i}} รายการ
 
                     </div>
                 </div>
@@ -129,7 +129,7 @@
                     <thead>
                     <tr>
                         <th>รหัสนิสิต</th>
-                        <th>ชื่อ นามสกุล</th>
+                        <th>ชื่อ-นามสกุล</th>
                         <th>ระดับการศึกษาที่สำเร็จ</th>
                         <th>หลักสูตรที่สำเร็จการศึกษา</th>
 
@@ -137,14 +137,18 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     @if(count($data_alumni) != 0)
+
                         @foreach ($data_alumni as $r)
 
                             <tr>
+                            
                                 <td>{{$r["student_id"]}}</td>
                                 <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
-                                <td>{{$r["education"] }}</td>
+                                <td>{{$r["degree"] }}</td>
                                 <td>{{$r["course"]}}</td>
+
                                 <td>
                                     <a type="button" href="/admin/profile/{{$r->id}}" class="btn btn-primary">View</a>
                                     <button type="button" class="btn btn-default">Edit</button>

@@ -3,7 +3,7 @@
 <ol class="breadcrumb">
   <li><a href="../admin">หน้าหลัก</a></li>
   <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li class="active">สถิติการทำงานตรงสายงาน</li>
+  <li class="active">ทำงานตรงสายงาน</li>
 </ol>
 
 <?php
@@ -26,24 +26,29 @@ $arrBranch = collect($branch)->toArray();
 
 
 
-<div>
-<div>
-  <h4><u>Quick Access</u></h4>
-<a href="#byyear">ปีที่จบการศึกษา</a>
-  <br>
-  <a href="#bybranch">สาขาวิชา</a>
-  <br>
+  <div class="panel panel-primary">
+      <div class="panel-heading">
+          <i class="fa fa-bolt"></i> Quick Access
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body">
+
+      <div class="row"><a href="#byyear">-ปีที่จบการศึกษา</a>
+      </div>
+      <div class="row">  <a href="#bybranch">-สาขาวิชา</a>
+        </div>
+      </div>
+
 </div>
-<div>
-<h4><u>สถิติการทำงานตรงสายงาน</u></h4>
-</div>
- <div id="byyear">
-  <table  class="table table-bordered table-hover table-striped">
-      <thead>
-      <tr>
-          <th><h4>ปีที่จบการศึกษา</h4></th>
-      </tr>
-      </thead>
+<h4><u>สถิติทำงานตรงสายงาน</u></h4>
+<div class="panel panel-success" id="byyear">
+    <div class="panel-heading">
+        <i class="fa fa-calendar"></i> ตามปีที่จบการศึกษา รวมทุกสาขา
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+      <div class="row" >
+    <table  class="table table-bordered table-hover table-striped">
       <tbody>
         @foreach ($arryearOfGraduation as $key=>$value)
           <tr>
@@ -52,20 +57,18 @@ $arrBranch = collect($branch)->toArray();
         </td>
           </tr>
         @endforeach
-
-
-
       </tbody>
   </table>
-</div>
+</div></div></div>
 
-<div id="bybranch">
-  <table  class="table table-bordered table-hover table-striped">
-      <thead>
-      <tr>
-          <th><h4>สาขาวิชา</h4></th>
-      </tr>
-      </thead>
+<div class="panel panel-warning" id="bybranch" >
+    <div class="panel-heading">
+        <i class="fa fa-users"></i> ตามสาขาวิชา รวมปีที่จบการศึกษา
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+      <div class="row" >
+     <table  class="table table-bordered table-hover table-striped">
       <tbody>
         @foreach ($arrBranch as $key=>$value)
           <tr>
@@ -76,7 +79,7 @@ $arrBranch = collect($branch)->toArray();
         @endforeach
 </div>
 
-
+</div>
 </div>
 
 

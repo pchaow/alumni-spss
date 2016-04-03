@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumni;
+use App\Models\Questionaire;
 use App\User;
 use Illuminate\Support\Facades\App;
 use Excel;
 use Symfony\Component\Console\Input\Input;
 use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+//use App\Http\Controllers\DB;
+//use App\Http\Controllers\Schema;
+
 
 
 class TestExcelController extends Controller
@@ -18,6 +21,13 @@ class TestExcelController extends Controller
 
     public function test_export_excel()
     {
+
+        $result = Alumni::with('questionnaires')->first();
+        dd($result);
+
+        foreach ($result as $key => $value) {
+          # code...
+        }
         $head = array(
             'ชื่อ', 'นามสกุล', 'เลขบัตร'
         );

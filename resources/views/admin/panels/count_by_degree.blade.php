@@ -80,14 +80,14 @@ series: [{
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
-        <div id="count_by_year_graph_panel" style="height: 500px;"></div>
+        <div id="count_by_degree_graph_panel" style="height: 500px;"></div>
 
         <script>
             var yearsofgrad = <?php echo json_encode($yearsofgrad); ?>;
             //['ss', 'Bananas', 'Oranges'];
 
             $(function () {
-                $('#count_by_year_graph_panel').highcharts({
+                $('#count_by_degree_graph_panel').highcharts({
                     chart: {
                         type: 'column'
                     },

@@ -12,6 +12,48 @@
 */
 use Illuminate\Support\Facades\Input;
 use App\Models\User;
+//use App\Models\Alumni;
+
+Route::post('/create/branch-list',function()
+{
+    $degree = Input::get('degree');
+    $subcategories = DB::table('Alumni')->select('branch')
+    ->distinct()
+    ->where('degree','=',$degree)
+    ->orderby('branch','ASC')
+    ->get();
+    //return $subcategories;
+    ?>
+    <option value="">เลือกสาขาวิชา</option>
+    <?php
+     foreach($subcategories as $branch) {
+      ?>
+	   <option value="<?php echo $branch->branch; ?>"><?php echo $branch->branch; ?></option>
+     <?php
+   }
+
+});
+
+Route::post('/create/yeargrad-list',function()
+{
+    $branch = Input::get('branch');
+    $subcategories = DB::table('Alumni')->select('yearofgraduation')
+    ->distinct()
+    ->where('branch','=',$branch)
+    ->orderby('yearofgraduation','DESC')
+    ->get();
+    //return $subcategories;
+    ?>
+    <option value="">เลือกปีที่จบการศึกษา</option>
+    <?php
+     foreach($subcategories as $year) {
+      ?>
+	   <option value="<?php echo $year->yearofgraduation; ?>"><?php echo $year->yearofgraduation; ?></option>
+     <?php
+   }
+
+});
+
 
 
 Route::group(['middleware' => ['web']], function () {
@@ -68,6 +110,8 @@ Route::group(['middleware' => ['web']], function () {
         });
 
         Route::get('/search', 'Admin\SearchAlumniController@get_index');
+
+
         Route::post('/search', 'Admin\SearchAlumniController@search_alumni');
 
         Route::get('/insert', function () {
@@ -95,6 +139,15 @@ Route::group(['middleware' => ['web']], function () {
         });
 
 
+
+        Route::get('/stat_work_status_by_branch_year_menu', function () {
+          return view('admin.stat_work_status_by_branch_year_menu');
+        });
+
+        Route::get('/stat_by_work_status_by_branch_year', function () {
+          return view('admin.stat_by_work_status_by_branch_year');
+        });
+
         Route::get('/stat_work_status', function () {
             return view('admin.stat_work_status');
         });
@@ -110,6 +163,14 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::get('/stat_by_degree', function () {
             return view('admin.stat_by_degree');
+        });
+
+        Route::get('/stat_by_degree_by_year', function () {
+            return view('admin.stat_by_degree_by_year');
+        });
+
+        Route::get('/stat_by_degree_by_year_show', function () {
+            return view('admin.stat_by_degree_by_year_show');
         });
 
         Route::get('/stat_by_branch', function () {

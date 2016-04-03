@@ -6,7 +6,7 @@ $year = $_GET['year'];
 <ol class="breadcrumb">
   <li><a href="../admin">หน้าหลัก</a></li>
   <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li><a href="../admin/stat_work_status">สถิติสถานะการมีงานทำ</a></li>
+  <li><a href="../admin/stat_work_status">สถานะการมีงานทำ</a></li>
   <li class="active">ปีการศึกษา {{$year}}</li>
 </ol>
 

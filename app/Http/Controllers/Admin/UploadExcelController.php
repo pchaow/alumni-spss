@@ -37,8 +37,6 @@ class UploadexcelController extends Controller
 
 
                 $sheet->prependRow(1, $head);
-
-
                 $sheet->rows($data);
 
 
