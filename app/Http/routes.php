@@ -189,6 +189,10 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.stat_by_graduates');
         });
 
+        Route::get('/stat/map', function () {
+            return view('admin.stat.map');
+        });
+
 
 
         Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
