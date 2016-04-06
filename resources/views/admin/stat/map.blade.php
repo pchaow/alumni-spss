@@ -43,7 +43,7 @@ group by alumni.houseProvince";
                         },
 
                         mapNavigation: {
-                            enabled: true,
+                            enabled: false,
                             buttonOptions: {
                                 verticalAlign: 'bottom'
                             }
@@ -56,12 +56,16 @@ group by alumni.houseProvince";
                         series: [{
                             mapData: Highcharts.maps['countries/th/th-all'],
                             data: <?php echo $thaidataJson; ?>,
-                            joinBy: [ 'province_code','PROVINCE_CODE'],
+                            joinBy: ['province_code', 'PROVINCE_CODE'],
                             dataLabels: {
                                 enabled: true,
                                 color: '#FFFFFF',
                                 format: '{point.value}'
                             },
+                            name: 'จำนวนนิสิต',
+                            tooltip: {
+                                pointFormat: '{point.PROVINCE_NAME}: {point.value} คน'
+                            }
                         }]
                     });
                 });
