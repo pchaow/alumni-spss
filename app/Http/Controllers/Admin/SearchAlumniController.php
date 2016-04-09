@@ -59,13 +59,6 @@ class SearchAlumniController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(20);
 
-        //  $data_alumni = Alumni::with('questionnaires')
-        //  ->where('yearofgraduation','LIKE',"%2556.0%")
-        //  ->paginate(20);
-
-        //dd($data_alumni);
-
-        //$data_alumni = Alumni::count();
         $data_alumni_all = Alumni::with('questionnaires')
             ->where(function ($q)
             use ($educationYear, $year_of_graduation, $education, $course, $title, $student_id, $firstname, $lastname) {
@@ -81,10 +74,6 @@ class SearchAlumniController extends Controller
             })
             ->count();
 
-
-        // dd($data_alumni);
-        //return Input::all();
-
         $yearOfGraduation = \DB::select(
             "select DISTINCT(alumni.yearOfGraduation) as yearOfGraduation from alumni order by yearOfGraduation ");
         $yearOfStartStudy = \DB::select(
@@ -94,7 +83,8 @@ class SearchAlumniController extends Controller
         return view('admin/search')->with('data_alumni', $data_alumni)
             ->with('data_alumni_all', $data_alumni_all)
             ->with('yearOfGraduation', $yearOfGraduation)
-            ->with('yearOfStartStudy', $yearOfStartStudy);;
+            ->with('yearOfStartStudy', $yearOfStartStudy)
+            ->with('form', $request->all());
 
 
     }
