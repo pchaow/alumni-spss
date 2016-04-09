@@ -17,8 +17,5 @@ class Alumni extends Model
     {
         return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
     }
-    public function getTableColumns(){
-        return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
-    }
 
 }
