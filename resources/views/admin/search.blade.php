@@ -51,22 +51,21 @@
                                     <label>ระดับการศึกษาที่สำเร็จ</label>
                                     <select name="education" id="education" class="form-control">
                                         <option value="">ไม่ระบุ</option>
-                                        <option value="ปริญญาตรี">ปริญญาตรี</option>
-                                        <option value="ปริญญาโท">ปริญญาโท</option>
-                                        <option value="ปริญญาเอก">ปริญญาเอก</option>
+                                        @foreach($degreeStudy as $value)
+                                            <option value="{{$value->degree}}">{{$value->degree}}</option>
+                                        @endforeach
 
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="form-group">
-                                    <label>หลักสูตรที่สำเร็จการศึกษา</label>
+                                    <label>สาขาวิชาที่สำเร็จการศึกษา</label>
                                     <select name="course" id="course" class="form-control">
                                         <option value="">ไม่ระบุ</option>
-                                        <option value="รัฐศาสตรบัณฑิต">รัฐศาสตรบัณฑิต (ร.บ.)</option>
-                                        <option value="ศิลปศาสตรบัณฑิต สาขาวิชาพัฒนาสังคม">ศิลปศาสตรบัณฑิต (ศศ.บ.)
-                                            สาขาวิชาพัฒนาสังคม
-                                        </option>
+                                        @foreach($branch as $value)
+                                            <option value="{{$value->branch}}">{{$value->branch}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

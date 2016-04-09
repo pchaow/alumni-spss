@@ -21,11 +21,21 @@ class SearchAlumniController extends Controller
         $yearOfStartStudy = \DB::select(
             "SELECT DISTINCT(CONCAT('25', SUBSTRING(alumni.student_id from 1 for 2))) as yearOfStudy from alumni order by yearOfStudy");
 
+        $degreeStudy = \DB::select(
+            "SELECT DISTINCT(degree) as degree from alumni order by degree");
+
+        $branch = \DB::select(
+            "SELECT DISTINCT(branch) as branch from alumni order by branch");
+
+
         $data_alumni = Alumni::with('questionnaires')->paginate(20);
         return view('admin.search')
             ->with('data_alumni', $data_alumni)
             ->with('yearOfGraduation', $yearOfGraduation)
-            ->with('yearOfStartStudy', $yearOfStartStudy);
+            ->with('yearOfStartStudy', $yearOfStartStudy)
+            ->with('degreeStudy', $degreeStudy)
+            ->with('branch', $branch)
+            ;
 
 
     }
@@ -35,29 +45,50 @@ class SearchAlumniController extends Controller
         // return Input::all();
         $educationYear = substr(Input::get("education_year"), -2);
         $year_of_graduation = Input::get("year_of_graduation");
-        $education = Input::get("degree");
+        $education = Input::get("education");
         $course = Input::get("course");
-        $title = Input::get("title");
         $student_id = Input::get("student_id");
         $firstname = Input::get("firstname");
         $lastname = Input::get("lastname");
-        //echo $year_of_graduation;
 
-        $data_alumni = Alumni::with('questionnaires')
-            ->where(function ($q)
-            use ($educationYear, $year_of_graduation, $education, $course, $title, $student_id, $firstname, $lastname) {
-                return $q
-                    ->where('student_id', 'LIKE', "$educationYear%")
-                    ->where('yearofgraduation', 'LIKE', "%$year_of_graduation%")
-                    ->where('degree', 'LIKE', "%$education%")
-                    ->where('course', 'LIKE', "%$course%")
-                    ->where('title', 'LIKE', "%$title%")
-                    ->where('student_id', 'LIKE', "%$student_id%")
-                    ->where('firstname', 'LIKE', "%$firstname%")
-                    ->where('lastname', 'LIKE', "%$lastname%");
-            })
-            ->orderBy('created_at', 'desc')
-            ->paginate(20);
+        //echo $education;
+
+        $data_alumni = Alumni::query();
+        if(Input::has("education_year")){
+            $data_alumni->where('student_id', 'LIKE', "$educationYear%");
+        }
+        if(Input::has("year_of_graduation")){
+            $data_alumni->where('yearofgraduation', 'LIKE', "%$year_of_graduation%");
+        }
+        if(Input::has("education")){
+            $data_alumni->where('degree', 'LIKE', "%$education%");
+        }
+        if(Input::has("course")){
+            $data_alumni->where('branch', 'LIKE', "%$course%");
+        }
+        if(Input::has("student_id")){
+            $data_alumni->where('student_id', 'LIKE', "%$student_id%");
+        }
+        if(Input::has("firstname")){
+            $data_alumni->where('firstname', 'LIKE', "%$firstname%");
+        }
+        if(Input::has("lastname")){
+            $data_alumni->where('lastname', 'LIKE', "%$lastname%");
+        }
+
+//            ->where(function ($q)
+//            use ($educationYear, $year_of_graduation, $education, $course, $student_id, $firstname, $lastname) {
+//                return $q
+//                    ->where('student_id', 'LIKE', "$educationYear%")
+//                    ->where('yearofgraduation', 'LIKE', "%$year_of_graduation%")
+//                    ->where('degree', 'LIKE', "%$education%")
+//                    ->where('course', 'LIKE', "%$course%")
+//                    ->where('student_id', 'LIKE', "%$student_id%")
+//                    ->where('firstname', 'LIKE', "%$firstname%")
+//                    ->where('lastname', 'LIKE', "%$lastname%");
+//            })
+            $data_alumni->orderBy('created_at', 'desc');
+            $data_alumni=$data_alumni->paginate(20);
 
         //  $data_alumni = Alumni::with('questionnaires')
         //  ->where('yearofgraduation','LIKE',"%2556.0%")
@@ -66,22 +97,6 @@ class SearchAlumniController extends Controller
         //dd($data_alumni);
 
         //$data_alumni = Alumni::count();
-        $data_alumni_all = Alumni::with('questionnaires')
-            ->where(function ($q)
-            use ($educationYear, $year_of_graduation, $education, $course, $title, $student_id, $firstname, $lastname) {
-                return $q
-                    ->where('student_id', 'LIKE', "$educationYear%")
-                    ->where('yearofgraduation', 'LIKE', "%$year_of_graduation%")
-                    ->where('degree', 'LIKE', "%$education%")
-                    ->where('course', 'LIKE', "%$course%")
-                    ->where('title', 'LIKE', "%$title%")
-                    ->where('student_id', 'LIKE', "%$student_id%")
-                    ->where('firstname', 'LIKE', "%$firstname%")
-                    ->where('lastname', 'LIKE', "%$lastname%");
-            })
-            ->count();
-
-
         // dd($data_alumni);
         //return Input::all();
 
@@ -89,13 +104,19 @@ class SearchAlumniController extends Controller
             "select DISTINCT(alumni.yearOfGraduation) as yearOfGraduation from alumni order by yearOfGraduation ");
         $yearOfStartStudy = \DB::select(
             "SELECT DISTINCT(CONCAT('25', SUBSTRING(alumni.student_id from 1 for 2))) as yearOfStudy from alumni order by yearOfStudy");
+        $degreeStudy = \DB::select(
+            "SELECT DISTINCT(degree) as degree from alumni order by degree");
+        $branch = \DB::select(
+            "SELECT DISTINCT(branch) as branch from alumni order by branch");
+
 
 
         return view('admin/search')->with('data_alumni', $data_alumni)
-            ->with('data_alumni_all', $data_alumni_all)
             ->with('yearOfGraduation', $yearOfGraduation)
-            ->with('yearOfStartStudy', $yearOfStartStudy);;
-
+            ->with('yearOfStartStudy', $yearOfStartStudy)
+            ->with('degreeStudy', $degreeStudy)
+            ->with('branch', $branch)
+            ;
 
     }
 
