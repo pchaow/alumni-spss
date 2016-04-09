@@ -18,7 +18,7 @@
                 <i class="fa fa-search"></i> เงื่อนไขการค้นหา
             </div>
 
-            <form role="form" action="<?php echo url('admin/search')?>" method="POST">
+            <form role="form" action="{{url('admin/search')}}" method="POST">
                 {{csrf_field()}}
                 <div class="panel-body" style="">
                     <form class="form">
@@ -103,6 +103,7 @@
                                 <button class="btn btn-default" type="reset">รีเซ็ต</button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </form>
@@ -112,13 +113,16 @@
     <?php $i = $data_alumni_all; $s = 1; ?>
     <div class="row">
         <div class="panel panel-success">
+            <div class="row">
+                <input type="button" class="btn btn-success" onclick="location.href='/test';" value="ส่งออกเป็น Excel" />
+            </div>
             <div class="panel-heading">
                 <i class="fa fa-file-text-o"></i> ผลลัพธ์การค้นหา
             </div>
             <div class="panel-body">
                 <div class="row" style="padding-bottom: 10px;">
                     <div class="col-lg-1">
-                        <button class="btn btn-success"><i class="fa fa-cloud-download"></i> ส่งออกเป็น Excel</button>
+
                     </div>
                     <div class="col-lg-11" style="text-align: center;">
                         พบข้อมูลทั้งหมดจำนวน {{$i}} รายการ

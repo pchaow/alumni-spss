@@ -7,11 +7,11 @@ use App\Models\Questionaire;
 use App\User;
 use Illuminate\Support\Facades\App;
 use Excel;
-use Symfony\Component\Console\Input\Input;
+use Illuminate\Support\Facades\Input;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-//use App\Http\Controllers\DB;
+
 //use App\Http\Controllers\Schema;
 
 
@@ -19,27 +19,46 @@ use Illuminate\Http\Request;
 class TestExcelController extends Controller
 {
 
-    public function test_export_excel()
+    public function test_export_excel(Request $request)
     {
 
-        $result = Alumni::with('questionnaires')->first();
+        $educationYear = substr(Input::get("education_year"), -2);
+        $year_of_graduation = Input::get("year_of_graduation");
+        $education = Input::get("degree");
+        $course = Input::get("course");
+        $title = Input::get("title");
+        $student_id = Input::get("student_id");
+        $firstname = Input::get("firstname");
+        $lastname = Input::get("lastname");
+
+        $data_alumni = Alumni::with('questionnaires')
+            ->where(function ($q)
+            use
+            ($educationYear, $year_of_graduation, $education, $course, $title, $student_id, $firstname, $lastname) {
+                return $q
+                    ->where('student_id', 'LIKE', "$educationYear%")
+                    ->where('yearofgraduation', 'LIKE', "%$year_of_graduation%")
+                    ->where('degree', 'LIKE', "%$education%")
+                    ->where('course', 'LIKE', "%$course%")
+                    ->where('title', 'LIKE', "%$title%")
+                    ->where('student_id', 'LIKE', "%$student_id%")
+                    ->where('firstname', 'LIKE', "%$firstname%")
+                    ->where('lastname', 'LIKE', "%$lastname%")
+                    ;
+            })
+            ->orderBy('created_at', 'desc');
+
+        $query = \App\Models\Alumni::query();
+        $query->join('questionnaires',function($join){
+            $join->on('alumni.id','=','questionnaires.alumni_id');
+        });
+        $result  = $query->get()->toArray();
+        $keys = array_keys($result[0]);
+        //$result = Alumni::with('questionnaires')->first();
         dd($result);
+        $head = $keys;
 
-        foreach ($result as $key => $value) {
-          # code...
-        }
-        $head = array(
-            'ชื่อ', 'นามสกุล', 'เลขบัตร'
-        );
-
-        $data = array(
-            array('กอไก่', 'ใจดี', '1234566'),
-            array('ขอไข่', 'ใจดี', '22222222'),
-            array('คอควาย', 'ใจดี', '333333'),
-            array('งองู', 'ใจดี', '444444'),
-            array('จอจาร', 'ใจดี', '555555'),
-            array('ฉอฉิ่ง', 'ใจดี', '6666666'),
-        );
+        $data = $result;
 
         Excel::create('Laravel Excel', function ($excel) use ($data, $head) {
 

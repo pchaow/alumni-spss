@@ -16,5 +16,8 @@ class Alumni extends Model
     {
         return $this->hasMany('App\Models\Questionnaire','alumni_id');
     }
+    public function getTableColumns(){
+        return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
+    }
 
 }

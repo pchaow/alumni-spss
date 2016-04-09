@@ -24,7 +24,6 @@ class SearchAlumniController extends Controller
 
     public function search_alumni(Request $request)
     {
-
         // return Input::all();
         $educationYear = substr(Input::get("education_year"), -2);
         $year_of_graduation = Input::get("year_of_graduation");
