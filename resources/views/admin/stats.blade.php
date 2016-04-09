@@ -27,7 +27,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="/admin/stat/map">- จำนวนนิสิตตามภูมิลำเนาในประเทศไทย</a></td>
+                        <td><a href="/admin/stats/maphome">- จำนวนนิสิตตามภูมิลำเนาในประเทศไทย</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/admin/stats/mapwork">- จำนวนนิสิตที่ทำงานในประเทศไทย</a></td>
                     </tr>
                     <tr>
                         <td>
