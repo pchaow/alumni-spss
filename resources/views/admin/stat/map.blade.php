@@ -5,9 +5,6 @@
 @endsection
 @section('content')
     <?php
-    "select count(*) as value, province.PROVINCE_NAME,province.PROVINCE_CODE from alumni
-JOIN province on province.PROVINCE_NAME = alumni.houseProvince
-group by alumni.houseProvince";
 
     $query = \App\Models\Alumni::query();
     $query->select([

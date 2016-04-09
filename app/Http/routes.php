@@ -12,48 +12,46 @@
 */
 use Illuminate\Support\Facades\Input;
 use App\Models\User;
+
 //use App\Models\Alumni;
 
-Route::post('/create/branch-list',function()
-{
+Route::post('/create/branch-list', function () {
     $degree = Input::get('degree');
     $subcategories = DB::table('Alumni')->select('branch')
-    ->distinct()
-    ->where('degree','=',$degree)
-    ->orderby('branch','ASC')
-    ->get();
+        ->distinct()
+        ->where('degree', '=', $degree)
+        ->orderby('branch', 'ASC')
+        ->get();
     //return $subcategories;
     ?>
     <option value="">เลือกสาขาวิชา</option>
     <?php
-     foreach($subcategories as $branch) {
-      ?>
-	   <option value="<?php echo $branch->branch; ?>"><?php echo $branch->branch; ?></option>
-     <?php
-   }
+    foreach ($subcategories as $branch) {
+        ?>
+        <option value="<?php echo $branch->branch; ?>"><?php echo $branch->branch; ?></option>
+        <?php
+    }
 
 });
 
-Route::post('/create/yeargrad-list',function()
-{
+Route::post('/create/yeargrad-list', function () {
     $branch = Input::get('branch');
     $subcategories = DB::table('Alumni')->select('yearofgraduation')
-    ->distinct()
-    ->where('branch','=',$branch)
-    ->orderby('yearofgraduation','DESC')
-    ->get();
+        ->distinct()
+        ->where('branch', '=', $branch)
+        ->orderby('yearofgraduation', 'DESC')
+        ->get();
     //return $subcategories;
     ?>
     <option value="">เลือกปีที่จบการศึกษา</option>
     <?php
-     foreach($subcategories as $year) {
-      ?>
-	   <option value="<?php echo $year->yearofgraduation; ?>"><?php echo $year->yearofgraduation; ?></option>
-     <?php
-   }
+    foreach ($subcategories as $year) {
+        ?>
+        <option value="<?php echo $year->yearofgraduation; ?>"><?php echo $year->yearofgraduation; ?></option>
+        <?php
+    }
 
 });
-
 
 
 Route::group(['middleware' => ['web']], function () {
@@ -66,34 +64,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::group(['prefix' => 'admin'], function () {
 
-        Route::get('/auth/signin', function () {
-            return view('admin.auth.signin');
-        });
+        Route::post('/auth/signin', "Auth\AuthController@postSignin");
 
-        Route::post('/auth/signin', function () {
-            $login = Input::get('login');
-
-            //$login['password'] = \Hash::make($login['password']);
-
-            $user = User::where('username', $login['username'])->first();
-
-            if ($user != null) {
-                $usertype = $user->usertype()->first();
-                if ($usertype->name == "ADMIN") {
-                    if (\Hash::check($login['password'], $user->password)) {
-                        \Auth::login($user);
-                        return redirect('/admin/index');
-                    }
-                }
-            }
-            return redirect('/');
-
-        });
-
-        Route::get('/auth/logout', function () {
-            \Auth::logout();
-            return redirect('/');
-        });
+        Route::get('/auth/logout', "Auth\AuthController@postLogout");
 
         Route::get('/', function () {
             return redirect('/admin/index');
@@ -106,7 +79,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/profile/{id}', function ($id) {
             $alumni = \App\Models\Alumni::find($id);
             return view('admin.view_profile')
-                ->with('alumni',$alumni);
+                ->with('alumni', $alumni);
         });
 
         Route::get('/search', 'Admin\SearchAlumniController@get_index');
@@ -126,8 +99,13 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.stats');
         });
 
+        //Read
+        Route::get('/stats/{viewName}', function ($viewName) {
+            return view("admin.stat.$viewName");
+        });
+
         Route::get('/stat_work_direct_branch', function () {
-            return view('admin.stat_work_direct_branch');
+
         });
 
         Route::get('/stat_by_work_direct_branch_by_year', function () {
@@ -145,11 +123,11 @@ Route::group(['middleware' => ['web']], function () {
         });
 
         Route::get('/stat_work_status_by_branch_year_menu', function () {
-          return view('admin.stat_work_status_by_branch_year_menu');
+            return view('admin.stat_work_status_by_branch_year_menu');
         });
 
         Route::get('/stat_by_work_status_by_branch_year', function () {
-          return view('admin.stat_by_work_status_by_branch_year');
+            return view('admin.stat_by_work_status_by_branch_year');
         });
 
         Route::get('/stat_work_status', function () {
@@ -192,7 +170,6 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/stat/map', function () {
             return view('admin.stat.map');
         });
-
 
 
         Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
