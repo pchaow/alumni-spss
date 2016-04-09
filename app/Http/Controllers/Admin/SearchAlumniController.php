@@ -116,7 +116,8 @@ class SearchAlumniController extends Controller
             ->with('yearOfStartStudy', $yearOfStartStudy)
             ->with('degreeStudy', $degreeStudy)
             ->with('branch', $branch)
-            ;
+            ->with('form', $request->all());
+
 
     }
 

@@ -29,7 +29,13 @@
                                     <select name="education_year" id="year_of_education" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         @foreach($yearOfStartStudy as $value)
-                                            <option value="{{$value->yearOfStudy}}">{{$value->yearOfStudy}}</option>
+                                            <?php
+                                            $selectedStr = "";
+                                            if (isset($form) and $form['education_year'] == $value->yearOfStudy) {
+                                                $selectedStr = 'selected="selected"';
+                                            }
+                                            ?>
+                                            <option {{$selectedStr}} value="{{$value->yearOfStudy}}">{{$value->yearOfStudy}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -40,7 +46,13 @@
                                     <select name="year_of_graduation" id="year_of_graduation" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         @foreach($yearOfGraduation as $value)
-                                            <option value="{{$value->yearOfGraduation}}">{{$value->yearOfGraduation}}</option>
+                                            <?php
+                                            $selectedStr = "";
+                                            if (isset($form) and $form['year_of_graduation'] == $value->yearOfGraduation) {
+                                                $selectedStr = 'selected="selected"';
+                                            }
+                                            ?>
+                                            <option {{$selectedStr}} value="{{$value->yearOfGraduation}}">{{$value->yearOfGraduation}}</option>
                                         @endforeach
 
                                     </select>
@@ -52,7 +64,13 @@
                                     <select name="education" id="education" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         @foreach($degreeStudy as $value)
-                                            <option value="{{$value->degree}}">{{$value->degree}}</option>
+                                            <?php
+                                            $selectedStr = "";
+                                            if (isset($form) and $form['education'] == $value->degree) {
+                                                $selectedStr = 'selected="selected"';
+                                            }
+                                            ?>
+                                            <option {{$selectedStr}} value="{{$value->degree}}">{{$value->degree}}</option>
                                         @endforeach
 
                                     </select>
@@ -64,7 +82,13 @@
                                     <select name="course" id="course" class="form-control">
                                         <option value="">ไม่ระบุ</option>
                                         @foreach($branch as $value)
-                                            <option value="{{$value->branch}}">{{$value->branch}}</option>
+                                            <?php
+                                            $selectedStr = "";
+                                            if (isset($form) and $form['course'] == $value->branch) {
+                                                $selectedStr = 'selected="selected"';
+                                            }
+                                            ?>
+                                            <option {{$selectedStr}} value="{{$value->branch}}">{{$value->branch}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -72,19 +96,22 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>รหัสนิสิต</label>
-                                    <input name="student_id" id="student_id" type="text" class="form-control">
+                                    <input name="student_id" id="student_id" value="{{$form['student_id'] or ''}}"
+                                           type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>ชื่อ</label>
-                                    <input name="firstname" id="firstname" class="form-control">
+                                    <input name="firstname" id="firstname" class="form-control"
+                                           value="{{$form['firstname'] or ''}}">
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>นามสกุล</label>
-                                    <input name="lastname" id="lastname" class="form-control">
+                                    <input name="lastname" id="lastname" class="form-control"
+                                           value="{{$form['lastname'] or ''}}">
                                 </div>
                             </div>
 
