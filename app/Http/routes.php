@@ -57,6 +57,7 @@ Route::post('/create/yeargrad-list', function () {
 Route::group(['middleware' => ['web']], function () {
 
 
+
     Route::get('/', function () {
         return view('home.signin');
     });
@@ -101,7 +102,7 @@ Route::group(['middleware' => ['web']], function () {
 
         //Read
         Route::get('/stats/{viewName}', function ($viewName) {
-            return view("admin.stat.$viewName");
+            return view("admin.stats.$viewName");
         });
 
         Route::get('/stat_work_direct_branch', function () {
@@ -167,8 +168,8 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.stat_by_graduates');
         });
 
-        Route::get('/stat/map', function () {
-            return view('admin.stat.map');
+        Route::get('/stats/map', function () {
+            return view('admin.stats.map');
         });
 
 

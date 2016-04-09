@@ -8,13 +8,14 @@ class Alumni extends Model
 {
     protected $table = 'alumni';
 
-  /*  public function workplace()
-    {
-        return $this->hasMany('App\Models\Workplace','alumni_id');
-    }*/
     public function questionnaires()
     {
-        return $this->hasMany('App\Models\Questionnaire','alumni_id');
+        return $this->hasMany('App\Models\Questionnaire', 'alumni_id');
+    }
+
+    public function getTableColumns()
+    {
+        return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
     }
 
 }
