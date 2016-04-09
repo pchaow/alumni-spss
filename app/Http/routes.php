@@ -12,6 +12,7 @@
 */
 use Illuminate\Support\Facades\Input;
 use App\Models\User;
+//use App\Models\Alumni;
 
 Route::post('/create/branch-list', function () {
     $degree = Input::get('degree');
@@ -31,7 +32,6 @@ Route::post('/create/branch-list', function () {
     }
 
 });
-
 
 Route::post('/create/yeargrad-list', function () {
     $branch = Input::get('branch');
@@ -56,7 +56,6 @@ Route::post('/create/yeargrad-list', function () {
 Route::group(['middleware' => ['web']], function () {
 
 
-    //Route::get('test', 'TestExcelController@test_export_excel');
 
     Route::get('/', function () {
         return view('home.signin');
@@ -65,34 +64,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::group(['prefix' => 'admin'], function () {
 
-        Route::get('/auth/signin', function () {
-            return view('admin.auth.signin');
-        });
+        Route::post('/auth/signin', "Auth\AuthController@postSignin");
 
-        Route::post('/auth/signin', function () {
-            $login = Input::get('login');
-
-            //$login['password'] = \Hash::make($login['password']);
-
-            $user = User::where('username', $login['username'])->first();
-
-            if ($user != null) {
-                $usertype = $user->usertype()->first();
-                if ($usertype->name == "ADMIN") {
-                    if (\Hash::check($login['password'], $user->password)) {
-                        \Auth::login($user);
-                        return redirect('/admin/index');
-                    }
-                }
-            }
-            return redirect('/');
-
-        });
-
-        Route::get('/auth/logout', function () {
-            \Auth::logout();
-            return redirect('/');
-        });
+        Route::get('/auth/logout', "Auth\AuthController@postLogout");
 
         Route::get('/', function () {
             return redirect('/admin/index');
@@ -125,8 +99,13 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.stats');
         });
 
+        //Read
+        Route::get('/stats/{viewName}', function ($viewName) {
+            return view("admin.stats.$viewName");
+        });
+
         Route::get('/stat_work_direct_branch', function () {
-            return view('admin.stat_work_direct_branch');
+
         });
 
         Route::get('/stat_by_work_direct_branch_by_year', function () {
@@ -188,10 +167,9 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.stat_by_graduates');
         });
 
-        Route::get('/stat/map', function () {
-            return view('admin.stat.map');
+        Route::get('/stats/map', function () {
+            return view('admin.stats.map');
         });
-
 
 
         Route::get('/test', 'TestExcelController@test_export_excel');
