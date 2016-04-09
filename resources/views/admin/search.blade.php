@@ -28,12 +28,9 @@
                                     <label>ปีที่เข้าศึกษา</label>
                                     <select name="education_year" id="year_of_education" class="form-control">
                                         <option value="">ไม่ระบุ</option>
-                                        <option value="2558">2558</option>
-                                        <option value="2557">2557</option>
-                                        <option value="2556">2556</option>
-                                        <option value="2555">2555</option>
-                                        <option value="2554">2554</option>
-                                        <option value="2553">2553</option>
+                                        @foreach($yearOfStartStudy as $value)
+                                            <option value="{{$value->yearOfStudy}}">{{$value->yearOfStudy}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -42,12 +39,10 @@
                                     <label>ปีที่สำเร็จการศึกษา</label>
                                     <select name="year_of_graduation" id="year_of_graduation" class="form-control">
                                         <option value="">ไม่ระบุ</option>
-                                        <option value="2558">2558</option>
-                                        <option value="2557">2557</option>
-                                        <option value="2556">2556</option>
-                                        <option value="2555">2555</option>
-                                        <option value="2554">2554</option>
-                                        <option value="2553">2553</option>
+                                        @foreach($yearOfGraduation as $value)
+                                            <option value="{{$value->yearOfGraduation}}">{{$value->yearOfGraduation}}</option>
+                                        @endforeach
+
                                     </select>
                                 </div>
                             </div>
@@ -110,11 +105,10 @@
 
         </div>
     </div>
-    <?php $i = $data_alumni_all; $s = 1; ?>
     <div class="row">
         <div class="panel panel-success">
             <div class="row">
-                <input type="button" class="btn btn-success" onclick="location.href='/test';" value="ส่งออกเป็น Excel" />
+                <input type="button" class="btn btn-success" onclick="location.href='/test';" value="ส่งออกเป็น Excel"/>
             </div>
             <div class="panel-heading">
                 <i class="fa fa-file-text-o"></i> ผลลัพธ์การค้นหา
@@ -125,7 +119,7 @@
 
                     </div>
                     <div class="col-lg-11" style="text-align: center;">
-                        พบข้อมูลทั้งหมดจำนวน {{$i}} รายการ
+                        พบข้อมูลทั้งหมดจำนวน {{$data_alumni->total()}} รายการ
 
                     </div>
                 </div>
@@ -147,7 +141,7 @@
                         @foreach ($data_alumni as $r)
 
                             <tr>
-                            
+
                                 <td>{{$r["student_id"]}}</td>
                                 <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
                                 <td>{{$r["degree"] }}</td>
