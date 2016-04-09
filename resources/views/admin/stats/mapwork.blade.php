@@ -5,20 +5,26 @@
 @endsection
 @section('content')
     <?php
-    "select count(*) as value, province.PROVINCE_NAME,province.PROVINCE_CODE from alumni
-JOIN province on province.PROVINCE_NAME = alumni.houseProvince
-group by alumni.houseProvince";
+    "select count(*),questionnaires.QuestionWorkplaceProvince, province.PROVINCE_CODE from alumni
+join questionnaires on alumni.id = questionnaires.alumni_id
+left join province on questionnaires.QuestionWorkplaceProvince = province.PROVINCE_NAME
+group by questionnaires.QuestionWorkplaceProvince";
 
     $query = \App\Models\Alumni::query();
     $query->select([
+            "questionnaires.QuestionWorkplaceProvince",
             "province.PROVINCE_NAME",
             "province.PROVINCE_CODE",
-            DB::raw("count(*) as value")
+            DB::raw("count(DISTINCT(alumni.personal_id)) as value")
     ]);
-    $query->leftJoin('province', function ($join) {
-        $join->on('province.PROVINCE_NAME', '=', 'alumni.houseProvince');
+    $query->join('questionnaires', function ($join) {
+        $join->on('alumni.id', '=', 'questionnaires.alumni_id');
     });
-    $query->groupBy("alumni.houseProvince");
+    $query->leftJoin('province', function ($join) {
+        $join->on('province.PROVINCE_NAME', '=', 'questionnaires.QuestionWorkplaceProvince');
+    });
+    $query->whereRaw("province.PROVINCE_CODE IS NOT NULL");
+    $query->groupBy("questionnaires.QuestionWorkplaceProvince");
 
     $thaidataJson = $query = $query->get()->toJson();
 
@@ -26,7 +32,7 @@ group by alumni.houseProvince";
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตที่มีภูมิลำเนาในประเทศไทย
+            <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตที่ทำงานในประเทศไทย
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -39,7 +45,7 @@ group by alumni.houseProvince";
                     $('#stat_map').highcharts('Map', {
 
                         title: {
-                            text: 'จำนวนบัณฑิตที่มีภูมิลำเนาในประเทศไทย'
+                            text: 'จำนวนบัณฑิตที่ทำงานในประเทศไทย'
                         },
 
                         mapNavigation: {
