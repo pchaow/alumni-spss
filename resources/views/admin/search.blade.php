@@ -182,7 +182,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="5" align="center">ไม่พอข้อมูล</td>
+                            <td colspan="5" align="center">ไม่พบข้อมูล</td>
                         </tr>
                     @endif
                     </tbody>
