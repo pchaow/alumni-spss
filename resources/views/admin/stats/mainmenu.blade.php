@@ -6,7 +6,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li><a href="../admin">หน้าหลัก</a></li>
+        <li><a href="../">หน้าหลัก</a></li>
         <li class="active">รายการสถิติ</li>
     </ol>
 
@@ -23,7 +23,7 @@
                     <tbody>
                     <tr>
                         <td>
-                            <a href="/admin/stat_by_graduates">- จำนวนบัณฑิต</a>
+                            <a href="/admin/stats/graduates">- จำนวนบัณฑิต</a>
                         </td>
                     </tr>
                     <tr>
@@ -34,23 +34,23 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="/admin/stat_work_status_by_branch_year_menu">- ภาวะการมีงานทำ
+                            <a href="/admin/stats/work_status_by_branch_year_menu">- ภาวะการมีงานทำ
                                 ตามสาขาวิชาและปีการศึกษา</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <a href="/admin/stat_workplace_type_menu">- ประเภทงานบัณฑิต ตามสาขาวิชาและปีการศึกษา</a>
+                            <a href="/admin/stats/workplace_type">- ประเภทงานบัณฑิต ตามสาขาวิชาและปีการศึกษา</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <a href="/admin/stat_work_status">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมสถานะการทำงาน</a>
+                            <a href="/admin/stats/work_status">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมสถานะการทำงาน</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <a href="/admin/stat_work_direct_branch">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมทำงานตรงสายงาน</a>
+                            <a href="/admin/stats/work_direct_branch">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมทำงานตรงสายงาน</a>
                         </td>
                     </tr>
                     </tbody>

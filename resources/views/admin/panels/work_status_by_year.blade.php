@@ -92,7 +92,7 @@ foreach ($WorkStatusGroup as $key=>$value) {
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> สถานะการมีงานทำของบัณฑิตปีที่จบการศึกษา <?php echo $year;?> แยกตามสาขาวิชา
+        <i class="fa fa-bar-chart-o fa-fw"></i> สถานะการทำงานของบัณฑิตปีที่จบการศึกษา <?php echo $year;?> แยกตามสาขาวิชา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -105,7 +105,7 @@ foreach ($WorkStatusGroup as $key=>$value) {
                     type: 'column'
                 },
                 title: {
-                    text: 'สถานะการมีงานทำของบัณฑิตปีที่จบการศึกษา <?php echo $year;?> แยกตามสาขาวิชา'
+                    text: 'สถานะการทำงานของบัณฑิตปีที่จบการศึกษา <?php echo $year;?> แยกตามสาขาวิชา'
                 },
                 xAxis: {
                     categories: <?php echo json_encode($arrBranch);?>
@@ -115,6 +115,11 @@ foreach ($WorkStatusGroup as $key=>$value) {
                     title: {
                         text: 'อัตราส่วนสถานะการมีงานทำของบัณฑิต'
                     }
+                },plotOptions: {  column: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
                 },
                 
                 series: <?php echo json_encode($arrValueofgraduates);?>
@@ -124,7 +129,7 @@ foreach ($WorkStatusGroup as $key=>$value) {
         </script>
 
 
-<h3>สถานะการมีงานทำของบัณฑิตปีที่จบการศึกษา <?php echo $year;?> แยกตามสาขาวิชา</h3>
+<h3>สถานะการทำงานของบัณฑิตปีที่จบการศึกษา <?php echo $year;?> แยกตามสาขาวิชา</h3>
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
                             <tr>

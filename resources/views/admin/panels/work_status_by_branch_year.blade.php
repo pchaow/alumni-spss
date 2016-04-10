@@ -112,7 +112,14 @@ foreach ($workstatusGroup as $key=>$value) {
       plotOptions: {
           pie: {
               shadow: false,
-              center: ['50%', '50%']
+              center: ['50%', '50%'],
+
+
+              dataLabels: {
+                  enabled: true
+              }
+
+
           }
       },
       tooltip: {
