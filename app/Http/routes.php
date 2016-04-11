@@ -90,7 +90,7 @@ Route::group(['middleware' => ['web']], function () {
         });
 */
 
-        Route::get('/test', 'TestExcelController@test_export_excel');
+        Route::get('/export_excel', 'Admin\ExportExcelController@export_excel');
 
         Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
 
