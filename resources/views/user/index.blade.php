@@ -42,7 +42,7 @@
 
         <div class="col-lg-8">
             @include('admin.panels.summary_by_branch')
-            @include('admin.panels.count_by_branch')
+            @include('admin.panels.branch')
         </div>
         <div class="col-lg-4">
             <div class="fb-page"

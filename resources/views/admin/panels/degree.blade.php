@@ -2,10 +2,10 @@
 
 
 $sql = "SELECT count(*) as `amount` ,
-`alumni`.`branch` as `branch`
+`alumni`.`degree` as `degree`
 , `alumni`.`yearofgraduation` as `yearGrad`
 FROM `alumni`
-group by `alumni`.`branch`, `alumni`.`yearofgraduation`"  ;
+group by `alumni`.`degree`, `alumni`.`yearofgraduation`"  ;
 
 $result = DB::select($sql);
 
@@ -25,7 +25,7 @@ $yearsofgrad[] = $key;
     foreach ($value as $data) {
 
         $obj['year'] = $key;
-        $obj[$data->branch] = $data->amount;
+        $obj[$data->degree] = $data->amount;
     }
     $resultArray1[] = $obj;
 
@@ -33,9 +33,9 @@ $yearsofgrad[] = $key;
 
 $arrvalueofgraduates = [];
 
-$branchGradGroup = collect($result)->groupBy('branch');
-//dd($branchGradGroup);
-foreach ($branchGradGroup as $key=>$value) {
+$degreeGradGroup = collect($result)->groupBy('degree');
+//dd($degreeGradGroup);
+foreach ($degreeGradGroup as $key=>$value) {
   $valueofgraduates = new stdClass();
   $arrvalueofgradyear=[];
 //print_r($value);
@@ -76,23 +76,23 @@ series: [{
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา
+        <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามระดับการศึกษา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
-        <div id="count_by_year_graph_panel" style="height: 500px;"></div>
+        <div id="count_by_degree_graph_panel" style="height: 500px;"></div>
 
         <script>
             var yearsofgrad = <?php echo json_encode($yearsofgrad); ?>;
             //['ss', 'Bananas', 'Oranges'];
 
             $(function () {
-                $('#count_by_year_graph_panel').highcharts({
+                $('#count_by_degree_graph_panel').highcharts({
                     chart: {
                         type: 'column'
                     },
                     title: {
-                        text: 'จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา'
+                        text: 'จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามระดับการศึกษา'
                     },
                     xAxis: {
 
@@ -107,18 +107,25 @@ series: [{
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
             shared: true
         },
-        
+        plotOptions: {
+                       column: {
+                                dataLabels: {
+                                    enabled: true
+                                }
+                            }
+
+        },
                     series: <?PHP echo json_encode($arrvalueofgraduates);?>
                 });
             });
 
         </script>
-        <h3>จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามสาขาวิชา</h3>
+        <h3>จำนวนบัณฑิตตามปีที่จบการศึกษา แยกตามระดับการศึกษา</h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>
                 <th>ปีที่จบการศึกษา</th>
-                <th>สาขาวิชา</th>
+                <th>ระดับการศึกษา</th>
                 <th>จำนวนบัณฑิต(คน)</th>
             </tr>
             </thead>
@@ -135,7 +142,7 @@ series: [{
                         @if($firstRow)
                             <td rowspan="{{count($value)}}">{{$key}}</td>
                         @endif
-                        <td>{{$subValue->branch}}</td>
+                        <td>{{$subValue->degree}}</td>
                         <td>{{$subValue->amount}}</td>
                     </tr>
                     <?php

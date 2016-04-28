@@ -1,9 +1,9 @@
 @extends('admin.layout')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="../admin">หน้าหลัก</a></li>
-  <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li><a href="/admin/stat_by_graduates">จำนวนบัณฑิต</a></li>
+  <li><a href="../">หน้าหลัก</a></li>
+  <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
+  <li><a href="/admin/stats/graduates">จำนวนบัณฑิต</a></li>
   <li class="active">ภาพรวมจำนวนบัณฑิต ตามปีการศึกษา</li>
 </ol>
 
@@ -31,7 +31,7 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
         @foreach ($arryearOfGraduation as $key=>$value)
           <tr>
             <td>
-          <a href="/admin/stat_by_degree_by_year_show?year=<?php echo $value->yearOfGraduation;?>">- <?php echo $value->yearOfGraduation;?></a>
+          <a href="/admin/stats/degree_by_year_show?year=<?php echo $value->yearOfGraduation;?>">- <?php echo $value->yearOfGraduation;?></a>
         </td>
           </tr>
         @endforeach

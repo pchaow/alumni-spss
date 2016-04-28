@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-            <a href="/admin/stats">
+            <a href="/admin/stats/mainmenu">
                 <div class="panel panel-yellow">
                     <div class="panel-heading">
                         <div class="row">
@@ -117,7 +117,7 @@
                data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
                data-show-facepile="true"></div>
       </div>
-
+</div>
       <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

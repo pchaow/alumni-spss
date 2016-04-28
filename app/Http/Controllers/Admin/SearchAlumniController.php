@@ -76,29 +76,9 @@ class SearchAlumniController extends Controller
             $data_alumni->where('lastname', 'LIKE', "%$lastname%");
         }
 
-//            ->where(function ($q)
-//            use ($educationYear, $year_of_graduation, $education, $course, $student_id, $firstname, $lastname) {
-//                return $q
-//                    ->where('student_id', 'LIKE', "$educationYear%")
-//                    ->where('yearofgraduation', 'LIKE', "%$year_of_graduation%")
-//                    ->where('degree', 'LIKE', "%$education%")
-//                    ->where('course', 'LIKE', "%$course%")
-//                    ->where('student_id', 'LIKE', "%$student_id%")
-//                    ->where('firstname', 'LIKE', "%$firstname%")
-//                    ->where('lastname', 'LIKE', "%$lastname%");
-//            })
-            $data_alumni->orderBy('created_at', 'desc');
+        $data_alumni->orderBy('yearofgraduation', 'asc');
+        $data_alumni->orderBy('student_id', 'asc');
             $data_alumni=$data_alumni->paginate(20);
-
-        //  $data_alumni = Alumni::with('questionnaires')
-        //  ->where('yearofgraduation','LIKE',"%2556.0%")
-        //  ->paginate(20);
-
-        //dd($data_alumni);
-
-        //$data_alumni = Alumni::count();
-        // dd($data_alumni);
-        //return Input::all();
 
         $yearOfGraduation = \DB::select(
             "select DISTINCT(alumni.yearOfGraduation) as yearOfGraduation from alumni order by yearOfGraduation ");

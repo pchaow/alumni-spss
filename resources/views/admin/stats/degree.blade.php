@@ -1,12 +1,12 @@
 @extends('admin.layout')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="../admin">หน้าหลัก</a></li>
+  <li><a href="../">หน้าหลัก</a></li>
   <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li><a href="../admin/stat_by_graduates">สถิติจำนวนบัณฑิต</a></li>
+  <li><a href="/admin/stats/graduates">จำนวนบัณฑิต</a></li>
     <li class="active">ตามระดับการศึกษา</li>
 </ol>
 
-@include('admin.panels.count_by_degree')
+@include('admin.panels.degree')
 
 @endsection

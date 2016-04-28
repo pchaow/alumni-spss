@@ -14,42 +14,26 @@ use Illuminate\Support\Facades\Input;
 use App\Models\User;
 //use App\Models\Alumni;
 
-Route::post('/create/branch-list', function () {
-    $degree = Input::get('degree');
-    $subcategories = DB::table('Alumni')->select('branch')
+Route::get('/ajax-branch',function(){
+   $degree_id = Input::get('degree_id');
+
+    $branch =  \App\Models\Alumni::select('branch')
+        ->where('degree','=',$degree_id)
         ->distinct()
-        ->where('degree', '=', $degree)
         ->orderby('branch', 'ASC')
         ->get();
-    //return $subcategories;
-    ?>
-    <option value="">เลือกสาขาวิชา</option>
-    <?php
-    foreach ($subcategories as $branch) {
-        ?>
-        <option value="<?php echo $branch->branch; ?>"><?php echo $branch->branch; ?></option>
-        <?php
-    }
-
+    return \Illuminate\Support\Facades\Response::json($branch);
 });
 
-Route::post('/create/yeargrad-list', function () {
-    $branch = Input::get('branch');
-    $subcategories = DB::table('Alumni')->select('yearofgraduation')
+Route::get('/ajax-yeargrad',function(){
+    $branch_id = Input::get('branch_id');
+
+    $yeargrad =  \App\Models\Alumni::select('yearofgraduation')
+        ->where('branch','=',$branch_id)
         ->distinct()
-        ->where('branch', '=', $branch)
         ->orderby('yearofgraduation', 'DESC')
         ->get();
-    //return $subcategories;
-    ?>
-    <option value="">เลือกปีที่จบการศึกษา</option>
-    <?php
-    foreach ($subcategories as $year) {
-        ?>
-        <option value="<?php echo $year->yearofgraduation; ?>"><?php echo $year->yearofgraduation; ?></option>
-        <?php
-    }
-
+    return \Illuminate\Support\Facades\Response::json($yeargrad);
 });
 
 
@@ -94,85 +78,19 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/import', function () {
             return view('admin.import');
         });
-
-        Route::get('/stats', function () {
-            return view('admin.stats');
-        });
+        
 
         //Read
         Route::get('/stats/{viewName}', function ($viewName) {
             return view("admin.stats.$viewName");
         });
 
-        Route::get('/stat_work_direct_branch', function () {
-
-        });
-
-        Route::get('/stat_by_work_direct_branch_by_year', function () {
-            return view('admin.stat_by_work_direct_branch_by_year');
-        });
-
-        Route::get('/stat_by_work_direct_branch_by_branch', function () {
-            return view('admin.stat_by_work_direct_branch_by_branch');
-        });
-        Route::get('/stat_by_workplace_type', function () {
-            return view('admin.stat_by_workplace_type');
-        });
-        Route::get('/stat_workplace_type_menu', function () {
-            return view('admin.stat_workplace_type_menu');
-        });
-
-        Route::get('/stat_work_status_by_branch_year_menu', function () {
-            return view('admin.stat_work_status_by_branch_year_menu');
-        });
-
-        Route::get('/stat_by_work_status_by_branch_year', function () {
-            return view('admin.stat_by_work_status_by_branch_year');
-        });
-
-        Route::get('/stat_work_status', function () {
-            return view('admin.stat_work_status');
-        });
-
-
-        Route::get('/stat_work_status_by_year', function () {
-            return view('admin.stat_work_status_by_year');
-        });
-
-        Route::get('/stat_work_status_by_branch', function () {
-            return view('admin.stat_work_status_by_branch');
-        });
-
-        Route::get('/stat_by_degree', function () {
-            return view('admin.stat_by_degree');
-        });
-
-        Route::get('/stat_by_degree_by_year', function () {
-            return view('admin.stat_by_degree_by_year');
-        });
-
-        Route::get('/stat_by_degree_by_year_show', function () {
-            return view('admin.stat_by_degree_by_year_show');
-        });
-
-        Route::get('/stat_by_branch', function () {
-            return view('admin.stat_by_branch');
-        });
-
-        Route::get('/stat_by_yearofgraduation', function () {
-            return view('admin.stat_by_yearofgraduation');
-        });
-
-        Route::get('/stat_by_graduates', function () {
-            return view('admin.stat_by_graduates');
-        });
-
-        Route::get('/stats/map', function () {
+     /*   Route::get('/stats/map', function () {
             return view('admin.stats.map');
         });
+*/
 
-
-        Route::get('/test', 'TestExcelController@test_export_excel');
+        Route::get('/export_excel', 'Admin\ExportExcelController@export_excel');
 
         Route::post('/import_excel', 'Admin\UploadExcelController@import_excel');
 

@@ -127,7 +127,7 @@
                             <a href="/admin/search"><i class="fa fa-search fa-fw"></i> ค้นหาบัณฑิต</a>
                         </li>
                         <li>
-                            <a href="/admin/stats"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ</a>
+                            <a href="/admin/stats/mainmenu"><i class="fa fa-bar-chart-o fa-fw"></i> รายงานสถิติ</a>
 
                             <!-- /.nav-second-level -->
                         </li>
@@ -138,7 +138,7 @@
                 </div>
 
 
-
+</div>
             <!-- /.navbar-static-side -->
         </nav>
         <div id="page-wrapper">

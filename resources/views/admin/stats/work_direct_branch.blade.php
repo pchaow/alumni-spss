@@ -1,9 +1,9 @@
 @extends('admin.layout')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="../admin">หน้าหลัก</a></li>
-  <li><a href="/admin/stats">รายการสถิติ</a></li>
-  <li class="active">สถานะการทำงาน</li>
+  <li><a href="../">หน้าหลัก</a></li>
+  <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
+  <li class="active">ทำงานตรงสายงาน</li>
 </ol>
 
 <?php
@@ -40,20 +40,20 @@ $arrBranch = collect($branch)->toArray();
       </div>
 
 </div>
-<h4><u>สถิติสถานะการทำงาน</u></h4>
-<div class="panel panel-success"  id="byyear" >
+<h4><u>สถิติทำงานตรงสายงาน</u></h4>
+<div class="panel panel-success" id="byyear">
     <div class="panel-heading">
-        <i class="fa fa-calendar"></i> ปีที่จบการศึกษา
+        <i class="fa fa-calendar"></i> ตามปีที่จบการศึกษา รวมทุกสาขา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
-      <div class="row">
+      <div class="row" >
     <table  class="table table-bordered table-hover table-striped">
       <tbody>
         @foreach ($arryearOfGraduation as $key=>$value)
           <tr>
             <td>
-          <a href="/admin/stat_work_status_by_year?year=<?php echo $value->yearOfGraduation;?>">- <?php echo $value->yearOfGraduation;?></a>
+          <a href="/admin/stats/work_direct_branch_by_year?year=<?php echo $value->yearOfGraduation;?>">- <?php echo $value->yearOfGraduation;?></a>
         </td>
           </tr>
         @endforeach
@@ -61,9 +61,9 @@ $arrBranch = collect($branch)->toArray();
   </table>
 </div></div></div>
 
-<div class="panel panel-warning" id="bybranch">
+<div class="panel panel-warning" id="bybranch" >
     <div class="panel-heading">
-        <i class="fa fa-users"></i> สาขาวิชา
+        <i class="fa fa-users"></i> ตามสาขาวิชา รวมปีที่จบการศึกษา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -73,10 +73,12 @@ $arrBranch = collect($branch)->toArray();
         @foreach ($arrBranch as $key=>$value)
           <tr>
             <td>
-          <a href="/admin/stat_work_status_by_branch?branch=<?php echo $value->branch;?>">- <?php echo $value->branch;?></a>
+          <a href="/admin/stats/work_direct_branch_by_branch?branch=<?php echo $value->branch;?>">- <?php echo $value->branch;?></a>
         </td>
           </tr>
         @endforeach
+          </tbody>
+         </table>
 </div>
 
 </div>

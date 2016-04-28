@@ -1,8 +1,8 @@
 @extends('admin.layout')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="../admin">หน้าหลัก</a></li>
-  <li><a href="/admin/stats">รายการสถิติ</a></li>
+  <li><a href="../">หน้าหลัก</a></li>
+  <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
   <li class="active">จำนวนบัณฑิต</li>
 </ol>
 
@@ -18,22 +18,22 @@
       <tbody>
         <tr>
           <td>
-        <a href="/admin/stat_by_degree_by_year">- ภาพรวมทั้งหมดตามปีการศึกษา</a>
+        <a href="/admin/stats/degree_by_year">- ภาพรวมทั้งหมดตามปีการศึกษา</a>
         </td>
         </tr>
           <tr>
             <td>
-          <a href="/admin/stat_by_degree">- ตามระดับการศึกษา เรียงปีการศึกษา</a>
+          <a href="/admin/stats/degree">- ตามระดับการศึกษา เรียงปีการศึกษา</a>
           </td>
           </tr>
           <tr>
             <td>
-          <a href="/admin/stat_by_branch">- ตามสาขาวิชา เรียงปีการศึกษา</a>
+          <a href="/admin/stats/branch">- ตามสาขาวิชา เรียงปีการศึกษา</a>
           </td>
           </tr>
           <tr>
             <td>
-          <a href="/admin/stat_by_yearofgraduation">- ตามปีการศึกษา เรียงสาขาวิชา</a>
+          <a href="/admin/stats/yearofgraduation">- ตามปีการศึกษา เรียงสาขาวิชา</a>
           </td>
           </tr>
 

@@ -133,13 +133,16 @@
     </div>
     <div class="row">
         <div class="panel panel-success">
-            <div class="row">
-                <input type="button" class="btn btn-success" onclick="location.href='/test';" value="ส่งออกเป็น Excel"/>
-            </div>
+
             <div class="panel-heading">
                 <i class="fa fa-file-text-o"></i> ผลลัพธ์การค้นหา
             </div>
             <div class="panel-body">
+                <div class="row">
+                    @if(isset($form))
+                    <a class="btn btn-success" href='/admin/export_excel?{{http_build_query($form)}}'>ส่งออกเป็น Excel</a>
+                    @endif
+                </div>
                 <div class="row" style="padding-bottom: 10px;">
                     <div class="col-lg-1">
 

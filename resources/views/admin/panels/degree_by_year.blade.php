@@ -57,8 +57,8 @@ foreach ($degreeGradGroup as $key=>$value) {
         $(function () {
 
       var colors = Highcharts.getOptions().colors,
-      categories = <?PHP echo json_encode($arrofdegree);?>,
-      data = <?PHP echo json_encode($arrvalueofdegree);?>,
+      categories = <?php echo json_encode($arrofdegree); ?>,
+      data = <?php echo json_encode($arrvalueofdegree);?>,
       browserData = [],
       versionsData = [],
       i,
@@ -106,7 +106,15 @@ foreach ($degreeGradGroup as $key=>$value) {
       plotOptions: {
           pie: {
               shadow: false,
-              center: ['50%', '50%']
+              center: ['50%', '50%'],
+
+
+              dataLabels: {
+                  enabled: true
+              }
+
+
+
           }
       },
       tooltip: {
@@ -176,3 +184,4 @@ foreach ($degreeGradGroup as $key=>$value) {
             </tbody>
         </table>
       </div>
+</div>
