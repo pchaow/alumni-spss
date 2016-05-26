@@ -130,6 +130,7 @@
                         $fb = app(\SammyK\LaravelFacebookSdk\LaravelFacebookSdk::class);
                         $response = $fb->get('/563173463853702/feed?limit=5&fields=id,from{picture,name},message,created_time', Auth::user()->facebook_token);
                         $groupData = $response->getGraphEdge();
+                        Carbon\Carbon::setLocale('th');
                         ?>
                         <div class="row">
                             <div class="col-lg-12">
@@ -152,7 +153,10 @@
                                             <h4 class="media-heading">
                                                 {{$post->getField('from')->getField('name')}}
                                             </h4>
-                                            <span>{{$post->getField('created_time')->setTimeZone( new DateTimeZone('Asia/Bangkok'))->format("c")}}</span><br/>
+                                            <?php
+                                            $postCarbon = Carbon\Carbon::instance($post->getField('created_time'));
+                                            ?>
+                                            <span>{{$postCarbon->diffForHumans()}}</span><br/>
                                             {{$post->getField('message')}}
                                         </div>
                                     </div>
