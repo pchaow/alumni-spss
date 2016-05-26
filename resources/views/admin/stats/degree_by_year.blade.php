@@ -19,7 +19,7 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <i class="fa fa-calendar"></i> สถิติภาพรวมจำนวนบัณฑิต ตามปีที่จบการศึกษา
+        <i class="fa fa-calendar"></i>สถิติภาพรวมจำนวนบัณฑิต ตามปีที่จบการศึกษา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">

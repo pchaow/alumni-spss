@@ -5,146 +5,131 @@ $sql = "SELECT `alumni`.`degree` as `degree`,
 count(*) as `amount`
 FROM `alumni`
 where yearofgraduation=$year
-group by `alumni`.`degree`,`alumni`.`branch`" ;
+group by `alumni`.`branch`" ;
 
 $result = DB::select($sql);
 
 //$degreeGroup = collect($result)->groupBy('degree');
 //$array = $degreeGroup->toArray();
-
+$masterarray = [];
+$subarray = [];
 $arrvalueofdegree = [];
 $arrofdegree = [];
 $degreeGradGroup = collect($result)->groupBy('degree');
 //dd($degreeGradGroup);
-$cs= array("#00CC66", "#CCFF66", "#99FFFF", "#FFCCFF",'#CCFFCC');
+
 $i=0;
 foreach ($degreeGradGroup as $key=>$value) {
 
+
   $sum=0;
-  $arrofdegree[]=$key;
-  $valueofdegree = new stdClass();
+   $arrofdegree[]=$key;
+   $valueofdegree = new stdClass();
+    $valueofdegree->name = $key;
    $arrofbranch=[];
    $arrofbranchamount=[];
+
+    $vdegree = new stdClass();
+    $vdegree->name = $key;
+    $vdegree->id = $key;
+
    foreach ($value as $subkey => $subvalue) {
+
      $arrofbranch[]=$subvalue->branch;
      $arrofbranchamount[]=$subvalue->amount;
      $sum=$sum+$subvalue->amount;
+
+       $vbranch[] = $subvalue->branch;
+       $vbranch[] = $subvalue->amount;
+       $groupvbranch[] = $vbranch;
+       $vbranch = [];
    }
+
+    $vdegree->data = $groupvbranch;
+    $groupvbranch = [];
+
+
   $valueofdegree->y=$sum;
-  $valueofdegree->color=$cs[$i];
+
+    $degree = new stdClass();
+    $degree->name = $key;
+    $degree->y=$sum;
+    $degree->drilldown=$key;
+    $masterarray[] =  $degree;
+  //$valueofdegree->color=$cs[$i];
   $valueofbranch = new stdClass();
   $valueofbranch->name=$key;
   $valueofbranch->categories=$arrofbranch;
   $valueofbranch->data=$arrofbranchamount;
-  $valueofbranch->color=$cs[$i];
+  //$valueofbranch->color=$cs[$i]
 
  $valueofdegree->drilldown=$valueofbranch;
  $i++;
+    $subarray[] = $vdegree;
  $arrvalueofdegree[] = $valueofdegree;
 }
-//dd($arrvalueofdegree);
+//dd($subarray);
+//dd($valueofbranch);
 ?>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตที่จบปีการศึกษา <?php  echo $year;?> แยกตามระดับการศึกษาและสาขาวิชา
+        <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตที่จบปีการศึกษา <?php  echo $year;?> ตามสาขาวิชา
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
         <div id="count_by_year_graph_panel" style="height: 500px;"></div>
 
         <script>
-        $(function () {
+            $(function () {
+                // Create the chart
+                $('#count_by_year_graph_panel').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Browser market shares. January, 2015 to May, 2015'
+                    },
+                    subtitle: {
+                        text: 'Click the columns to view versions. Source: <a href="http://netmarketshare.com">netmarketshare.com</a>.'
+                    },
+                    xAxis: {
+                        type: 'category'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Total percent market share'
+                        }
 
-      var colors = Highcharts.getOptions().colors,
-      categories = <?php echo json_encode($arrofdegree); ?>,
-      data = <?php echo json_encode($arrvalueofdegree);?>,
-      browserData = [],
-      versionsData = [],
-      i,
-      j,
-      dataLen = data.length,
-      drillDataLen,
-      brightness;
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        series: {
+                            borderWidth: 0,
+                            dataLabels: {
+                                enabled: true,
+                                //format: '{point.y:.1f}%'
+                            }
+                        }
+                    },
 
+                    tooltip: {
+                        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b><br/>'
+                    },
 
-  // Build the data arrays
-  for (i = 0; i < dataLen; i += 1) {
-
-      // add browser data
-      browserData.push({
-          name: categories[i],
-          y: data[i].y,
-          color: data[i].color
-      });
-
-      // add version data
-      drillDataLen = data[i].drilldown.data.length;
-      for (j = 0; j < drillDataLen; j += 1) {
-          brightness = 0.2 - (j / drillDataLen) / 5;
-          versionsData.push({
-              name: data[i].drilldown.categories[j],
-              y: data[i].drilldown.data[j],
-              color: Highcharts.Color(data[i].color).brighten(brightness).get()
-          });
-      }
-  }
-
-  // Create the chart
-  $('#count_by_year_graph_panel').highcharts({
-      chart: {
-          type: 'pie'
-      },
-      title: {
-          text: "จำนวนบัณฑิตที่จบปีการศึกษา <?php  echo $year;?> แยกตามระดับการศึกษาและสาขาวิชา"
-      },
-      yAxis: {
-          title: {
-              text: 'Total percent market share'
-          }
-      },
-      plotOptions: {
-          pie: {
-              shadow: false,
-              center: ['50%', '50%'],
-
-
-              dataLabels: {
-                  enabled: true
-              }
-
-
-
-          }
-      },
-      tooltip: {
-          valueSuffix: 'คน'
-      },
-      series: [{
-          name: 'จำนวนบัณฑิต',
-          data: browserData,
-          size: '60%',
-          dataLabels: {
-              formatter: function () {
-                  return this.y > 5 ? this.point.name : null;
-              },
-              color: '#ffffff',
-              distance: -30
-          }
-      }, {
-          name: 'จำนวนบัณฑิต',
-          data: versionsData,
-          size: '80%',
-          innerSize: '60%',
-          dataLabels: {
-              formatter: function () {
-                  // display only if larger than 1
-                  return this.y > 1 ? '<b>' + this.point.name + ':</b> ' + this.y + 'คน' : null;
-              }
-          }
-      }]
-  });
-});
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: <?php echo json_encode($masterarray);?>
+                    }],
+                    drilldown: {
+                        series: <?php echo json_encode($subarray);?>
+                    }
+                });
+            });
         </script>
         <h3>จำนวนบัณฑิตที่จบปีการศึกษา <?php  echo $year;?> แยกตามระดับการศึกษาและสาขาวิชา</h3>
         <table class="table table-bordered table-hover table-striped">
