@@ -30,7 +30,6 @@
     <link href="/bower/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-
     @yield('css')
 
             <!-- Bootstrap core JavaScript
@@ -61,39 +60,6 @@
 </head>
 
 <body>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '1632600647065531',
-            xfbml      : true,
-            version    : 'v2.6'
-        });
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-<div
-        class="fb-like"
-        data-share="true"
-        data-width="450"
-        data-show-faces="true">
-</div>
-
-<div id="fb-root"></div>
-<script>(function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=269294876435228";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
 <div id="wrapper">
     <div id="wrapper">
 
@@ -162,7 +128,7 @@
                 </div>
 
 
-</div>
+            </div>
             <!-- /.navbar-static-side -->
         </nav>
         <div id="page-wrapper">
@@ -175,8 +141,6 @@
     </div>
     <!-- /#wrapper -->
 </div>
-
-
 
 
 </body>

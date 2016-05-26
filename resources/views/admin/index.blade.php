@@ -107,26 +107,30 @@
         </div>
     </div>
     <!-- /.row -->
+
     <div class="row">
+        <div class="col-lg-12">
+            <?php
+            $fb = app(SammyK\LaravelFacebookSdk\LaravelFacebookSdk::class);
+            $login_url = $fb->getLoginUrl(['email', 'user_managed_groups']);
+            ?>
+            <h1 class="page-header">ข่าวประกาศจากเฟสบุค
+                @if(Auth::user()->facebook_token)
+                @else
+                    <small><a href="{{$login_url}}">Login with Facebook</a></small>
+                @endif
 
+            </h1>
 
-      <div class="col-lg-12">
-<div class="fb-comments" data-href="https://www.facebook.com/%E0%B8%A3%E0%B8%B1%E0%B8%90%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-217829844912090/timeline" data-numposts="10"></div>
-          <div class="fb-page"
-               data-href="https://www.facebook.com/%E0%B8%A3%E0%B8%B1%E0%B8%90%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-217829844912090/"
-               data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
-               data-show-facepile="true"></div>
-      </div>
-</div>
-      <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=132560943422397";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-    <!-- /.row -->
+        </div>
+    </div>
+    @if(Auth::user()->facebook_token)
+        <div class="row">
+            <div class="col-lg-12">
+                
+            </div>
+        </div>
+    @endif
 
 @endsection
 
