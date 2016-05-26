@@ -110,27 +110,64 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <?php
-            $fb = app(SammyK\LaravelFacebookSdk\LaravelFacebookSdk::class);
-            $login_url = $fb->getLoginUrl(['email', 'user_managed_groups']);
-            ?>
-            <h1 class="page-header">ข่าวประกาศจากเฟสบุค
-                @if(Auth::user()->facebook_token)
-                @else
-                    <small><a href="{{$login_url}}">Login with Facebook</a></small>
-                @endif
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?php
+                    $fb = app(SammyK\LaravelFacebookSdk\LaravelFacebookSdk::class);
+                    $login_url = $fb->getLoginUrl(['email', 'user_managed_groups']);
+                    ?>
+                    <h3 class="panel-header">ข่าวประกาศจากเฟสบุค
+                        @if(Auth::user()->facebook_token)
+                            <small><a href="/facebook/logout">Logout from Facebook</a></small>
+                        @else
 
-            </h1>
+                        @endif
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    @if(Auth::user()->facebook_token)
+                        <?php
+                        $fb = app(\SammyK\LaravelFacebookSdk\LaravelFacebookSdk::class);
+                        $response = $fb->get('/563173463853702/feed?limit=5&fields=id,from{picture,name},message,created_time', Auth::user()->facebook_token);
+                        $groupData = $response->getGraphEdge();
+                        ?>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                @foreach($groupData as $post)
+                                    <?php
+                                    /* @var \Facebook\GraphNodes\GraphNode $post */
+                                    //                    dd($post);
+                                    ?>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img class="media-object"
+                                                     src="{{$post->getField('from')->getField('picture')->getField('url')}}"
+                                                     data-holder-rendered="true"
+                                                     style="width: 64px; height: 64px;">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
 
-        </div>
-    </div>
-    @if(Auth::user()->facebook_token)
-        <div class="row">
-            <div class="col-lg-12">
-                
+                                            <h4 class="media-heading">
+                                                {{$post->getField('from')->getField('name')}}
+                                            </h4>
+                                            <span>{{$post->getField('created_time')->setTimeZone( new DateTimeZone('Asia/Bangkok'))->format("c")}}</span><br/>
+                                            {{$post->getField('message')}}
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @else
+                        คลิกลิงค์ <a href="{{$login_url}}">Login with Facebook</a> เพื่อเชื่อมต่อบัญชีกับเฟสบุค
+                        <small></small>
+                    @endif
+                </div>
             </div>
         </div>
-    @endif
+    </div>
+
 
 @endsection
 

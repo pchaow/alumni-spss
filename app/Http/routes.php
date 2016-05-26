@@ -128,6 +128,14 @@ Route::group(['middleware' => ['web']], function () {
         echo '<a href="' . $login_url . '">Login with Facebook</a>';
     });
 
+    Route::get('/facebook/logout', function () {
+        $user = Auth::user();
+        $user->facebook_token = null;
+
+        $user->save();
+        return redirect('/admin/index')->with('message', 'Successfully logged in with Facebook');
+    });
+
 // Endpoint that is redirected to after an authentication attempt
     Route::get('/facebook/callback', function (SammyK\LaravelFacebookSdk\LaravelFacebookSdk $fb) {
         // Obtain an access token.
@@ -181,7 +189,7 @@ Route::group(['middleware' => ['web']], function () {
         }
 
         // Convert the response to a `Facebook/GraphNodes/GraphUser` collection
-        if(Auth::user()){
+        if (Auth::user()) {
             $facebook_user = $response->getGraphUser();
             $test = [];
             $test['facebook'] = $facebook_user;
@@ -192,23 +200,21 @@ Route::group(['middleware' => ['web']], function () {
             $user->facebook_token = (string)$token;
             $user->facebook_profile_url = $facebook_user->getPicture()->getUrl();
 
+
             $user->save();
             return redirect('/admin/index')->with('message', 'Successfully logged in with Facebook');
-        }else {
+        } else {
             return redirect('/')->with('message', 'You must login with your student id first');
         }
 
 
-
-
-
     });
 
-    Route::get('/test/graph',function(\SammyK\LaravelFacebookSdk\LaravelFacebookSdk $fb){
+    Route::get('/test/graph', function (\SammyK\LaravelFacebookSdk\LaravelFacebookSdk $fb) {
         try {
-            $response = $fb->get('/563173463853702/feed?fields=id,from{picture,name},message', Session::get('fb_user_access_token'));
+            $response = $fb->get('/563173463853702/feed?fields=id,from{picture,name},message', Auth::user()->facebook_token);
             dd($response->getGraphEdge());
-        } catch(\Facebook\Exceptions\FacebookSDKException $e) {
+        } catch (\Facebook\Exceptions\FacebookSDKException $e) {
             dd($e->getMessage());
         }
     });
