@@ -118,6 +118,7 @@ foreach ($WorkStatusGroup as $key=>$value) {
 
         </script>
 
+
 <h3>สถานะการทำงานของบัณฑิตสาขาวิชา<?php echo $major;?> ตามปีที่จบการศึกษา</h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>

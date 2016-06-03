@@ -3,24 +3,58 @@
 <ol class="breadcrumb">
   <li><a href="../">หน้าหลัก</a></li>
   <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-  <li class="active">จำนวนบัณฑิต</li>
+  <li class="active">จำนวนบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ</li>
 </ol>
 
+<?php
+$sql = "SELECT  distinct yearOfGraduation
+FROM alumni
+order by yearOfGraduation ASC";
 
+$yearOfGraduation = DB::select($sql);
+$arryearOfGraduation = collect($yearOfGraduation)->toArray();
+
+?>
+<form action="/admin/stats/degree_by_year_show" method="get">
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> สถิติจำนวนบัณฑิต
+        <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
-    <div class="row">
+
      <table  class="table table-bordered table-hover table-striped">
       <tbody>
         <tr>
           <td>
-        <a href="/admin/stats/degree_by_year">- ภาพรวมทั้งหมดตามปีการศึกษา</a>
+              <div class="form-group">
+                  <label>เลือกช่วงปีการศึกษาที่จบ (เริ่มต้น)
+                      <select required name="yearGradStart" id="yearGradStart" class="form-control input-sm"  >
+                          <option value="">เลือกปีการศึกษาที่จบ</option>
+                          @foreach ($arryearOfGraduation as $key=>$value)
+                          <option value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
+                          @endforeach
+                      </select>
+                  </label>
+
+              </div>
+
+
+
         </td>
+
         </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label>เลือกช่วงปีการศึกษาที่จบ (สิ้นสุด)
+                        <select required name="yearGradEnd" id="yearGradEnd" class="form-control input-sm"  >
+                        </select>
+                    </label>
+                </div>
+            </td>
+            </tr>
+        <!--
           <tr>
             <td>
           <a href="/admin/stats/degree">- ตามระดับการศึกษา เรียงปีการศึกษา</a>
@@ -28,7 +62,7 @@
           </tr>
           <tr>
             <td>
-          <a href="/admin/stats/branch">- ตามสาขาวิชา เรียงปีการศึกษา</a>
+          <a href="/admin/stats/branch">- ตามสาขาวิชา เลือกช่วงการศึกษา</a>
           </td>
           </tr>
           <tr>
@@ -36,16 +70,36 @@
           <a href="/admin/stats/yearofgraduation">- ตามปีการศึกษา เรียงสาขาวิชา</a>
           </td>
           </tr>
-
+-->
 
 
 
       </tbody>
   </table>
-</div>
-</div>
-</div>
 
+    <button type="submit" value="submit" class="btn btn-success">ดูรายงานสถิติ</button>
+    <button type="reset" value="Reset" class="btn btn-default">รีเซต</button>
+    </div>
+    </div>
 
+</form>
 
+<script>
+    $('#yearGradStart').on('change',function(e){
+        //console.log(e);
+        var yearGrad = e.target.value;
+        //ajax
+        $.get('../../ajax-yearGrad?yearGrad='+yearGrad, function(data){
+            //success data
+            //console.log(data);
+            $('#yearGradEnd').empty();
+           // $('#yearGradEnd').append('<option value="">เลือกปีการศึกษาที่จบ</option>');
+            $.each(data, function (index, years) {
+                //console.log(years.yearofgraduation);
+                $('#yearGradEnd').append('<option value="'+years.yearofgraduation+'">'+years.yearofgraduation+'</option>');
+
+            });
+        });
+    });
+    </script>
 @endsection

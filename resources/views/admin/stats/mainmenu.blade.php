@@ -43,7 +43,7 @@
                             <a href="/admin/stats/workplace_type">- ประเภทงานบัณฑิต ตามสาขาวิชาและปีการศึกษา</a>
                         </td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                         <td>
                             <a href="/admin/stats/work_status">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมสถานะการทำงาน</a>
                         </td>
@@ -52,7 +52,7 @@
                         <td>
                             <a href="/admin/stats/work_direct_branch">&nbsp;&nbsp;&nbsp;&nbsp;- ภาพรวมทำงานตรงสายงาน</a>
                         </td>
-                    </tr>
+                    </tr>-->
                     </tbody>
                 </table>
             </div>

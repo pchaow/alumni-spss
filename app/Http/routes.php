@@ -15,6 +15,17 @@ use App\Models\User;
 
 //use App\Models\Alumni;
 
+Route::get('/ajax-yearGrad', function () {
+    $yearGrad = Input::get('yearGrad');
+
+    $years = \App\Models\Alumni::select('yearofgraduation')
+        ->where('yearofgraduation', '>=', $yearGrad)
+        ->distinct()
+        ->orderby('yearofgraduation', 'ASC')
+        ->get();
+    return \Illuminate\Support\Facades\Response::json($years);
+});
+
 Route::get('/ajax-branch', function () {
     $degree_id = Input::get('degree_id');
 
