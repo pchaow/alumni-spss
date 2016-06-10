@@ -31,6 +31,11 @@ group by questionnaires.QuestionWorkplaceProvince";
 
     ?>
     <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="../">หน้าหลัก</a></li>
+            <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
+            <li class="active">จำนวนบัณฑิตที่ทำงานในประเทศไทย</li>
+        </ol>
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -60,7 +65,18 @@ group by questionnaires.QuestionWorkplaceProvince";
                                 colorAxis: {
                                     min: 0
                                 },
-
+                                plotOptions: {
+                                    series: {
+                                        point: {
+                                            events: {
+                                                click: function () {
+                                                    window.location.href =
+                                                            "/admin/stats/mapwork?QuestionWorkplaceProvince="+this.PROVINCE_NAME+"&PROVINCE_CODE="+this.PROVINCE_CODE;
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
 
 
                                 series: [{
@@ -110,6 +126,7 @@ group by questionnaires.QuestionWorkplaceProvince";
             $data_alumni->setPath(url("/admin/stats/mapwork?QuestionWorkplaceProvince=$questionWorkplaceProvince&PROVINCE_CODE=$provinceCode"));
             ?>
             <div class="col-lg-12">
+                <h2>รายชื่อบัณฑิตที่ทำงานอยู่ใน {{$questionWorkplaceProvince}}</h2>
                 <div class="panel panel-success">
 
                     <div class="panel-heading">
@@ -133,6 +150,7 @@ group by questionnaires.QuestionWorkplaceProvince";
                                 <th>ชื่อ-นามสกุล</th>
                                 <th>ระดับการศึกษาที่สำเร็จ</th>
                                 <th>หลักสูตรที่สำเร็จการศึกษา</th>
+                                <th>Action</th>
 
                             </tr>
                             </thead>
@@ -148,6 +166,10 @@ group by questionnaires.QuestionWorkplaceProvince";
                                         <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
                                         <td>{{$r["degree"] }}</td>
                                         <td>{{$r["course"]}}</td>
+                                        <td>
+                                            <a type="button" href="/admin/profile/{{$r->id}}" target="_blank"
+                                               class="btn btn-primary">View</a>
+                                        </td>
 
                                     </tr>
                                 @endforeach

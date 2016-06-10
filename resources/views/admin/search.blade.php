@@ -179,7 +179,7 @@
                                     <td>{{$r["course"]}}</td>
 
                                     <td>
-                                        <a type="button" href="/admin/profile/{{$r->id}}"
+                                        <a type="button" href="/admin/profile/{{$r->id}}" target="_blank"
                                            class="btn btn-primary">View</a>
                                         <button type="button" class="btn btn-default">Edit</button>
                                         <button type="button" class="btn btn-danger">Delete</button>
