@@ -132,67 +132,71 @@
         </div>
     </div>
     <div class="row">
-        <div class="panel panel-success">
+        <div class="col-lg-12">
+            <div class="panel panel-success">
 
-            <div class="panel-heading">
-                <i class="fa fa-file-text-o"></i> ผลลัพธ์การค้นหา
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    @if(isset($form))
-                    <a class="btn btn-success" href='/admin/export_excel?{{http_build_query($form)}}'>ส่งออกเป็น Excel</a>
-                    @endif
+                <div class="panel-heading">
+                    <i class="fa fa-file-text-o"></i> ผลลัพธ์การค้นหา
                 </div>
-                <div class="row" style="padding-bottom: 10px;">
-                    <div class="col-lg-1">
-
+                <div class="panel-body">
+                    <div class="row">
+                        @if(isset($form))
+                            <a class="btn btn-success" href='/admin/export_excel?{{http_build_query($form)}}'>ส่งออกเป็น
+                                Excel</a>
+                        @endif
                     </div>
-                    <div class="col-lg-11" style="text-align: center;">
-                        พบข้อมูลทั้งหมดจำนวน {{$data_alumni->total()}} รายการ
+                    <div class="row" style="padding-bottom: 10px;">
+                        <div class="col-lg-1">
 
+                        </div>
+                        <div class="col-lg-11" style="text-align: center;">
+                            พบข้อมูลทั้งหมดจำนวน {{$data_alumni->total()}} รายการ
+
+                        </div>
                     </div>
-                </div>
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>รหัสนิสิต</th>
-                        <th>ชื่อ-นามสกุล</th>
-                        <th>ระดับการศึกษาที่สำเร็จ</th>
-                        <th>หลักสูตรที่สำเร็จการศึกษา</th>
-
-                        <th>จัดการ</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    @if(count($data_alumni) != 0)
-
-                        @foreach ($data_alumni as $r)
-
-                            <tr>
-
-                                <td>{{$r["student_id"]}}</td>
-                                <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
-                                <td>{{$r["degree"] }}</td>
-                                <td>{{$r["course"]}}</td>
-
-                                <td>
-                                    <a type="button" href="/admin/profile/{{$r->id}}" class="btn btn-primary">View</a>
-                                    <button type="button" class="btn btn-default">Edit</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
                         <tr>
-                            <td colspan="5" align="center">ไม่พบข้อมูล</td>
+                            <th>รหัสนิสิต</th>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>ระดับการศึกษาที่สำเร็จ</th>
+                            <th>หลักสูตรที่สำเร็จการศึกษา</th>
+
+                            <th>จัดการ</th>
                         </tr>
-                    @endif
-                    </tbody>
+                        </thead>
+                        <tbody>
 
-                </table>
-                <div align="center">{!! $data_alumni->render() !!}</div>
+                        @if(count($data_alumni) != 0)
 
+                            @foreach ($data_alumni as $r)
+
+                                <tr>
+
+                                    <td>{{$r["student_id"]}}</td>
+                                    <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
+                                    <td>{{$r["degree"] }}</td>
+                                    <td>{{$r["course"]}}</td>
+
+                                    <td>
+                                        <a type="button" href="/admin/profile/{{$r->id}}"
+                                           class="btn btn-primary">View</a>
+                                        <button type="button" class="btn btn-default">Edit</button>
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="5" align="center">ไม่พบข้อมูล</td>
+                            </tr>
+                        @endif
+                        </tbody>
+
+                    </table>
+                    <div align="center">{!! $data_alumni->render() !!}</div>
+
+                </div>
             </div>
         </div>
     </div>
