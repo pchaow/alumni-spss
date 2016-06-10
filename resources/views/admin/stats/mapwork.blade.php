@@ -61,20 +61,7 @@ group by questionnaires.QuestionWorkplaceProvince";
                                     min: 0
                                 },
 
-                                plotOptions: {
-                                    series: {
-                                        point: {
-                                            events: {
-                                                click: function () {
-                                                    window.location.href =
-                                                            "/admin/stats/mapwork?QuestionWorkplaceProvince="
-                                                            + this.QuestionWorkplaceProvince
-                                                            + "&PROVINCE_CODE=" + this.PROVINCE_CODE;
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
+
 
                                 series: [{
                                     mapData: Highcharts.maps['countries/th/th-all'],

@@ -14,6 +14,9 @@ class AddThailandProvince extends Migration
     {
         DB::unprepared(file_get_contents(resource_path("assets/database/thailand.sql")));
 
+
+        // trim province
+        DB::update(' update province set provine_code = trim(province_code)');
     }
 
     /**
