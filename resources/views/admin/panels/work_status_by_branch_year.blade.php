@@ -88,7 +88,7 @@ foreach ($WorkStatusGroup as $key=>$value) {
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ภาวะการทำงานของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ
+        <i class="fa fa-bar-chart-o fa-fw"></i> ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ
         <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
     </div>
     <!-- /.panel-heading -->
@@ -125,8 +125,23 @@ foreach ($WorkStatusGroup as $key=>$value) {
                 });
             });
 
-        </script>
+            var chart = $('#count_by_work_status_graph_panel').highcharts(),
+                    $button = $('#button');
+            $button.click(function () {
+                var series = chart.series[0];
+                if (series.visible) {
+                    series.hide();
+                    $button.html('แสดงทั้งหมด');
+                } else {
+                    series.show();
+                    $button.html('ซ่อนปริญญาโท');
+                }
 
+
+            });
+
+        </script>
+        <button id="button" class="autocompare">ซ่อนปริญญาโท</button>
     </div>
 
         <h3>ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>

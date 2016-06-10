@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="/admin/stats/workplace_type">- ประเภทงานบัณฑิต ตามสาขาวิชาและปีการศึกษา</a>
+                            <a href="/admin/stats/workplace_type_menu">- ประเภทงานบัณฑิต ตามสาขาวิชาและปีการศึกษา</a>
                         </td>
                     </tr>
                     <!--<tr>

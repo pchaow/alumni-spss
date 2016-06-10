@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="../">หน้าหลัก</a></li>
+            <li class="active">ประวัติส่วนตัวบัณฑิต</li>
+        </ol>
         <div class="col-lg-12">
             <h1 class="page-header">ข้อมูลส่วนตัวบัณฑิต</h1>
         </div>

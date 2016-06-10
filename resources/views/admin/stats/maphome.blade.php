@@ -25,6 +25,11 @@
     ?>
 
     <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="../">หน้าหลัก</a></li>
+            <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
+            <li class="active">จำนวนบัณฑิตที่มีภูมิลำเนาในประเทศไทย</li>
+        </ol>
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -114,6 +119,7 @@
             $data_alumni->setPath(url("/admin/stats/maphome?PROVINCE_NAME=$provinceName&PROVINCE_CODE=$provinceCode"));
             ?>
             <div class="col-lg-12">
+                <h2>รายชื่อบัณฑิตที่มีภูมิลำเนาอยู่ใน {{$provinceName}}</h2>
                 <div class="panel panel-success">
 
                     <div class="panel-heading">
@@ -137,6 +143,7 @@
                                 <th>ชื่อ-นามสกุล</th>
                                 <th>ระดับการศึกษาที่สำเร็จ</th>
                                 <th>หลักสูตรที่สำเร็จการศึกษา</th>
+                                <th>Action</th>
 
                             </tr>
                             </thead>
@@ -152,6 +159,10 @@
                                         <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
                                         <td>{{$r["degree"] }}</td>
                                         <td>{{$r["course"]}}</td>
+                                        <td>
+                                            <a type="button" href="/admin/profile/{{$r->id}}" target="_blank"
+                                               class="btn btn-primary">View</a>
+                                        </td>
 
                                     </tr>
                                 @endforeach
