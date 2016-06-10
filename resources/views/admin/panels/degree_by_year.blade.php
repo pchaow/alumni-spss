@@ -132,7 +132,7 @@ foreach ($arrofyeargrad as $year) {
                 series: <?php echo json_encode($masterarray); ?>
             });
 
-                var chart = $('#count_by_year_graph_panel').highcharts(),
+               /* var chart = $('#count_by_year_graph_panel').highcharts(),
                         $button = $('#button');
                 $button.click(function () {
                     var series = chart.series[0];
@@ -145,12 +145,12 @@ foreach ($arrofyeargrad as $year) {
                     }
 
 
-                });
+                });*/
 
 
             });
         </script>
-        <button id="button" class="autocompare">ซ่อนปริญญาโท</button>
+       <!-- <button id="button" class="autocompare">ซ่อนปริญญาโท</button> -->
       </div>
 
     <h3>จำนวนบัณฑิตตามสาขาวิชา ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></h3>

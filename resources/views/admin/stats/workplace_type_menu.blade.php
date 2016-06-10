@@ -3,8 +3,8 @@
     <ol class="breadcrumb">
         <li><a href="../">หน้าหลัก</a></li>
         <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-        <li><a href="/admin/stats/work_status_by_branch_year_menu">ประเภทอาชีพบัณฑิต</a></li>
-        <li class="active">เลือกสาขาวิชา และช่วงปีการศึกษาที่จบ</li>
+        <li class="active"><a href="/admin/stats/workplace_type_menu">ประเภทอาชีพบัณฑิต</a></li>
+
     </ol>
     <?php
     $sql = "SELECT  distinct yearOfGraduation
@@ -36,14 +36,15 @@ order by branch ASC";
                     <tr>
                         <td>
                             <div class="form-group">
-                                <label>เลือกสาขาวิชา
+                                <h5><u>ขั้นตอนที่ 1</u></h5>
+                                <label>เลือกสาขาวิชา</label>
                                     <select required name="branch" id="branch" class="form-control input-sm"  >
                                         <option value="">เลือกสาขาวิชา</option>
                                         @foreach ($arrbranchs as $key=>$value)
                                             <option value="<?php echo $value->branch;?>"><?php echo $value->branch;?></option>
                                         @endforeach
                                     </select>
-                                </label>
+
 
                             </div>
 
@@ -53,14 +54,15 @@ order by branch ASC";
                     <tr>
                         <td>
                             <div class="form-group">
-                                <label>เลือกช่วงปีการศึกษาที่จบ (เริ่มต้น)
+                                <h5><u>ขั้นตอนที่ 2</u></h5>
+                                <label>เลือกช่วงปีการศึกษาที่จบ (เริ่มต้น) </label>
                                     <select required name="yearGradStart" id="yearGradStart" class="form-control input-sm"  >
                                         <option value="">เลือกปีการศึกษาที่จบ</option>
                                         @foreach ($arryearOfGraduation as $key=>$value)
                                             <option value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
                                         @endforeach
                                     </select>
-                                </label>
+
 
                             </div>
 
@@ -70,10 +72,11 @@ order by branch ASC";
                     <tr>
                         <td>
                             <div class="form-group">
-                                <label>เลือกช่วงปีการศึกษาที่จบ (สิ้นสุด)
+                                <h5><u>ขั้นตอนที่ 3</u></h5>
+                                <label>เลือกช่วงปีการศึกษาที่จบ (สิ้นสุด)</label>
                                     <select required name="yearGradEnd" id="yearGradEnd" class="form-control input-sm"  >
                                     </select>
-                                </label>
+
                             </div>
                         </td>
                     </tr>
