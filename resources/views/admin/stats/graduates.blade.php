@@ -16,7 +16,7 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
 
 ?>
 <form action="/admin/stats/degree_by_year_show" method="get">
-<div class="panel panel-primary">
+<div class="panel panel-success">
     <div class="panel-heading">
         <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
     </div>

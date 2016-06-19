@@ -50,14 +50,14 @@
 
 <div class="row" style="padding-top:40px;">
 
-    <div class="col-lg-4 col-lg-offset-2 col-xs-12">
+   <!-- <div class="col-lg-4 col-lg-offset-2 col-xs-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <i class="fa fa-graduation-cap"></i>
                 ศิษย์เก่า
             </div>
             <div class="panel-body">
-                <form action="/user/index" method="get" class="form-signin">
+                <form  action="/user/index" method="get" class="form-signin">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>รหัสประจำตัวประชาชน</label>
@@ -83,7 +83,8 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
+       <div class="col-lg-4 col-xs-12"></div>
 
     <div class="col-lg-4 col-xs-12">
         <div class="panel panel-green">
@@ -120,7 +121,7 @@
         </div>
     </div>
 
-
+       <div class="col-lg-4 col-xs-12"></div>
 </div>
 
 

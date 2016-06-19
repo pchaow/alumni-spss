@@ -90,6 +90,10 @@ Route::group(['middleware' => ['web']], function () {
             return view('admin.import');
         });
 
+        Route::get('/contact', function () {
+            return view('admin.contact');
+        });
+
 
         //Read
         Route::get('/stats/{viewName}', function ($viewName) {

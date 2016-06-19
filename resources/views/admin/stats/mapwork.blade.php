@@ -30,13 +30,16 @@ group by questionnaires.QuestionWorkplaceProvince";
     });
     $query->whereRaw("province.PROVINCE_CODE IS NOT NULL");
 
-    $query->where('branch',$branch);
+    if($branch){
+        $query->where('branch',$branch);
+    }
     $query->whereBetween('yearofgraduation', array($yearGradStart, $yearGradEnd));
 
     $query->groupBy("questionnaires.QuestionWorkplaceProvince");
     $thaidataJson = $query = $query->get()->toJson();
 
     ?>
+    <?php if(!$branch){$branch = "All";} ?>
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="../">หน้าหลัก</a></li>
@@ -145,6 +148,7 @@ group by questionnaires.QuestionWorkplaceProvince";
             //dd($data_alumni);
             ?>
             <div class="col-lg-12">
+
                 <h3>รายชื่อบัณฑิตสาขาวิชา <u>{{$branch}}</u> ที่ทำงานอยู่ใน <u>{{$questionWorkplaceProvince}}</u> ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
                     </u></h3>
                 <div class="panel panel-success">

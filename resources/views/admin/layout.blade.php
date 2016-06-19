@@ -111,7 +111,7 @@
                             @endif
                         </li>
                         <li>
-                            <a href="/admin/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="/admin/index"><i class="fa fa-dashboard fa-fw"></i> หน้าหลัก</a>
                         </li>
 
                         <li>
@@ -124,6 +124,9 @@
                         </li>
                         <li>
                             <a href="/admin/import"><i class="fa fa-cloud-upload fa-fw"></i> นำเข้าข้อมูล</a>
+                        </li>
+                        <li>
+                            <a href="/admin/contact"><i class="fa fa-info fa-fw"></i> ช่วยเหลือ</a>
                         </li>
                     </ul>
                 </div>

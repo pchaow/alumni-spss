@@ -1,7 +1,6 @@
-
 <?php
-
-$sql = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,
+if($branch){
+    $sql = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,
 `questionnaires`.`QuestionWorkplaceWorkType` as `workplacetype`
 ,
 count(*) as `amount`
@@ -14,6 +13,21 @@ yearofgraduation BETWEEN $yearGradStart AND  $yearGradEnd
 AND questionworkstatus in ('ทำงานแล้ว' ,'ทำงานแล้วและกำลังศึกษาต่อ')
 group by questionworkplaceworktype,yearofgraduation" ;
 
+}else{
+    $sql = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,
+`questionnaires`.`QuestionWorkplaceWorkType` as `workplacetype`
+,
+count(*) as `amount`
+FROM `alumni`
+Inner Join questionnaires
+on alumni.id = questionnaires.alumni_id
+and
+yearofgraduation BETWEEN $yearGradStart AND  $yearGradEnd
+AND questionworkstatus in ('ทำงานแล้ว' ,'ทำงานแล้วและกำลังศึกษาต่อ')
+group by questionworkplaceworktype,yearofgraduation" ;
+}
+
+
 $result = DB::select($sql);
 //dd($result);
 //$degreeGroup = collect($result)->groupBy('degree');
@@ -25,7 +39,7 @@ foreach ($YearsWkGroup as $key => $value) {
     $arrYeargroup[]=$key;
 }
 
-
+if($branch){
 $sql = "SELECT  `alumni`.`yearofgraduation`,`questionnaires`.`questionworkplaceworktype` as 'workplacetype', `questionnaires`.`QuestionWorkplaceWorkPosition` as `workposition`,
 count(*) as `amount`
 FROM `alumni`
@@ -36,7 +50,20 @@ and
 yearofgraduation BETWEEN $yearGradStart AND  $yearGradEnd
 AND questionworkstatus in ('ทำงานแล้ว' ,'ทำงานแล้วและกำลังศึกษาต่อ')
 group by workplacetype,QuestionWorkplaceWorkPosition,yearofgraduation
+";}
+        else{
+            $sql = "SELECT  `alumni`.`yearofgraduation`,`questionnaires`.`questionworkplaceworktype` as 'workplacetype', `questionnaires`.`QuestionWorkplaceWorkPosition` as `workposition`,
+count(*) as `amount`
+FROM `alumni`
+Inner Join questionnaires
+on alumni.id = questionnaires.alumni_id
+and
+yearofgraduation BETWEEN $yearGradStart AND  $yearGradEnd
+AND questionworkstatus in ('ทำงานแล้ว' ,'ทำงานแล้วและกำลังศึกษาต่อ')
+group by workplacetype,QuestionWorkplaceWorkPosition,yearofgraduation
 ";
+
+}
 
 $result = DB::select($sql);
 //dd($result);
@@ -73,7 +100,7 @@ $valueofgraduates->data=$arrValueofgrad;
 $arrValueofgraduates[] = $valueofgraduates;
 }
 ?>
-
+<?php if(!$branch){$branch = "All";} ?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ

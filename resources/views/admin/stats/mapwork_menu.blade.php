@@ -24,7 +24,7 @@ $arrbranchs = collect($branchs)->toArray();
 ?>
 <form action="/admin/stats/mapwork" method="get">
 
-    <div class="panel panel-primary">
+    <div class="panel panel-warning">
         <div class="panel-heading">
             <i class="fa fa-bar-chart-o fa-fw"></i> สถานที่ทำงานของบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
         </div>
@@ -38,8 +38,8 @@ $arrbranchs = collect($branchs)->toArray();
                         <div class="form-group">
                             <h5><u>ขั้นตอนที่ 1</u></h5>
                             <label>เลือกสาขาวิชา</label>
-                                <select required name="branch" id="branch" class="form-control input-sm"  >
-                                    <option value="">เลือกสาขาวิชา</option>
+                                <select name="branch" id="branch" class="form-control input-sm"  >
+                                    <option value="">ทุกสาขาวิชา</option>
                                     @foreach ($arrbranchs as $key=>$value)
                                         <option value="<?php echo $value->branch;?>"><?php echo $value->branch;?></option>
                                     @endforeach
