@@ -8,7 +8,7 @@
 <ol class="breadcrumb">
   <li><a href="../">หน้าหลัก</a></li>
   <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-  <li><a href="/admin/stats/workplace_type">ประเภทงานบัณฑิต</a></li>
+  <li><a href="/admin/stats/workplace_type_menu">ประเภทงานบัณฑิต</a></li>
   <li class="active">สาขาวิชา{{$branch}} ปีการศึกษาที่จบ {{$yearGradStart}} ถึง {{$yearGradEnd}}</li>
 </ol>
 

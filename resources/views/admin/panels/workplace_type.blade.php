@@ -18,7 +18,12 @@ $result = DB::select($sql);
 //dd($result);
 //$degreeGroup = collect($result)->groupBy('degree');
 //$array = $degreeGroup->toArray();
+$WorkTypeGroup = collect($result)->groupBy('workplacetype');
 $YearsWkGroup = collect($result)->groupBy('yearofgraduation');
+$arrYeargroup=[];
+foreach ($YearsWkGroup as $key => $value) {
+    $arrYeargroup[]=$key;
+}
 
 
 $sql = "SELECT  `alumni`.`yearofgraduation`,`questionnaires`.`questionworkplaceworktype` as 'workplacetype', `questionnaires`.`QuestionWorkplaceWorkPosition` as `workposition`,
@@ -30,7 +35,8 @@ where branch = '$branch'
 and
 yearofgraduation BETWEEN $yearGradStart AND  $yearGradEnd
 AND questionworkstatus in ('ทำงานแล้ว' ,'ทำงานแล้วและกำลังศึกษาต่อ')
-group by workplacetype,QuestionWorkplaceWorkPosition,yearofgraduation" ;
+group by workplacetype,QuestionWorkplaceWorkPosition,yearofgraduation
+";
 
 $result = DB::select($sql);
 //dd($result);
@@ -39,26 +45,104 @@ $result = DB::select($sql);
 $YearsGroup = collect($result)->groupBy('yearofgraduation');
 //dd($YearsGroup);
 
-$arrvalueofworkstatus = [];
-$arrofworkstatus = [];
-$workstatusGroup = collect($result)->groupBy('workstatus');
-//dd($workstatusGroup);
-//$cs= array("#00CC66", "#CCFF66", "#99FFFF", "pink",'#CCFFCC');
-        $masterarray = [];
-$subarray = [];
+$arrValueofgraduates=[];
+//dd($WorkTypeGroup);
+foreach ($WorkTypeGroup as $key=>$value) {
+$valueofgraduates = new stdClass();
+$valueofgraduates->name=$key;
+//dd($value);
+//$valueofgraduates->name=$value->yearOfGraduation;
+$arrValueofgrad=[];
+$i=0;
+foreach ($arrYeargroup as $year) {
+
+    foreach ($value as $key) {
+
+        if($key->yearofgraduation==$year){
+            $arrValueofgrad[$i] = $key->amount;
+            break;
+        }else{
+            $arrValueofgrad[$i]=null;
+        }
+    }
+    $i++;
+}
+$valueofgraduates->data=$arrValueofgrad;
+//
+//var_dump($valueofgraduates);
+$arrValueofgraduates[] = $valueofgraduates;
+}
 ?>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+        <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ
+        <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
-        <div id="count_by_workplace_type_graph_panel" style="height: 500px;"></div>
+        <div id="count_by_workplace_type_graph_panel" style="height: 500px;">
+            <script>
+            $(function () {
+            $('#count_by_workplace_type_graph_panel').highcharts({
+            chart: {
+            type: 'column'
+            },
+            title: {
+            text: 'ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
+            },
+
+            xAxis: {
+            categories: <?php echo json_encode($arrYeargroup);?>,
+            title: {
+            text: null
+            }
+            },
+            yAxis: {
+            min: 0,
+            title: {
+            text: 'จำนวนบัณฑิต (คน)',
+            align: 'high'
+            },
+            labels: {
+            overflow: 'justify'
+            }
+            },
+            tooltip: {
+            valueSuffix: ' คน'
+            },
+            plotOptions: {
+            column: {
+            dataLabels: {
+            enabled: true
+            }
+            }
+            },
+            legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: false,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+            },
+            credits: {
+            enabled: false
+            },
+            series: <?php echo json_encode($arrValueofgraduates);?>
+            });
+            });
+            </script>
+
+        </div>
 
 
 
-        <h3>ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} </h3>
+        <h3>ประเภทงานของบัณฑิตสาขาวิชา <u>{{$branch}}</u>
+            ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></u></h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>
@@ -98,7 +182,7 @@ $subarray = [];
             </tbody>
         </table>
 
-        <h3>ตำแหน่งงานของบัณฑิตสาขาวิชา {{$branch}} </h3>
+        <h3>ตำแหน่งงานของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></u></h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>

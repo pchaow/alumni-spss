@@ -28,7 +28,7 @@ class SearchAlumniController extends Controller
             "SELECT DISTINCT(branch) as branch from alumni order by branch");
 
 
-        $data_alumni = Alumni::with('questionnaires')->paginate(20);
+        $data_alumni = Alumni::with('questionnaires')->paginate(25);
         return view('admin.search')
             ->with('data_alumni', $data_alumni)
             ->with('yearOfGraduation', $yearOfGraduation)
@@ -78,7 +78,7 @@ class SearchAlumniController extends Controller
 
         $data_alumni->orderBy('yearofgraduation', 'asc');
         $data_alumni->orderBy('student_id', 'asc');
-            $data_alumni=$data_alumni->paginate(20);
+            $data_alumni=$data_alumni->paginate(25);
 
         $yearOfGraduation = \DB::select(
             "select DISTINCT(alumni.yearOfGraduation) as yearOfGraduation from alumni order by yearOfGraduation ");

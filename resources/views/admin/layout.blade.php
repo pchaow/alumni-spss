@@ -28,7 +28,7 @@
 
     <!-- Custom Fonts -->
     <link href="/bower/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
 
     @yield('css')
 

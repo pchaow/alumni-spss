@@ -11,6 +11,10 @@ join questionnaires on alumni.id = questionnaires.alumni_id
 left join province on questionnaires.QuestionWorkplaceProvince = province.PROVINCE_NAME
 group by questionnaires.QuestionWorkplaceProvince";
 
+    $yearGradStart = $_GET['yearGradStart'];
+    $yearGradEnd = $_GET['yearGradEnd'];
+    $branch = $_GET['branch'];
+
     $query = \App\Models\Alumni::query();
     $query->select([
             "questionnaires.QuestionWorkplaceProvince",
@@ -25,8 +29,11 @@ group by questionnaires.QuestionWorkplaceProvince";
         $join->on('province.PROVINCE_NAME', '=', 'questionnaires.QuestionWorkplaceProvince');
     });
     $query->whereRaw("province.PROVINCE_CODE IS NOT NULL");
-    $query->groupBy("questionnaires.QuestionWorkplaceProvince");
 
+    $query->where('branch',$branch);
+    $query->whereBetween('yearofgraduation', array($yearGradStart, $yearGradEnd));
+
+    $query->groupBy("questionnaires.QuestionWorkplaceProvince");
     $thaidataJson = $query = $query->get()->toJson();
 
     ?>
@@ -34,12 +41,15 @@ group by questionnaires.QuestionWorkplaceProvince";
         <ol class="breadcrumb">
             <li><a href="../">หน้าหลัก</a></li>
             <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-            <li class="active">จำนวนบัณฑิตที่ทำงานในประเทศไทย</li>
+            <li class="active">สถานที่ทำงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ
+                <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></li>
         </ol>
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิตที่ทำงานในประเทศไทย
+                    <i class="fa fa-bar-chart-o fa-fw"></i> สถานที่ทำงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ
+                    <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -52,7 +62,7 @@ group by questionnaires.QuestionWorkplaceProvince";
                             $('#stat_map').highcharts('Map', {
 
                                 title: {
-                                    text: 'จำนวนบัณฑิตที่ทำงานในประเทศไทย'
+                                    text: 'สถานที่ทำงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
                                 },
 
                                 mapNavigation: {
@@ -71,7 +81,9 @@ group by questionnaires.QuestionWorkplaceProvince";
                                             events: {
                                                 click: function () {
                                                     window.location.href =
-                                                            "/admin/stats/mapwork?QuestionWorkplaceProvince="+this.PROVINCE_NAME+"&PROVINCE_CODE="+this.PROVINCE_CODE;
+                                                            "/admin/stats/mapwork?QuestionWorkplaceProvince="+this.PROVINCE_NAME+"&PROVINCE_CODE="+this.PROVINCE_CODE
+                                                            +"&branch="+"{{$branch}}"+"&yearGradStart="+"{{$yearGradStart}}"+"&yearGradEnd="+"{{$yearGradEnd}}";
+
                                                 }
                                             }
                                         }
@@ -112,6 +124,7 @@ group by questionnaires.QuestionWorkplaceProvince";
             $query->select([
                     "alumni.*",
                     "questionnaires.QuestionWorkplaceProvince",
+                    "questionnaires.QuestionWorkplaceName",
                     "province.PROVINCE_NAME",
                     "province.PROVINCE_CODE",
             ]);
@@ -122,11 +135,18 @@ group by questionnaires.QuestionWorkplaceProvince";
                 $join->on('province.PROVINCE_NAME', '=', 'questionnaires.QuestionWorkplaceProvince');
             });
             $query->where("province.PROVINCE_NAME", "=", $questionWorkplaceProvince);
+            $query->where('branch',$branch);
+            $query->whereBetween('yearofgraduation', array($yearGradStart, $yearGradEnd));
+
+            //$query->orderBy("yearOfGraduation","asc");
             $data_alumni = $query->paginate(15);
+
             $data_alumni->setPath(url("/admin/stats/mapwork?QuestionWorkplaceProvince=$questionWorkplaceProvince&PROVINCE_CODE=$provinceCode"));
+            //dd($data_alumni);
             ?>
             <div class="col-lg-12">
-                <h2>รายชื่อบัณฑิตที่ทำงานอยู่ใน {{$questionWorkplaceProvince}}</h2>
+                <h3>รายชื่อบัณฑิตสาขาวิชา <u>{{$branch}}</u> ที่ทำงานอยู่ใน <u>{{$questionWorkplaceProvince}}</u> ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+                    </u></h3>
                 <div class="panel panel-success">
 
                     <div class="panel-heading">
@@ -146,11 +166,12 @@ group by questionnaires.QuestionWorkplaceProvince";
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
+                                <th>สาขาวิชาที่สำเร็จการศึกษา</th>
+                                <th>ปีที่จบการศึกษา</th>
                                 <th>รหัสนิสิต</th>
                                 <th>ชื่อ-นามสกุล</th>
-                                <th>ระดับการศึกษาที่สำเร็จ</th>
-                                <th>หลักสูตรที่สำเร็จการศึกษา</th>
-                                <th>Action</th>
+                                <th>สถานที่ทำงาน</th>
+                                <th>การจัดการ</th>
 
                             </tr>
                             </thead>
@@ -161,14 +182,15 @@ group by questionnaires.QuestionWorkplaceProvince";
                                 @foreach ($data_alumni as $r)
 
                                     <tr>
-
+                                        <td>{{$r["branch"]}}</td>
+                                        <td>{{$r["yearOfGraduation"]}}</td>
                                         <td>{{$r["student_id"]}}</td>
                                         <td>{{$r["title"] . ' ' . $r["firstname"] . ' ' . $r["lastname"]}}</td>
-                                        <td>{{$r["degree"] }}</td>
-                                        <td>{{$r["course"]}}</td>
+                                        <td>{{$r["QuestionWorkplaceName"] }}</td>
+
                                         <td>
                                             <a type="button" href="/admin/profile/{{$r->id}}" target="_blank"
-                                               class="btn btn-primary">View</a>
+                                               class="btn btn-primary">ดูข้อมูล</a>
                                         </td>
 
                                     </tr>

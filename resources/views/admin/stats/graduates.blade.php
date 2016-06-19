@@ -28,7 +28,8 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
         <tr>
           <td>
               <div class="form-group">
-                  <label>เลือกช่วงปีการศึกษาที่จบ (เริ่มต้น)
+                  <h5><u>ขั้นตอนที่ 1</u></h5>
+                  <label>เลือกปีการศึกษาที่จบ (เริ่มต้น)
                       <select required name="yearGradStart" id="yearGradStart" class="form-control input-sm"  >
                           <option value="">เลือกปีการศึกษาที่จบ</option>
                           @foreach ($arryearOfGraduation as $key=>$value)
@@ -47,7 +48,8 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
         <tr>
             <td>
                 <div class="form-group">
-                    <label>เลือกช่วงปีการศึกษาที่จบ (สิ้นสุด)
+                    <h5><u>ขั้นตอนที่ 2</u></h5>
+                    <label>เลือกปีการศึกษาที่จบ (สิ้นสุด)
                         <select required name="yearGradEnd" id="yearGradEnd" class="form-control input-sm"  >
                         </select>
                     </label>
@@ -62,7 +64,7 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
           </tr>
           <tr>
             <td>
-          <a href="/admin/stats/branch">- ตามสาขาวิชา เลือกช่วงการศึกษา</a>
+          <a href="/admin/stats/branch">- ตามสาขาวิชา เลือกการศึกษา</a>
           </td>
           </tr>
           <tr>

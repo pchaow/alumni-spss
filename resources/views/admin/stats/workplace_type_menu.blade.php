@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
         <li><a href="../">หน้าหลัก</a></li>
         <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-        <li class="active"><a href="/admin/stats/workplace_type_menu">ประเภทอาชีพบัณฑิต</a></li>
+        <li class="active">ประเภทงานของบัณฑิต</li>
 
     </ol>
     <?php
@@ -26,7 +26,7 @@ order by branch ASC";
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทอาชีพบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
+                <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -55,7 +55,7 @@ order by branch ASC";
                         <td>
                             <div class="form-group">
                                 <h5><u>ขั้นตอนที่ 2</u></h5>
-                                <label>เลือกช่วงปีการศึกษาที่จบ (เริ่มต้น) </label>
+                                <label>เลือกปีการศึกษาที่จบ (เริ่มต้น) </label>
                                     <select required name="yearGradStart" id="yearGradStart" class="form-control input-sm"  >
                                         <option value="">เลือกปีการศึกษาที่จบ</option>
                                         @foreach ($arryearOfGraduation as $key=>$value)
@@ -73,7 +73,7 @@ order by branch ASC";
                         <td>
                             <div class="form-group">
                                 <h5><u>ขั้นตอนที่ 3</u></h5>
-                                <label>เลือกช่วงปีการศึกษาที่จบ (สิ้นสุด)</label>
+                                <label>เลือกปีการศึกษาที่จบ (สิ้นสุด)</label>
                                     <select required name="yearGradEnd" id="yearGradEnd" class="form-control input-sm"  >
                                     </select>
 
@@ -88,7 +88,7 @@ order by branch ASC";
                       </tr>
                       <tr>
                         <td>
-                      <a href="/admin/stats/branch">- ตามสาขาวิชา เลือกช่วงการศึกษา</a>
+                      <a href="/admin/stats/branch">- ตามสาขาวิชา เลือกการศึกษา</a>
                       </td>
                       </tr>
                       <tr>

@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/banner.ico">
+    <link rel="icon" href="/banner.ico">ๆ
 
     <title>SAS : SPASs Alumni System</title>
 
@@ -100,7 +100,7 @@
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             <input name="login[username]" type="text" class="form-control" placeholder="บัญชีผู้ใช้ มหาวิทยาลัยพะเยา">
                         </div>
-                        <p class="help-block">Example block-level help text here.</p>
+                        <p class="help-block">กรุณากรอก Username</p>
                     </div>
 
                     <div class="form-group">
@@ -109,7 +109,7 @@
                             <span class="input-group-addon"><i class="fa fa-key"></i></span>
                             <input name="login[password]" type="password" class="form-control" placeholder="รหัสผ่าน">
                         </div>
-                        <p class="help-block">Example block-level help text here.</p>
+                        <p class="help-block">กรุณากรอก Password</p>
                     </div>
 
                     <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>

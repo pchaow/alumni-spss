@@ -6,7 +6,14 @@
 
 @section('content')
 
+
     <div class="row">
+        <div>
+            <ol class="breadcrumb">
+                <li><a href="/admin">หน้าหลัก</a></li>
+                <li class="active">ค้นหาข้อมูลบัณฑิต</li>
+            </ol>
+            </div>
         <div class="col-lg-12">
             <h1 class="page-header">ค้นหาข้อมูลบัณฑิต</h1>
         </div>

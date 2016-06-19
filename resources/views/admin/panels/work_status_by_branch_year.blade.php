@@ -1,8 +1,20 @@
 
 <?php
 
+$sqlwkstatus = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+count(*) as `amount`
+FROM `alumni`
+Inner Join questionnaires
+on alumni.id = questionnaires.alumni_id
+where branch = '$branch'
+and
+yearofgraduation between $yearGradStart and '$yearGradEnd'
 
-$sql = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+group by workstatus,yearofgraduation" ;
+
+$resultwkstatus = DB::select($sqlwkstatus);
+
+$sqlwkdirect = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
 `questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
 count(*) as `amount`
 FROM `alumni`
@@ -14,15 +26,16 @@ yearofgraduation between $yearGradStart and '$yearGradEnd'
 
 group by workstatus,workdirectbranch,yearofgraduation" ;
 
-$result = DB::select($sql);
+$resultwkdirect = DB::select($sqlwkdirect);
+
 //dd($result);
 //$degreeGroup = collect($result)->groupBy('degree');
 //$array = $degreeGroup->toArray();
 
 $arrvalueofworkstatus = [];
 $arrofworkstatus = [];
-$WorkStatusGroup = collect($result)->groupBy('workstatus');
-$yearGradWorkstatusGroup = collect($result)->groupBy('yearofgraduation');
+$WorkStatusGroup = collect($resultwkstatus)->groupBy('workstatus');
+$yearGradWorkstatusGroup = collect($resultwkdirect)->groupBy('yearofgraduation');
 //dd($YearGradWorkstatusGroup);
 //$cs= array("#00CC66", "#CCFF66", "#99FFFF", "pink",'#CCFFCC');
 
@@ -102,7 +115,7 @@ foreach ($WorkStatusGroup as $key=>$value) {
                         type: 'column'
                     },
                     title: {
-                        text: 'ภาวะการทำงานของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
+                        text: 'ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
                     },
                     xAxis: {
                         categories: <?php echo json_encode($arrYeargroup);?>
@@ -119,32 +132,33 @@ foreach ($WorkStatusGroup as $key=>$value) {
                             enabled: true
                         }
                     }
+                    },    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'top',
+                        x: -40,
+                        y: 80,
+                        floating: false,
+                        borderWidth: 1,
+                        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                        shadow: true
+                    },
+                    credits: {
+                        enabled: false
                     },
 
                     series: <?php echo json_encode($arrValueofgraduates);?>
                 });
             });
 
-            var chart = $('#count_by_work_status_graph_panel').highcharts(),
-                    $button = $('#button');
-            $button.click(function () {
-                var series = chart.series[0];
-                if (series.visible) {
-                    series.hide();
-                    $button.html('แสดงทั้งหมด');
-                } else {
-                    series.show();
-                    $button.html('ซ่อนปริญญาโท');
-                }
 
-
-            });
 
         </script>
-        <button id="button" class="autocompare">ซ่อนปริญญาโท</button>
+
     </div>
 
-        <h3>ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+        <h3>ภาวะการมีงานทำของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+                </u></h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>
