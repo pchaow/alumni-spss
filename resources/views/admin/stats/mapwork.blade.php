@@ -30,7 +30,7 @@ group by questionnaires.QuestionWorkplaceProvince";
     });
     $query->whereRaw("province.PROVINCE_CODE IS NOT NULL");
 
-    if($branch){
+    if(($branch)&&($branch!="All")){
         $query->where('branch',$branch);
     }
     $query->whereBetween('yearofgraduation', array($yearGradStart, $yearGradEnd));
