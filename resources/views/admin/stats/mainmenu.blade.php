@@ -18,7 +18,7 @@
         <div class="panel-body">
 
             <div class="col-lg-4 col-md-6">
-                <a href="/admin/stats/graduates">
+                <a href="/admin/stats/graduates?view=index">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <a href="/admin/stats/mapwork_menu">
+                <a href="/admin/stats/mapwork?view=index">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">
@@ -87,7 +87,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="/admin/stats/work_status_by_branch_year_menu">
+                <a href="/admin/stats/work_status?view=index">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -111,7 +111,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="/admin/stats/workplace_type_menu">
+                <a href="/admin/stats/workplace_type?view=index">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="row">

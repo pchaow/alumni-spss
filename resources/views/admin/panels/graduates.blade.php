@@ -1,4 +1,5 @@
 <?php
+
 $yearGradStart = $_GET['yearGradStart'];
 $yearGradEnd = $_GET['yearGradEnd'];
 
@@ -9,6 +10,8 @@ count(*) as `amount`
 FROM `alumni`
 WHERE yearofgraduation BETWEEN $yearGradStart AND $yearGradEnd
 group by `alumni`.`yearofgraduation`,`alumni`.`branch`";
+
+
 
 $result = DB::select($sql);
 
@@ -192,6 +195,7 @@ foreach ($branchGroup as $key => $value) {
             <th>ระดับปริญญา</th>
             <th>สาขาวิชา</th>
             <th>จำนวนบัณฑิต(คน)</th>
+            <th>อัตราส่วน(%)</th>
             <th>การจัดการ</th>
         </tr>
         </thead>
@@ -202,8 +206,14 @@ foreach ($branchGroup as $key => $value) {
             $firstRow = true;
 
             $sum = 0;
-
+            $sumforpercentage = 0;
             ?>
+
+            @foreach($value as $subValue)
+                <?php $sumforpercentage = $sumforpercentage + $subValue->amount;?>
+            @endforeach
+
+
             @foreach($value as $subValue)
                 <tr>
                     <?php $sum = $sum + $subValue->amount;
@@ -214,6 +224,9 @@ foreach ($branchGroup as $key => $value) {
                     <td>{{$subValue->degree}}</td>
                     <td>{{$subValue->branch}}</td>
                     <td>{{$subValue->amount}}</td>
+                        <td><?php
+                            printf("%.2f",($subValue->amount/$sumforpercentage*100));?>
+                        </td>
                     <td>
                         <form role="form" action="{{url('admin/search')}}" method="POST">
                             <input type="hidden" name="year_of_graduation" value={{$key}}>
@@ -237,6 +250,7 @@ foreach ($branchGroup as $key => $value) {
             <tr class="success">
                 <td colspan="3" style="text-align: right">รวม</td>
                 <td>{{$sum}}</td>
+                <td><?php echo "100%"?></td>
             </tr>
         @endforeach
         <tr>

@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
     <ol class="breadcrumb">
-        <li><a href="../">หน้าหลัก</a></li>
+        <li><a href="/admin/">หน้าหลัก</a></li>
         <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
         <li class="active">ประเภทงานของบัณฑิต</li>
 
@@ -22,8 +22,8 @@ order by branch ASC";
     $arrbranchs = collect($branchs)->toArray();
 
     ?>
-    <form action="/admin/stats/workplace_type_show" method="get">
-
+    <form action="/admin/stats/workplace_type" method="get">
+        <input type="hidden" name="view" value="query">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
@@ -108,6 +108,14 @@ order by branch ASC";
             </div>
         </div>
     </form>
+
+    <?php if($_GET['view']=="query"){
+    ?>
+    @include('admin.panels.workplace_type')
+    <?php } ?>
+
+
+
     <script>
         $('#yearGradStart').on('change',function(e){
             //console.log(e);

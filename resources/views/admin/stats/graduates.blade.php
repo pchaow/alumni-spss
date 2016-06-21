@@ -15,7 +15,8 @@ $yearOfGraduation = DB::select($sql);
 $arryearOfGraduation = collect($yearOfGraduation)->toArray();
 
 ?>
-<form action="/admin/stats/degree_by_year_show" method="get">
+<!--<form action="/admin/stats/degree_by_year_show" method="get">-->
+<form role="form" action="/admin/stats/graduates" method="get">
 <div class="panel panel-success">
     <div class="panel-heading">
         <i class="fa fa-bar-chart-o fa-fw"></i> จำนวนบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
@@ -33,14 +34,24 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
                       <select required name="yearGradStart" id="yearGradStart" class="form-control input-sm"  >
                           <option value="">เลือกปีการศึกษาที่จบ</option>
                           @foreach ($arryearOfGraduation as $key=>$value)
-                          <option value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
+
+                           <!--   $selectedStr = "";
+                              if($_GET['view']=="query"){
+                                if ($_GET['yearGradStart'] == $value->yearOfGraduation) {
+                                $selectedStr = 'selected';
+                                 }
+                                  }-->
+
+
+
+                          <option  value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
                           @endforeach
                       </select>
                   </label>
 
               </div>
 
-
+              <input type="hidden" name="view" value="query">
 
         </td>
 
@@ -86,6 +97,11 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
 
 </form>
 
+<?php if($_GET['view']=="query"){
+?>
+   @include('admin.panels.graduates');
+<?php } ?>
+
 <script>
     $('#yearGradStart').on('change',function(e){
         //console.log(e);
@@ -103,5 +119,26 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
             });
         });
     });
+
+   /* $('#yearGradEnd').ready(function() {
+        //console.log(e);
+        var e = document.getElementById("yearGradStart");
+        var yearGrad = e.options[e.selectedIndex].value;
+
+        //ajax
+        $.get('../../ajax-yearGrad?yearGrad='+yearGrad, function(data){
+            //success data
+            //console.log(data);
+            $('#yearGradEnd').empty();
+            // $('#yearGradEnd').append('<option value="">เลือกปีการศึกษาที่จบ</option>');
+            $.each(data, function (index, years) {
+                //console.log(years.yearofgraduation);
+
+                $('#yearGradEnd').append('<option value="'+years.yearofgraduation+'">'+years.yearofgraduation+'</option>');
+
+            });
+        });
+    });*/
+
     </script>
 @endsection

@@ -31,6 +31,19 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
 
     @yield('css')
+    <style type="text/css">
+        #toTopImg{
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            cursor: pointer;
+            display: none;
+            z-index: 999999;
+            background: #eeeeee none repeat scroll 0 0;
+            display: block;
+            padding: 12px 15px;
+        }
+    </style>
 
             <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -57,7 +70,22 @@
 
 
     @yield('javascript')
-
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('body').append('<div id="toTopImg" style="display:none"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>');
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0) {
+                    $('#toTopImg').fadeIn();
+                } else {
+                    $('#toTopImg').fadeOut();
+                }
+            });
+            $('#toTopImg').click(function(){
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+        });
+    </script>
 </head>
 
 <body>

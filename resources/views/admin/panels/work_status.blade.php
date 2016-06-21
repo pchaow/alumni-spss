@@ -1,4 +1,7 @@
 <?php
+$yearGradStart = $_GET['yearGradStart'];
+$yearGradEnd = $_GET['yearGradEnd'];
+$branch = $_GET['branch'];
 if ($branch) {
     $sqlwkstatus = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
 count(*) as `amount`
@@ -207,6 +210,7 @@ foreach ($WorkStatusGroup as $key => $value) {
             <th>สถานะการมีงานทำ</th>
             <th>ทำงานตรงสาย</th>
             <th>จำนวนบัณฑิต(คน)</th>
+            <th>อัตราส่วน(%)</th>
         </tr>
         </thead>
         <tbody>
@@ -215,7 +219,12 @@ foreach ($WorkStatusGroup as $key => $value) {
             <?php
             $firstRow = true;
             $sum = 0;
+            $sumforpercentage = 0;
             ?>
+            @foreach($value as $subValue)
+                <?php $sumforpercentage = $sumforpercentage + $subValue->amount;?>
+            @endforeach
+
             @foreach($value as $subValue)
                 <tr>
                     <?php $sum = $sum + $subValue->amount;
@@ -226,6 +235,9 @@ foreach ($WorkStatusGroup as $key => $value) {
                     <td>{{$subValue->workstatus}}</td>
                     <td>{{$subValue->workdirectbranch}}</td>
                     <td>{{$subValue->amount}}</td>
+                        <td><?php
+                            printf("%.2f",($subValue->amount/$sumforpercentage*100));?>
+                        </td>
                 </tr>
                 <?php
                 $firstRow = false;
@@ -235,6 +247,7 @@ foreach ($WorkStatusGroup as $key => $value) {
             <tr class="success">
                 <td colspan="3" style="text-align: right">รวม</td>
                 <td>{{$sum}}</td>
+                <td><?php echo "100%"?></td>
             </tr>
         @endforeach
         <tr>

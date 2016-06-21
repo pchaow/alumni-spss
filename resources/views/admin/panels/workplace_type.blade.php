@@ -1,4 +1,8 @@
 <?php
+$yearGradStart = $_GET['yearGradStart'];
+$yearGradEnd = $_GET['yearGradEnd'];
+$branch = $_GET['branch'];
+
 if($branch){
     $sql = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,
 `questionnaires`.`QuestionWorkplaceWorkType` as `workplacetype`
@@ -177,6 +181,7 @@ $arrValueofgraduates[] = $valueofgraduates;
 
                 <th>ประเภทงาน</th>
                 <th>จำนวนบัณฑิต(คน)</th>
+                <th>อัตราส่วน(%)</th>
             </tr>
             </thead>
             <tbody>
@@ -185,7 +190,13 @@ $arrValueofgraduates[] = $valueofgraduates;
                 <?php
                 $firstRow = true;
                 $sum = 0;
+                $sumforpercentage = 0;
                 ?>
+
+                @foreach($value as $subValue)
+                    <?php $sumforpercentage = $sumforpercentage + $subValue->amount;?>
+                @endforeach
+
                 @foreach($value as $subValue)
                     <tr>
                         <?php $sum = $sum + $subValue->amount; ?>
@@ -195,6 +206,9 @@ $arrValueofgraduates[] = $valueofgraduates;
 
                         <td>{{$subValue->workplacetype}}</td>
                         <td>{{$subValue->amount}}</td>
+                            <td><?php
+                                printf("%.2f",($subValue->amount/$sumforpercentage*100));?>
+                            </td>
                     </tr>
                     <?php
                     $firstRow = false;
@@ -204,6 +218,7 @@ $arrValueofgraduates[] = $valueofgraduates;
                 <tr class="success">
                     <td colspan="2" style="text-align: right">รวม</td>
                     <td>{{$sum}}</td>
+                    <td><?php echo "100%"?></td>
                 </tr>
             @endforeach
             </tbody>
@@ -217,6 +232,7 @@ $arrValueofgraduates[] = $valueofgraduates;
                 <th>ประเภทงาน</th>
                 <th>ตำแหน่งงาน</th>
                 <th>จำนวนบัณฑิต(คน)</th>
+                <th>อัตราส่วน(%)</th>
             </tr>
             </thead>
             <tbody>
@@ -225,7 +241,13 @@ $arrValueofgraduates[] = $valueofgraduates;
                 <?php
                 $firstRow = true;
                 $sum = 0;
+                $sumforpercentage = 0;
                 ?>
+
+                @foreach($value as $subValue)
+                    <?php $sumforpercentage = $sumforpercentage + $subValue->amount;?>
+                @endforeach
+
                 @foreach($value as $subValue)
                     <tr>
                         <?php $sum = $sum + $subValue->amount; ?>
@@ -236,6 +258,9 @@ $arrValueofgraduates[] = $valueofgraduates;
                             <td>{{$subValue->workplacetype}}</td>
                             <td>{{$subValue->workposition}}</td>
                         <td>{{$subValue->amount}}</td>
+                            <td><?php
+                                printf("%.2f",($subValue->amount/$sumforpercentage*100));?>
+                            </td>
                     </tr>
                     <?php
                     $firstRow = false;
@@ -245,6 +270,7 @@ $arrValueofgraduates[] = $valueofgraduates;
                 <tr class="success">
                     <td colspan="3" style="text-align: right">รวม</td>
                     <td>{{$sum}}</td>
+                    <td><?php echo "100%"?></td>
                 </tr>
             @endforeach
             </tbody>
