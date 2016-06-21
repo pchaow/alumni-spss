@@ -35,16 +35,7 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
                           <option value="">เลือกปีการศึกษาที่จบ</option>
                           @foreach ($arryearOfGraduation as $key=>$value)
 
-                           <!--   $selectedStr = "";
-                              if($_GET['view']=="query"){
-                                if ($_GET['yearGradStart'] == $value->yearOfGraduation) {
-                                $selectedStr = 'selected';
-                                 }
-                                  }-->
-
-
-
-                          <option  value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
+                          <option value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
                           @endforeach
                       </select>
                   </label>
@@ -67,25 +58,6 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
                 </div>
             </td>
             </tr>
-        <!--
-          <tr>
-            <td>
-          <a href="/admin/stats/degree">- ตามระดับการศึกษา เรียงปีการศึกษา</a>
-          </td>
-          </tr>
-          <tr>
-            <td>
-          <a href="/admin/stats/branch">- ตามสาขาวิชา เลือกการศึกษา</a>
-          </td>
-          </tr>
-          <tr>
-            <td>
-          <a href="/admin/stats/yearofgraduation">- ตามปีการศึกษา เรียงสาขาวิชา</a>
-          </td>
-          </tr>
--->
-
-
 
       </tbody>
   </table>
@@ -120,25 +92,6 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
         });
     });
 
-   /* $('#yearGradEnd').ready(function() {
-        //console.log(e);
-        var e = document.getElementById("yearGradStart");
-        var yearGrad = e.options[e.selectedIndex].value;
-
-        //ajax
-        $.get('../../ajax-yearGrad?yearGrad='+yearGrad, function(data){
-            //success data
-            //console.log(data);
-            $('#yearGradEnd').empty();
-            // $('#yearGradEnd').append('<option value="">เลือกปีการศึกษาที่จบ</option>');
-            $.each(data, function (index, years) {
-                //console.log(years.yearofgraduation);
-
-                $('#yearGradEnd').append('<option value="'+years.yearofgraduation+'">'+years.yearofgraduation+'</option>');
-
-            });
-        });
-    });*/
 
     </script>
 @endsection

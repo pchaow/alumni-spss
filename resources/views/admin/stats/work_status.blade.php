@@ -41,6 +41,9 @@ $arrbranchs = collect($branchs)->toArray();
                             <select name="branch" id="branch" class="form-control input-sm"  >
                                 <option value="">ทุกสาขาวิชา</option>
                                 @foreach ($arrbranchs as $key=>$value)
+
+
+
                                 <option value="<?php echo $value->branch;?>"><?php echo $value->branch;?></option>
                                 @endforeach
                             </select>
@@ -131,6 +134,7 @@ $arrbranchs = collect($branchs)->toArray();
             });
         });
     });
+
 </script>
 
 @endsection
