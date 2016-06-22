@@ -66,6 +66,8 @@
     <script src="/bower/highcharts/highcharts.js"></script>
     <script src="/bower/highcharts/modules/map.js"></script>
     <script src="/bower/highcharts/modules/drilldown.js"></script>
+    <script src="/bower/highcharts/modules/exporting.js"></script>
+    <script src="/bower/highcharts/modules/offline-exporting.js"></script>
     <script src="/bower/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
 
 

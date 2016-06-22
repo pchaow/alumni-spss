@@ -41,12 +41,7 @@ group by questionnaires.QuestionWorkplaceProvince";
     ?>
     <?php if(!$branch){$branch = "All";} ?>
     <div class="row">
-        <ol class="breadcrumb">
-            <li><a href="../">หน้าหลัก</a></li>
-            <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-            <li class="active">สถานที่ทำงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ
-                <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></li>
-        </ol>
+
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">

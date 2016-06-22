@@ -1,8 +1,6 @@
 @extends('admin.layout')
 
-@section('css')
-    <link href="/assets/css/search_custom.css" rel="stylesheet" type="text/css">
-@endsection
+
 
 @section('content')
     <ol class="breadcrumb">

@@ -25,6 +25,21 @@ and
 yearofgraduation between $yearGradStart and '$yearGradEnd'
 
 group by workstatus,workdirectbranch,yearofgraduation";
+
+    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+`questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
+count(*) as `amount`
+FROM `alumni`
+Inner Join questionnaires
+on alumni.id = questionnaires.alumni_id
+where branch = '$branch'
+and
+`questionnaires`.`questionworkstatus` = 'ทำงานแล้ว'
+and
+yearofgraduation between $yearGradStart and '$yearGradEnd'
+
+group by workstatus,workdirectbranch,yearofgraduation";
+
 } else {
     $sqlwkdirect = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
 `questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
@@ -32,6 +47,19 @@ count(*) as `amount`
 FROM `alumni`
 Inner Join questionnaires
 on alumni.id = questionnaires.alumni_id
+and
+yearofgraduation between $yearGradStart and '$yearGradEnd'
+
+group by workstatus,workdirectbranch,yearofgraduation";
+
+    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+`questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
+count(*) as `amount`
+FROM `alumni`
+Inner Join questionnaires
+on alumni.id = questionnaires.alumni_id
+and
+`questionnaires`.`questionworkstatus` = 'ทำงานแล้ว'
 and
 yearofgraduation between $yearGradStart and '$yearGradEnd'
 
@@ -53,24 +81,16 @@ $resultwkstatus = DB::select($sqlwkstatus);
 
 $resultwkdirect = DB::select($sqlwkdirect);
 
-//dd($result);
-//$degreeGroup = collect($result)->groupBy('degree');
-//$array = $degreeGroup->toArray();
+$resultwkdirectextend = DB::select($sqlwkdirectextend);
 
 $arrvalueofworkstatus = [];
 $arrofworkstatus = [];
 $WorkStatusGroup = collect($resultwkstatus)->groupBy('workstatus');
 $yearGradWorkstatusGroup = collect($resultwkdirect)->groupBy('yearofgraduation');
-//dd($YearGradWorkstatusGroup);
-//$cs= array("#00CC66", "#CCFF66", "#99FFFF", "pink",'#CCFFCC');
 
-/*$Yeargrad = DB::table('alumni')
-        ->select('yearOfGraduation')
-        ->distinct()
-        ->where('branch', '=', $branch)
-        ->orderBy('yearOfGraduation', 'asc')
-        ->get();*/
-//$yeargrad= collect($result)->toArray();
+$wkdirectentend = collect($resultwkdirectextend)->groupBy('workdirectbranch');
+
+//dd($yearGradWorkstatusGroup);
 $arrYeargroup = [];
 foreach ($yearGradWorkstatusGroup as $key => $value) {
     $arrYeargroup[] = $key;
@@ -88,12 +108,11 @@ foreach ($workstatus as $key => $value) {
 }
 //print_r($arrWorkstgroup);
 
-
-
 $arrValueofgraduates = [];
 
 foreach ($WorkStatusGroup as $key => $value) {
     $valueofgraduates = new stdClass();
+
     $valueofgraduates->name = $key;
     //dd($value);
     //$valueofgraduates->name=$value->yearOfGraduation;
@@ -118,9 +137,39 @@ foreach ($WorkStatusGroup as $key => $value) {
     $arrValueofgraduates[] = $valueofgraduates;
 }
 //dd($arrValueofgraduates);
+        $masterarray = [];
+foreach ($wkdirectentend as $key => $value) {
+   // dd($wkdirectentend);
+    $valueofgraduates = new stdClass();
+    if($key==null){
+        $key = "ไม่ระบุ";
+    }
+    $valueofgraduates->name = $key;
+    //dd($value);
+    //$valueofgraduates->name=$value->yearOfGraduation;
+    $arrValueofgrad = [];
+    $i = 0;
+    foreach ($arrYeargroup as $year) {
 
+        foreach ($value as $key) {
 
+            if ($key->yearofgraduation == $year) {
+                $arrValueofgrad[$i] = $key->amount;
+                break;
+            } else {
+                $arrValueofgrad[$i] = null;
+            }
+        }
+        $i++;
+    }
+    $valueofgraduates->data = $arrValueofgrad;
+    //
+    //var_dump($valueofgraduates);
+    $masterarray[] = $valueofgraduates;
 
+}
+
+//dd($masterarray);
 
 ?>
 <?php if(!$branch){$branch = "All";} ?>
@@ -138,6 +187,8 @@ foreach ($WorkStatusGroup as $key => $value) {
     <!-- /.panel-heading -->
     <div class="panel-body">
         <div id="count_by_work_status_graph_panel" style="height: 500px;"></div>
+        <div id="work_direct_branch" style="height: 500px;"></div>
+
 
         <script>
             $(function () {
@@ -190,6 +241,65 @@ foreach ($WorkStatusGroup as $key => $value) {
             });
 
 
+            $(function () {
+                $('#work_direct_branch').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'ทำงานตรงสาย/ไม่ตรงสาย ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if ($yearGradStart == $yearGradEnd) {
+                            echo $yearGradStart;
+                        } else {
+                            echo $yearGradStart;
+                            echo " ถึง ";
+                            echo $yearGradEnd;
+                        } ?>'
+                    },
+
+                    xAxis: {
+                        categories: <?php echo json_encode($arrYeargroup);?>,
+                        title: {
+                            text: null
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'จำนวนบัณฑิต(คน)',
+                            align: 'high'
+                        },
+                        labels: {
+                            overflow: 'justify'
+                        }
+                    },
+                    tooltip: {
+                        valueSuffix: ' คน'
+                    },
+                    plotOptions: {
+                        column: {
+                            dataLabels: {
+                                enabled: true
+                            }
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'top',
+                        x: -40,
+                        y: 80,
+                        floating: true,
+                        borderWidth: 1,
+                        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                        shadow: true
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    series: <?php echo json_encode($masterarray);?>,
+                });
+            });
+
         </script>
 
     </div>
@@ -233,7 +343,12 @@ foreach ($WorkStatusGroup as $key => $value) {
                         <td rowspan="{{count($value)}}">{{$key}}</td>
                     @endif
                     <td>{{$subValue->workstatus}}</td>
-                    <td>{{$subValue->workdirectbranch}}</td>
+                    <td><?php if(($subValue->workstatus=="ทำงานแล้ว"||$subValue->workstatus=="ทำงานแล้วและกำลังศึกษาต่อ")&&($subValue->workdirectbranch==null)){
+                            echo "ไม่ระบุ";
+                        }else{
+                            echo $subValue->workdirectbranch;
+                        }
+                        ?></td>
                     <td>{{$subValue->amount}}</td>
                         <td><?php
                             printf("%.2f",($subValue->amount/$sumforpercentage*100));?>

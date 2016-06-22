@@ -41,7 +41,17 @@ order by branch ASC";
                                     <select name="branch" id="branch" class="form-control input-sm"  >
                                         <option value="">ทุกสาขาวิชา</option>
                                         @foreach ($arrbranchs as $key=>$value)
-                                            <option value="<?php echo $value->branch;?>"><?php echo $value->branch;?></option>
+                                            <?php
+                                            $selectedStr = "";
+                                            if($_GET['view']=="query"){
+
+                                                if ($_GET['branch'] == $value->branch) {
+                                                    // $ystart = $_GET['yearGradStart'];
+                                                    $selectedStr = 'selected="selected"';
+                                                }
+                                            }
+                                            ?>
+                                            <option {{$selectedStr}} value="<?php echo $value->branch;?>"><?php echo $value->branch;?></option>
                                         @endforeach
                                     </select>
 
@@ -59,7 +69,40 @@ order by branch ASC";
                                     <select required name="yearGradStart" id="yearGradStart" class="form-control input-sm"  >
                                         <option value="">เลือกปีการศึกษาที่จบ</option>
                                         @foreach ($arryearOfGraduation as $key=>$value)
-                                            <option value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
+                                            <?php
+                                            $selectedStr = "";
+                                            if($_GET['view']=="query"){
+                                            $ystart = $_GET['yearGradStart'];
+                                            $yend = $_GET['yearGradEnd'];
+
+                                            if ($_GET['yearGradStart'] == $value->yearOfGraduation) {
+                                                // $ystart = $_GET['yearGradStart'];
+                                                $selectedStr = 'selected="selected"';
+                                            }?>
+                                            <Script>
+                                                $('#yearGradEnd').ready(function(){
+
+                                                    $.get('../../ajax-yearGrad?yearGrad=<?php echo $ystart; ?>', function(data){
+
+                                                        $('#yearGradEnd').empty();
+
+                                                        $.each(data, function (index, years) {
+                                                            if(years.yearofgraduation==<?php echo $yend;?>){
+                                                                $('#yearGradEnd').append('<option selected value=\"'+years.yearofgraduation+'\">'+years.yearofgraduation+'</option>');
+                                                            }
+                                                            else{
+                                                                $('#yearGradEnd').append('<option value=\"'+years.yearofgraduation+'\">'+years.yearofgraduation+'</option>');
+                                                            }
+                                                        });
+                                                    });
+                                                });
+
+                                            </Script>
+                                            <?php
+                                            }
+
+                                            ?>
+                                            <option {{$selectedStr}} value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
                                         @endforeach
                                     </select>
 
@@ -104,7 +147,7 @@ order by branch ASC";
                 </table>
 
                 <button type="submit" value="submit" class="btn btn-success">ดูรายงานสถิติ</button>
-                <button type="reset" value="Reset" class="btn btn-default">รีเซต</button>
+
             </div>
         </div>
     </form>
@@ -117,7 +160,7 @@ order by branch ASC";
 
 
     <script>
-        $('#yearGradStart').on('change',function(e){
+        $('#yearGradStart').on('click',function(e){
             //console.log(e);
             var yearGrad = e.target.value;
             //ajax

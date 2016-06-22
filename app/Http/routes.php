@@ -17,7 +17,9 @@ use App\Models\User;
 
 Route::get('/ajax-yearGrad', function () {
     $yearGrad = Input::get('yearGrad');
-
+        if(!$yearGrad){
+            return;
+        }
     $years = \App\Models\Alumni::select('yearofgraduation')
         ->where('yearofgraduation', '>=', $yearGrad)
         ->distinct()

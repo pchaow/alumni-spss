@@ -35,7 +35,40 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
                           <option value="">เลือกปีการศึกษาที่จบ</option>
                           @foreach ($arryearOfGraduation as $key=>$value)
 
-                          <option value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
+                              <?php
+                              $selectedStr = "";
+                              if($_GET['view']=="query"){
+                              $ystart = $_GET['yearGradStart'];
+                              $yend = $_GET['yearGradEnd'];
+
+                              if ($_GET['yearGradStart'] == $value->yearOfGraduation) {
+                                  // $ystart = $_GET['yearGradStart'];
+                                  $selectedStr = 'selected="selected"';
+                              }?>
+                              <Script>
+                                  $('#yearGradEnd').ready(function(){
+
+                                      $.get('../../ajax-yearGrad?yearGrad=<?php echo $ystart; ?>', function(data){
+
+                                          $('#yearGradEnd').empty();
+
+                                          $.each(data, function (index, years) {
+                                              if(years.yearofgraduation==<?php echo $yend;?>){
+                                                  $('#yearGradEnd').append('<option selected value=\"'+years.yearofgraduation+'\">'+years.yearofgraduation+'</option>');
+                                              }
+                                              else{
+                                                  $('#yearGradEnd').append('<option value=\"'+years.yearofgraduation+'\">'+years.yearofgraduation+'</option>');
+                                              }
+                                          });
+                                      });
+                                  });
+
+                              </Script>
+                              <?php
+                              }
+
+                              ?>
+                              <option {{$selectedStr}} value="<?php echo $value->yearOfGraduation;?>"><?php echo $value->yearOfGraduation;?></option>
                           @endforeach
                       </select>
                   </label>
@@ -63,7 +96,7 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
   </table>
 
     <button type="submit" value="submit" class="btn btn-success">ดูรายงานสถิติ</button>
-    <button type="reset" value="Reset" class="btn btn-default">รีเซต</button>
+
     </div>
     </div>
 
@@ -75,21 +108,24 @@ $arryearOfGraduation = collect($yearOfGraduation)->toArray();
 <?php } ?>
 
 <script>
-    $('#yearGradStart').on('change',function(e){
+    $('#yearGradStart').on('click',function(e){
         //console.log(e);
         var yearGrad = e.target.value;
         //ajax
-        $.get('../../ajax-yearGrad?yearGrad='+yearGrad, function(data){
-            //success data
-            //console.log(data);
-            $('#yearGradEnd').empty();
-           // $('#yearGradEnd').append('<option value="">เลือกปีการศึกษาที่จบ</option>');
-            $.each(data, function (index, years) {
-                //console.log(years.yearofgraduation);
-                $('#yearGradEnd').append('<option value="'+years.yearofgraduation+'">'+years.yearofgraduation+'</option>');
 
+
+            $.get('../../ajax-yearGrad?yearGrad=' + yearGrad, function (data) {
+                //success data
+                //console.log(data);
+                $('#yearGradEnd').empty();
+                // $('#yearGradEnd').append('<option value="">เลือกปีการศึกษาที่จบ</option>');
+                $.each(data, function (index, years) {
+                    //console.log(years.yearofgraduation);
+                    $('#yearGradEnd').append('<option value="' + years.yearofgraduation + '">' + years.yearofgraduation + '</option>');
+
+                });
             });
-        });
+
     });
 
 
