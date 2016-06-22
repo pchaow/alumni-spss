@@ -196,7 +196,7 @@ foreach ($branchGroup as $key => $value) {
             <th>สาขาวิชา</th>
             <th>จำนวนบัณฑิต(คน)</th>
             <th>อัตราส่วน(%)</th>
-            <th>การจัดการ</th>
+           <!-- <th>การจัดการ</th> -->
         </tr>
         </thead>
         <tbody>
@@ -227,19 +227,19 @@ foreach ($branchGroup as $key => $value) {
                         <td><?php
                             printf("%.2f",($subValue->amount/$sumforpercentage*100));?>
                         </td>
-                    <td>
-                        <form role="form" action="{{url('admin/search')}}" method="POST">
-                            <input type="hidden" name="year_of_graduation" value={{$key}}>
+                    <!-- <td>
+                        <form role="form" target="_blank" action="url('admin/search')}}" method="POST">
+                            <input type="hidden" name="year_of_graduation" value=key}}>
                             <input type="hidden" name="education_year" value="">
-                            <input type="hidden" name="education" value={{$subValue->degree}}>
-                            <input type="hidden" name="course" value={{$subValue->branch}}>
+                            <input type="hidden" name="education" value=subValue->degree}}>
+                            <input type="hidden" name="course" value={subValue->branch}}>
                             <input type="hidden" name="student_id" value="">
                             <input type="hidden" name="firstname" value="">
                             <input type="hidden" name="lastname" value="">
 
-                            <button class="btn btn-primary" type="submit">ดูรายชื่อบัณฑิต</button>
+
                         </form>
-                    </td>
+                    </td>-->
 
                 </tr>
                 <?php

@@ -61,6 +61,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::group(['prefix' => 'admin'], function () {
 
+ 
+
         Route::post('/auth/signin', "Auth\AuthController@postSignin");
 
         Route::get('/auth/logout', "Auth\AuthController@postLogout");
