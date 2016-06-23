@@ -83,7 +83,7 @@
                                                             //success data
                                                             console.log(data);
                                                             $('#course').empty();
-                                                            $('#course').append('<option value="">เลือกสาขาวิชาที่จบ</option>');
+                                                            $('#course').append('<option value="">ไม่ระบุ</option>');
                                                             $.each(data, function (index, branch) {
                                                                 //console.log(years.yearofgraduation);
                                                                     if(branch.branch==major){
@@ -117,6 +117,15 @@
                                     <label>สาขาวิชาที่สำเร็จการศึกษา</label>
                                     <select name="course" id="course" class="form-control">
                                         <option value="">ไม่ระบุ</option>
+                                        @foreach($branch as $value)
+                                            <?php
+                                            $selectedStr = "";
+                                            if (isset($form) and $form['course'] == $value->branch) {
+                                                $selectedStr = 'selected="selected"';
+                                            }
+                                            ?>
+                                            <option {{$selectedStr}} value="<?php echo $value->branch;?>"><?php echo $value->branch;?></option>
+                                        @endforeach
 
                                     </select>
                                 </div>
@@ -247,7 +256,7 @@
                 //success data
                 //console.log(data);
                 $('#course').empty();
-                 $('#course').append('<option value="">เลือกสาขาวิชาที่จบ</option>');
+                 $('#course').append('<option value="">ไม่ระบุ</option>');
                 $.each(data, function (index, branch) {
                     //console.log(years.yearofgraduation);
                     $('#course').append('<option value="'+branch.branch+'">'+branch.branch+'</option>');

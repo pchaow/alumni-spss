@@ -30,13 +30,21 @@ Route::get('/ajax-yearGrad', function () {
 
 Route::get('/ajax-branch', function () {
     $degree_id = Input::get('degree_id');
+    if($degree_id!=null) {
+        $branch = \App\Models\Alumni::select('branch')
+            ->where('degree', '=', $degree_id)
+            ->distinct()
+            ->orderby('branch', 'ASC')
+            ->get();
+        return \Illuminate\Support\Facades\Response::json($branch);
+    }else{
+        $branch = \App\Models\Alumni::select('branch')
+            ->distinct()
+            ->orderby('branch', 'ASC')
+            ->get();
+        return \Illuminate\Support\Facades\Response::json($branch);
 
-    $branch = \App\Models\Alumni::select('branch')
-        ->where('degree', '=', $degree_id)
-        ->distinct()
-        ->orderby('branch', 'ASC')
-        ->get();
-    return \Illuminate\Support\Facades\Response::json($branch);
+    }
 });
 
 Route::get('/ajax-yeargrad', function () {
