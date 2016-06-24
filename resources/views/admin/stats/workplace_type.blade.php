@@ -160,7 +160,7 @@ order by branch ASC";
 
 
     <script>
-        $('#yearGradStart').on('click',function(e){
+        $('#yearGradStart').on('change',function(e){
             //console.log(e);
             var yearGrad = e.target.value;
             //ajax
