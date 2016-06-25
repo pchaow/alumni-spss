@@ -7,6 +7,7 @@
 
 </ol>
 <?php
+$view = $_GET['view'];
 $sql = "SELECT  distinct yearOfGraduation
 FROM alumni
 order by yearOfGraduation ASC";

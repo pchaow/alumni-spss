@@ -41,7 +41,7 @@ yearofgraduation between $yearGradStart and '$yearGradEnd'
 group by workstatus,workdirectbranch,yearofgraduation";
 
 } else {
-    $sqlwkdirect = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+    $sqlwkdirect = "SELECT `alumni`.`yearofgraduation`,`questionnaires`.`questionworkstatus` as `workstatus`,
 `questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
 count(*) as `amount`
 FROM `alumni`
@@ -52,7 +52,7 @@ yearofgraduation between $yearGradStart and '$yearGradEnd'
 
 group by workstatus,workdirectbranch,yearofgraduation";
 
-    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,`questionnaires`.`questionworkstatus` as `workstatus`,
 `questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
 count(*) as `amount`
 FROM `alumni`
@@ -65,7 +65,7 @@ yearofgraduation between $yearGradStart and '$yearGradEnd'
 
 group by workstatus,workdirectbranch,yearofgraduation";
 
-    $sqlwkstatus = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+    $sqlwkstatus = "SELECT `alumni`.`yearofgraduation`,`questionnaires`.`questionworkstatus` as `workstatus`,
 count(*) as `amount`
 FROM `alumni`
 Inner Join questionnaires
@@ -187,8 +187,6 @@ foreach ($wkdirectentend as $key => $value) {
     <!-- /.panel-heading -->
     <div class="panel-body">
         <div id="count_by_work_status_graph_panel" style="height: 500px;"></div>
-        <div id="work_direct_branch" style="height: 500px;"></div>
-
 
         <script>
             $(function () {
@@ -239,7 +237,27 @@ foreach ($wkdirectentend as $key => $value) {
                     series: <?php echo json_encode($arrValueofgraduates);?>
                 });
             });
+            </script>
+            </div>
+            </div>
 
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-bar-chart-o fa-fw"></i> ทำงานตรงสาย/ไม่ตรงสาย ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ
+        <?php if ($yearGradStart == $yearGradEnd) {
+            echo $yearGradStart;
+        } else {
+            echo $yearGradStart;
+            echo " ถึง ";
+            echo $yearGradEnd;
+        } ?>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div id="work_direct_branch" style="height: 500px;"></div>
+        <script>
 
             $(function () {
                 $('#work_direct_branch').highcharts({
@@ -299,10 +317,10 @@ foreach ($wkdirectentend as $key => $value) {
                     series: <?php echo json_encode($masterarray);?>,
                 });
             });
-
         </script>
-
     </div>
+</div>
+
 
     <h3>ภาวะการมีงานทำของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ปีการศึกษาที่จบ
         <u><?php if ($yearGradStart == $yearGradEnd) {
@@ -372,4 +390,4 @@ foreach ($wkdirectentend as $key => $value) {
         </tr>
         </tbody>
     </table>
-</div>
+

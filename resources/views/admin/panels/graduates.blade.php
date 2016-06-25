@@ -178,7 +178,7 @@ foreach ($branchGroup as $key => $value) {
         </script>
         <!-- <button id="button" class="autocompare">ซ่อนปริญญาโท</button> -->
     </div>
-
+</div>
     <h3>จำนวนบัณฑิต ตามสาขาวิชา ปีการศึกษาที่จบ <u><?php if ($yearGradStart == $yearGradEnd) {
             echo $yearGradStart;
         } else {
@@ -261,4 +261,3 @@ foreach ($branchGroup as $key => $value) {
         </tbody>
     </table>
 
-</div>
