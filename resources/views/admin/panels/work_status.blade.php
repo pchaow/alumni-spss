@@ -26,7 +26,7 @@ yearofgraduation between $yearGradStart and '$yearGradEnd'
 
 group by workstatus,workdirectbranch,yearofgraduation";
 
-    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,`questionnaires`.`questionworkstatus` as `workstatus`,
+    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,
 `questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
 count(*) as `amount`
 FROM `alumni`
@@ -34,11 +34,11 @@ Inner Join questionnaires
 on alumni.id = questionnaires.alumni_id
 where branch = '$branch'
 and
-`questionnaires`.`questionworkstatus` = 'ทำงานแล้ว'
+`questionnaires`.`questionworkstatus` in ('ทำงานแล้ว' ,'ทำงานแล้วและกำลังศึกษาต่อ')
 and
 yearofgraduation between $yearGradStart and '$yearGradEnd'
 
-group by workstatus,workdirectbranch,yearofgraduation";
+group by workdirectbranch,yearofgraduation";
 
 } else {
     $sqlwkdirect = "SELECT `alumni`.`yearofgraduation`,`questionnaires`.`questionworkstatus` as `workstatus`,
@@ -52,18 +52,18 @@ yearofgraduation between $yearGradStart and '$yearGradEnd'
 
 group by workstatus,workdirectbranch,yearofgraduation";
 
-    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,`questionnaires`.`questionworkstatus` as `workstatus`,
+    $sqlwkdirectextend = "SELECT `alumni`.`yearofgraduation`,
 `questionnaires`.`questionworkplacedirectbranch` as `workdirectbranch`,
 count(*) as `amount`
 FROM `alumni`
 Inner Join questionnaires
 on alumni.id = questionnaires.alumni_id
 and
-`questionnaires`.`questionworkstatus` = 'ทำงานแล้ว'
+`questionnaires`.`questionworkstatus` in ('ทำงานแล้ว' ,'ทำงานแล้วและกำลังศึกษาต่อ')
 and
 yearofgraduation between $yearGradStart and '$yearGradEnd'
 
-group by workstatus,workdirectbranch,yearofgraduation";
+group by workdirectbranch,yearofgraduation";
 
     $sqlwkstatus = "SELECT `alumni`.`yearofgraduation`,`questionnaires`.`questionworkstatus` as `workstatus`,
 count(*) as `amount`
@@ -90,7 +90,8 @@ $yearGradWorkstatusGroup = collect($resultwkdirect)->groupBy('yearofgraduation')
 
 $wkdirectentend = collect($resultwkdirectextend)->groupBy('workdirectbranch');
 
-//dd($yearGradWorkstatusGroup);
+//dd($wkdirectentend);
+
 $arrYeargroup = [];
 foreach ($yearGradWorkstatusGroup as $key => $value) {
     $arrYeargroup[] = $key;
@@ -137,7 +138,10 @@ foreach ($WorkStatusGroup as $key => $value) {
     $arrValueofgraduates[] = $valueofgraduates;
 }
 //dd($arrValueofgraduates);
+
+
         $masterarray = [];
+//dd($wkdirectentend);
 foreach ($wkdirectentend as $key => $value) {
    // dd($wkdirectentend);
     $valueofgraduates = new stdClass();
