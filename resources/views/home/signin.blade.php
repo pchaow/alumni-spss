@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/banner.ico">
-
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
     <title>SAS : SPASs Alumni System</title>
 
     <!-- Bootstrap Core CSS -->
