@@ -22,7 +22,7 @@ order by branch ASC";
     $arrbranchs = collect($branchs)->toArray();
 
     ?>
-    <form action="/admin/stats/duration_get_job#show" method="get">
+    <form action="/admin/stats/duration_get_job" method="get">
         <input type="hidden" name="view" value="query">
         <div class="panel panel-info">
             <div class="panel-heading">
