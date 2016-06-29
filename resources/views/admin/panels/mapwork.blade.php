@@ -15,6 +15,7 @@ group by questionnaires.QuestionWorkplaceProvince";
     $yearGradEnd = $_GET['yearGradEnd'];
     $branch = $_GET['branch'];
 
+
     $query = \App\Models\Alumni::query();
     $query->select([
             "questionnaires.QuestionWorkplaceProvince",
@@ -139,9 +140,12 @@ group by questionnaires.QuestionWorkplaceProvince";
             $query->whereBetween('yearofgraduation', array($yearGradStart, $yearGradEnd));
 
             //$query->orderBy("yearOfGraduation","asc");
-            $data_alumni = $query->paginate(15);
+           // $data_alumni = $query->paginate(15);
+            $data_alumni = $query->get();
+            $count = $data_alumni->count();
 
-            $data_alumni->setPath(url("/admin/stats/mapwork?QuestionWorkplaceProvince=$questionWorkplaceProvince&PROVINCE_CODE=$provinceCode"));
+           // $data_alumni->setPath(url("/admin/stats/mapwork?view=$view&branch=$branch&yearGradStart=$yearGradStart
+            //&yearGradEnd=$yearGradEnd&QuestionWorkplaceProvince=$questionWorkplaceProvince&PROVINCE_CODE=$provinceCode"));
             //dd($data_alumni);
             ?>
             <div class="col-lg-12">
@@ -160,7 +164,7 @@ group by questionnaires.QuestionWorkplaceProvince";
 
                             </div>
                             <div class="col-lg-11" style="text-align: center;">
-                                พบข้อมูลทั้งหมดจำนวน {{$data_alumni->total()}} รายการ
+                                พบข้อมูลทั้งหมดจำนวน {{$count}} รายการ
 
                             </div>
                         </div>
@@ -204,7 +208,7 @@ group by questionnaires.QuestionWorkplaceProvince";
                             </tbody>
 
                         </table>
-                        <div align="center">{!! $data_alumni->render() !!}</div>
+                       <!-- <div align="center">    !! $data_alumni->render() !!}</div> -->
 
                     </div>
                 </div>

@@ -8,7 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/banner.ico">
+<<<<<<< HEAD
 
+=======
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
+>>>>>>> c9b619eeeb8612cce6432f343d6c44fc117f0e30
     <title>SAS : SPASs Alumni System</title>
 
     <!-- Bootstrap Core CSS -->
@@ -36,13 +40,7 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation"
      style="margin-bottom: 0; background-color:#8B1C62;">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/user/index" style="color: white;">SAS : SPSS Alumni System</a>
+        <a class="navbar-brand" href="/admin/index" style="color: white;">SAS : SPSS Alumni System</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -58,7 +56,7 @@
             </div>
             <div class="panel-body">
                 <form  action="/user/index" method="get" class="form-signin">
-                    {{csrf_field()}}
+                   csrf_field()}}
                     <div class="form-group">
                         <label>รหัสประจำตัวประชาชน</label>
                         <div class="input-group">
@@ -87,7 +85,7 @@
        <div class="col-lg-4 col-xs-12"></div>
 
     <div class="col-lg-4 col-xs-12">
-        <div class="panel panel-green">
+        <div class="panel panel-info" style="color:#8B1C62;">
             <div class="panel-heading">
                 <i class="fa fa-briefcase"></i>
                 บุคลากรคณะรัฐศาสตร์ฯ มหาวิทยาลัยพะเยา
@@ -113,7 +111,7 @@
                         <p class="help-block">กรุณากรอก Password</p>
                     </div>
 
-                    <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
+                    <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
 
                 </form>
             </div>

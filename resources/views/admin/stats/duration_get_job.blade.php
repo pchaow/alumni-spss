@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
         <li><a href="/admin/">หน้าหลัก</a></li>
         <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-        <li class="active">ประเภทงานของบัณฑิต</li>
+        <li class="active">ช่วงเวลาในการได้งานทำของบัณฑิต</li>
 
     </ol>
     <?php
@@ -22,11 +22,11 @@ order by branch ASC";
     $arrbranchs = collect($branchs)->toArray();
 
     ?>
-    <form action="/admin/stats/workplace_type" method="get">
+    <form action="/admin/stats/duration_get_job" method="get">
         <input type="hidden" name="view" value="query">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
+                <i class="fa fa-bar-chart-o fa-fw"></i> ช่วงเวลาในการได้งานทำของบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -154,7 +154,7 @@ order by branch ASC";
 
     <?php if($_GET['view']=="query"){
     ?>
-    @include('admin.panels.workplace_type')
+    @include('admin.panels.duration_get_job')
     <?php } ?>
 
 

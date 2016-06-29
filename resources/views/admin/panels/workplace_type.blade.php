@@ -18,7 +18,7 @@ AND questionworkstatus in ('ทำงานแล้ว' ,'ทำงานแล
 group by questionworkplaceworktype,yearofgraduation" ;
 
 }else{
-    $sql = "SELECT `alumni`.`yearofgraduation`,`alumni`.`branch`,
+    $sql = "SELECT `alumni`.`yearofgraduation`,
 `questionnaires`.`QuestionWorkplaceWorkType` as `workplacetype`
 ,
 count(*) as `amount`
@@ -169,7 +169,8 @@ $arrValueofgraduates[] = $valueofgraduates;
             </script>
 
         </div>
-
+    </div>
+</div>
 
 
         <h3>ประเภทงานของบัณฑิตสาขาวิชา <u>{{$branch}}</u>
@@ -275,4 +276,4 @@ $arrValueofgraduates[] = $valueofgraduates;
             @endforeach
             </tbody>
         </table>
-      </div>
+
