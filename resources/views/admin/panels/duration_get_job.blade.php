@@ -91,7 +91,8 @@ foreach ($WorkDurationGroup as $key=>$value) {
                             type: 'column'
                         },
                         title: {
-                            text: 'ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
+                            text: 'ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo "
+                            ถึง "; echo $yearGradEnd;} ?>'
                         },
 
                         xAxis: {
