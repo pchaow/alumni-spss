@@ -26,7 +26,7 @@ order by branch ASC";
         <input type="hidden" name="view" value="query">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิต ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
+                <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิตภายใน 1 ปี หลังสำเร็จการศึกษา ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">

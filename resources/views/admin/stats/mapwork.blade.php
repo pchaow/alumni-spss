@@ -3,7 +3,7 @@
 <ol class="breadcrumb">
   <li><a href="../">หน้าหลัก</a></li>
   <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-  <li class="active">จำนวนบัณฑิตที่ทำงานในประเทศไทย</li>
+  <li class="active">จำนวนบัณฑิตที่ทำงานในประเทศไทยภายใน 1 ปี หลังสำเร็จการศึกษา</li>
 
 </ol>
 <?php

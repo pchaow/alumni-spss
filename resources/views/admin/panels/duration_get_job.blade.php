@@ -74,12 +74,13 @@ foreach ($WorkDurationGroup as $key=>$value) {
 
 }
 ?>
-<?php if(!$branch){$branch = "All";} ?>
+<?php if(!$branch){$branch = "(ทุกสาขาวิชา)";} ?>
 <!--<div id="show">-->
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ
-        <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+        <i class="fa fa-bar-chart-o fa-fw"></i> ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา {{$branch}} ภายใน 1 ปี หลังสำเร็จการศึกษา ปีการศึกษาที่จบ
+        <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;}
+              ?>
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -91,8 +92,8 @@ foreach ($WorkDurationGroup as $key=>$value) {
                             type: 'column'
                         },
                         title: {
-                            text: 'ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo "
-                            ถึง "; echo $yearGradEnd;} ?>'
+                            text: 'ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา {{$branch}} ภายใน 1 ปี หลังสำเร็จการศึกษา ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}
+                            else {echo $yearGradStart; echo "ถึง "; echo $yearGradEnd;} ?>'
                         },
 
                         xAxis: {
@@ -144,8 +145,11 @@ foreach ($WorkDurationGroup as $key=>$value) {
     </div>
 </div>
 
-        <h3>ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา <u>{{$branch}}</u>
-            ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></u></h3>
+        <h3>ช่วงเวลาในการได้งานทำของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ภายใน 1 ปี หลังสำเร็จการศึกษา
+            ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else
+                {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;}
+
+                ?></u></h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>

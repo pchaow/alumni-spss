@@ -3,7 +3,7 @@
 <ol class="breadcrumb">
   <li><a href="/admin/">หน้าหลัก</a></li>
   <li><a href="/admin/stats/mainmenu">รายการสถิติ</a></li>
-  <li class="active">ภาวะการมีงานทำ</li>
+  <li class="active">ภาวะการมีงานทำของบัณฑิตภายใน 1 ปี หลังสำเร็จการศึกษา</li>
 
 </ol>
 <?php
@@ -26,7 +26,7 @@ $arrbranchs = collect($branchs)->toArray();
     <input type="hidden" name="view" value="query">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <i class="fa fa-bar-chart-o fa-fw"></i> ภาวะการมีงานทำ ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
+            <i class="fa fa-bar-chart-o fa-fw"></i> ภาวะการมีงานทำภายใน 1 ปี หลังสำเร็จการศึกษา ตามสาขาวิชา ตามช่วงปีการศึกษาที่จบ
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
