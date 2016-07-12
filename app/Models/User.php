@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Social\UpProfile;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -28,7 +29,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['firstname','lastname','username','national_id', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -41,4 +42,10 @@ class User extends Model implements AuthenticatableContract,
     public function usertype(){
         return $this->belongsTo('App\Models\UserType','usertype_id');
     }
+
+    public function up()
+    {
+        return $this->hasOne(UpProfile::class);
+    }
+
 }

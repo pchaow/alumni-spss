@@ -8,11 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/banner.ico">
-<<<<<<< HEAD
 
-=======
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
->>>>>>> c9b619eeeb8612cce6432f343d6c44fc117f0e30
     <title>SAS : SPASs Alumni System</title>
 
     <!-- Bootstrap Core CSS -->
