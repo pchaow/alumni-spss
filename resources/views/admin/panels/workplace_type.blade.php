@@ -104,10 +104,10 @@ $valueofgraduates->data=$arrValueofgrad;
 $arrValueofgraduates[] = $valueofgraduates;
 }
 ?>
-<?php if(!$branch){$branch = "All";} ?>
+<?php if(!$branch){$branch = "(ทุกสาขาวิชา)";} ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ
+        <i class="fa fa-bar-chart-o fa-fw"></i> ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ภายใน 1 ปี หลังสำเร็จการศึกษา ปีการศึกษาที่จบ
         <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
     </div>
     <!-- /.panel-heading -->
@@ -120,7 +120,7 @@ $arrValueofgraduates[] = $valueofgraduates;
             type: 'column'
             },
             title: {
-            text: 'ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
+            text: 'ประเภทงานของบัณฑิตสาขาวิชา {{$branch}} ภายใน 1 ปี หลังสำเร็จการศึกษา ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
             },
 
             xAxis: {
@@ -173,7 +173,7 @@ $arrValueofgraduates[] = $valueofgraduates;
 </div>
 
 
-        <h3>ประเภทงานของบัณฑิตสาขาวิชา <u>{{$branch}}</u>
+        <h3>ประเภทงานของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ภายใน 1 ปี หลังสำเร็จการศึกษา
             ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></u></h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
@@ -225,7 +225,7 @@ $arrValueofgraduates[] = $valueofgraduates;
             </tbody>
         </table>
 
-        <h3>ตำแหน่งงานของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></u></h3>
+        <h3>ตำแหน่งงานของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ภายใน 1 ปี หลังสำเร็จการศึกษา ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?></u></h3>
         <table class="table table-bordered table-hover table-striped">
             <thead>
             <tr>

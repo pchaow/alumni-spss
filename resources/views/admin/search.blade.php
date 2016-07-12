@@ -134,7 +134,7 @@
                                 <div class="form-group">
                                     <label>รหัสนิสิต</label>
                                     <input name="student_id" id="student_id" value="{{$form['student_id'] or ''}}"
-                                           placeholder="กรอกรหัสนิสิต เช่น 55123456" type="text" class="form-control">
+                                           placeholder="กรอกส่วนหนึ่งของรหัสนิสิต เช่น 551256" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-4">

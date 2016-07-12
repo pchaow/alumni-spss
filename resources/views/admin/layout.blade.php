@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/banner.ico">
 
-    <title>SAS : SPASs Alumni System</title>
+    <title>ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิตคณะรัฐศาสตร์และสังคมศาสตร์ มหาวิทยาลัยพะเยา</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -104,7 +104,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/admin/index" style="color: white;">SAS : SPSS Alumni System</a>
+                <a class="navbar-brand" href="/admin/index" style="color: white;">ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิตคณะรัฐศาสตร์และสังคมศาสตร์ มหาวิทยาลัยพะเยา</a>
             </div>
             <!-- /.navbar-header -->
 

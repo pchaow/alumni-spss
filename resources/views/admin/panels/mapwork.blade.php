@@ -31,7 +31,7 @@ group by questionnaires.QuestionWorkplaceProvince";
     });
     $query->whereRaw("province.PROVINCE_CODE IS NOT NULL");
 
-    if(($branch)&&($branch!="All")){
+    if(($branch)&&($branch!="(ทุกสาขาวิชา)")){
         $query->where('branch',$branch);
     }
     $query->whereBetween('yearofgraduation', array($yearGradStart, $yearGradEnd));
@@ -40,14 +40,17 @@ group by questionnaires.QuestionWorkplaceProvince";
     $thaidataJson = $query = $query->get()->toJson();
 
     ?>
-    <?php if(!$branch){$branch = "All";} ?>
+    <?php if(!$branch){$branch = "(ทุกสาขาวิชา)";} ?>
     <div class="row">
 
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fa fa-bar-chart-o fa-fw"></i> สถานที่ทำงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ
-                    <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+                    <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else
+                    {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;}
+                    echo "ภายใน 1 ปี หลังสำเร็จการศึกษา";
+                    ?>
 
                 </div>
                 <!-- /.panel-heading -->
@@ -61,7 +64,9 @@ group by questionnaires.QuestionWorkplaceProvince";
                             $('#stat_map').highcharts('Map', {
 
                                 title: {
-                                    text: 'สถานที่ทำงานของบัณฑิตสาขาวิชา {{$branch}} ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>'
+
+                                    text: 'สถานที่ทำงานของบัณฑิตสาขาวิชา {{$branch}} ภายใน 1 ปี หลังสำเร็จการศึกษา ปีการศึกษาที่จบ <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}
+                            else {echo $yearGradStart; echo "ถึง "; echo $yearGradEnd;} ?>'
                                 },
 
                                 mapNavigation: {
@@ -134,7 +139,7 @@ group by questionnaires.QuestionWorkplaceProvince";
                 $join->on('province.PROVINCE_NAME', '=', 'questionnaires.QuestionWorkplaceProvince');
             });
             $query->where("province.PROVINCE_NAME", "=", $questionWorkplaceProvince);
-            if(($branch)&&($branch!="All")){
+            if(($branch)&&($branch!="(ทุกสาขาวิชา)")){
             $query->where('branch',$branch);
                 }
             $query->whereBetween('yearofgraduation', array($yearGradStart, $yearGradEnd));
@@ -150,7 +155,11 @@ group by questionnaires.QuestionWorkplaceProvince";
             ?>
             <div class="col-lg-12">
 
-                <h3>รายชื่อบัณฑิตสาขาวิชา <u>{{$branch}}</u> ที่ทำงานอยู่ใน <u>{{$questionWorkplaceProvince}}</u> ปีการศึกษาที่จบ <u><?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;} ?>
+                <h3>รายชื่อบัณฑิตสาขาวิชา <u>{{$branch}}</u> ที่ทำงานอยู่ใน <u>{{$questionWorkplaceProvince}}</u> ปีการศึกษาที่จบ <u>
+                        <?php if($yearGradStart==$yearGradEnd){echo $yearGradStart;}else
+                        {echo $yearGradStart; echo " ถึง "; echo $yearGradEnd;}
+                        echo "ภายใน 1 ปี หลังสำเร็จการศึกษา";
+                        ?>
                     </u></h3>
                 <div class="panel panel-success">
 

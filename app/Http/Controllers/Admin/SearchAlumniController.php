@@ -42,6 +42,7 @@ class SearchAlumniController extends Controller
 
     public function search_alumni(Request $request)
     {
+
         // return Input::all();
         $educationYear = substr(Input::get("education_year"), -2);
         $year_of_graduation = Input::get("year_of_graduation");
@@ -51,7 +52,8 @@ class SearchAlumniController extends Controller
         $firstname = Input::get("firstname");
         $lastname = Input::get("lastname");
 
-        //echo $education;
+       
+
 
         $data_alumni = Alumni::query();
         if(Input::has("education_year")){

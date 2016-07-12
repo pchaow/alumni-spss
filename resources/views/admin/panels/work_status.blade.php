@@ -176,17 +176,19 @@ foreach ($wkdirectentend as $key => $value) {
 //dd($masterarray);
 
 ?>
-<?php if(!$branch){$branch = "All";} ?>
+<?php if(!$branch){$branch = "(ทุกสาขาวิชา)";} ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ
+        <i class="fa fa-bar-chart-o fa-fw"></i> ภาวะการมีงานทำภายใน 1 ปี หลังสำเร็จการศึกษา ของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ
         <?php if ($yearGradStart == $yearGradEnd) {
             echo $yearGradStart;
         } else {
             echo $yearGradStart;
             echo " ถึง ";
             echo $yearGradEnd;
-        } ?>
+
+        }
+        ?>
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -199,13 +201,14 @@ foreach ($wkdirectentend as $key => $value) {
                         type: 'column'
                     },
                     title: {
-                        text: 'ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if ($yearGradStart == $yearGradEnd) {
+                        text: 'ภาวะการมีงานทำภายใน 1 ปี หลังสำเร็จการศึกษา ของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if ($yearGradStart == $yearGradEnd) {
                             echo $yearGradStart;
                         } else {
                             echo $yearGradStart;
                             echo " ถึง ";
                             echo $yearGradEnd;
-                        } ?>'
+                        }
+                                ?>'
                     },
                     xAxis: {
                         categories: <?php echo json_encode($arrYeargroup);?>
@@ -249,14 +252,15 @@ foreach ($wkdirectentend as $key => $value) {
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bar-chart-o fa-fw"></i> ทำงานตรงสาย/ไม่ตรงสาย ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ
+        <i class="fa fa-bar-chart-o fa-fw"></i> ทำงานตรงสาย/ไม่ตรงสาย ของภาวะการมีงานทำภายใน 1 ปี หลังสำเร็จการศึกษา ของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ
         <?php if ($yearGradStart == $yearGradEnd) {
             echo $yearGradStart;
         } else {
             echo $yearGradStart;
             echo " ถึง ";
             echo $yearGradEnd;
-        } ?>
+        }
+        ?>
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -269,13 +273,14 @@ foreach ($wkdirectentend as $key => $value) {
                         type: 'column'
                     },
                     title: {
-                        text: 'ทำงานตรงสาย/ไม่ตรงสาย ภาวะการมีงานทำของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if ($yearGradStart == $yearGradEnd) {
+                        text: 'ทำงานตรงสาย/ไม่ตรงสาย ของภาวะการมีงานทำภายใน 1 ปี หลังสำเร็จการศึกษา ของบัณฑิตสาขาวิชา<?php echo $branch;?> ปีการศึกษาที่จบ <?php if ($yearGradStart == $yearGradEnd) {
                             echo $yearGradStart;
                         } else {
                             echo $yearGradStart;
                             echo " ถึง ";
                             echo $yearGradEnd;
-                        } ?>'
+                        }
+                                ?>'
                     },
 
                     xAxis: {
@@ -326,15 +331,17 @@ foreach ($wkdirectentend as $key => $value) {
 </div>
 
 
-    <h3>ภาวะการมีงานทำของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ปีการศึกษาที่จบ
+    <h3>ภาวะการมีงานทำภายใน 1 ปี หลังสำเร็จการศึกษา ของบัณฑิตสาขาวิชา <u>{{$branch}}</u> ปีการศึกษาที่จบ
         <u><?php if ($yearGradStart == $yearGradEnd) {
                 echo $yearGradStart;
             } else {
                 echo $yearGradStart;
                 echo " ถึง ";
                 echo $yearGradEnd;
-            } ?>
-        </u></h3>
+            }
+
+            ?>
+        </u>
     <table class="table table-bordered table-hover table-striped">
         <thead>
         <tr>
