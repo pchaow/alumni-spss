@@ -82,6 +82,9 @@
        <div class="col-lg-4 col-xs-12"></div>
 
     <div class="col-lg-4 col-xs-12">
+
+        @include('share.error')
+
         <div class="panel panel-info" style="color:#8B1C62;">
             <div class="panel-heading">
                 <i class="fa fa-briefcase"></i>

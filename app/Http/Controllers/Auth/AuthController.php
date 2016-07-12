@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use App\Models\UserType;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\MessageBag;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -43,7 +44,7 @@ class AuthController extends Controller
             $sid = $authResult->LoginResult;
 
             if ($sid == "") {
-                return redirect('/');
+                return redirect('/')->withErrors(['up' => 'username or password is invalid.']);
             }
 
             //staff info
@@ -56,6 +57,11 @@ class AuthController extends Controller
             $staffService = new \App\Soap\StaffService();
             $staffInfoResult = $staffService->call('GetStaffInfo', $data2)->GetStaffInfoResult;
             if ($staffInfoResult->CitizenID) {
+
+                //check faculty
+                if ($staffInfoResult->Faculty != env('FACULTY')) {
+                    return redirect('/')->withErrors(['up' => 'Only ' . env('FACULTY') . ' can be logged in.']);
+                }
 
                 $userUpProfile = \App\Models\Social\UpProfile::where('username', '=', $login['username'])->first();
                 if ($userUpProfile) {
@@ -103,7 +109,7 @@ class AuthController extends Controller
                 return redirect('/admin/index');
             }
         }
-        return redirect('/');
+        return redirect('/')->withErrors(['up' => 'username or password is invalid.']);
 
     }
 
