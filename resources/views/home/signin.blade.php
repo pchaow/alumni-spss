@@ -10,7 +10,7 @@
     <link rel="icon" href="/banner.ico">
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <title>SAS : SPASs Alumni System</title>
+    <title>ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิต{{env('FACULTY')}} มหาวิทยาลัยพะเยา</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
