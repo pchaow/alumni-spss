@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/banner.ico">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
+
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <title>SAS : SPASs Alumni System</title>
 
     <!-- Bootstrap Core CSS -->
@@ -36,7 +37,8 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation"
      style="margin-bottom: 0; background-color:#8B1C62;">
     <div class="navbar-header">
-        <a class="navbar-brand" href="/admin/index" style="color: white;">SAS : SPSS Alumni System</a>
+        <a class="navbar-brand" href="/admin/index" style="color: white;">ระบบฐานข้อมูลภาวะการมีงานทำ
+            บัณฑิต{{env('FACULTY')}} มหาวิทยาลัยพะเยา</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -44,47 +46,50 @@
 
 <div class="row" style="padding-top:40px;">
 
-   <!-- <div class="col-lg-4 col-lg-offset-2 col-xs-12">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <i class="fa fa-graduation-cap"></i>
-                ศิษย์เก่า
-            </div>
-            <div class="panel-body">
-                <form  action="/user/index" method="get" class="form-signin">
-                   csrf_field()}}
-                    <div class="form-group">
-                        <label>รหัสประจำตัวประชาชน</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" name="person_id" class="form-control" placeholder="รหัสประจำตัวประชาชน 13 หลัก">
-                        </div>
-                        <p class="help-block"></p>
-                    </div>
+    <!-- <div class="col-lg-4 col-lg-offset-2 col-xs-12">
+         <div class="panel panel-primary">
+             <div class="panel-heading">
+                 <i class="fa fa-graduation-cap"></i>
+                 ศิษย์เก่า
+             </div>
+             <div class="panel-body">
+                 <form  action="/user/index" method="get" class="form-signin">
+                    csrf_field()}}
+                     <div class="form-group">
+                         <label>รหัสประจำตัวประชาชน</label>
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                             <input type="text" name="person_id" class="form-control" placeholder="รหัสประจำตัวประชาชน 13 หลัก">
+                         </div>
+                         <p class="help-block"></p>
+                     </div>
 
-                    <div class="form-group">
-                        <label>รหัสนิสิต</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" name="student_id" class="form-control" placeholder="รหัสนิสิต">
-                        </div>
-                        <p class="help-block"></p>
-                    </div>
+                     <div class="form-group">
+                         <label>รหัสนิสิต</label>
+                         <div class="input-group">
+                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                             <input type="text" name="student_id" class="form-control" placeholder="รหัสนิสิต">
+                         </div>
+                         <p class="help-block"></p>
+                     </div>
 
-                    <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+                     <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
 
-                </form>
-            </div>
+                 </form>
+             </div>
 
-        </div>
-    </div> -->
-       <div class="col-lg-4 col-xs-12"></div>
+         </div>
+     </div> -->
+    <div class="col-lg-4 col-xs-12"></div>
 
     <div class="col-lg-4 col-xs-12">
+
+        @include('share.error')
+
         <div class="panel panel-info" style="color:#8B1C62;">
             <div class="panel-heading">
                 <i class="fa fa-briefcase"></i>
-                บุคลากรคณะรัฐศาสตร์ฯ มหาวิทยาลัยพะเยา
+                บุคลากร{{env('FACULTY')}}
             </div>
             <div class="panel-body">
                 <form action="/admin/auth/signin" method="post" class="form-signin">
@@ -93,7 +98,8 @@
                         <label>บัญชีผู้ใช้ มหาวิทยาลัยพะเยา</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input name="login[username]" type="text" class="form-control" placeholder="บัญชีผู้ใช้ มหาวิทยาลัยพะเยา">
+                            <input name="login[username]" type="text" class="form-control"
+                                   placeholder="บัญชีผู้ใช้ มหาวิทยาลัยพะเยา">
                         </div>
                         <p class="help-block">กรุณากรอก Username</p>
                     </div>
@@ -115,7 +121,7 @@
         </div>
     </div>
 
-       <div class="col-lg-4 col-xs-12"></div>
+    <div class="col-lg-4 col-xs-12"></div>
 </div>
 
 

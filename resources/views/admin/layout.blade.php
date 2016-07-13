@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/banner.ico">
 
-    <title>ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิตคณะรัฐศาสตร์และสังคมศาสตร์ มหาวิทยาลัยพะเยา</title>
+    <title>ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิต{{env('FACULTY')}} มหาวิทยาลัยพะเยา</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,11 +28,11 @@
 
     <!-- Custom Fonts -->
     <link href="/bower/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     @yield('css')
     <style type="text/css">
-        #toTopImg{
+        #toTopImg {
             position: fixed;
             bottom: 20px;
             right: 30px;
@@ -45,7 +45,7 @@
         }
     </style>
 
-            <!-- Bootstrap core JavaScript
+    <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/bower/jquery/dist/jquery.min.js"></script>
@@ -73,7 +73,7 @@
 
     @yield('javascript')
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('body').append('<div id="toTopImg" style="display:none"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>');
             $(window).scroll(function () {
                 if ($(this).scrollTop() != 0) {
@@ -82,8 +82,8 @@
                     $('#toTopImg').fadeOut();
                 }
             });
-            $('#toTopImg').click(function(){
-                $("html, body").animate({ scrollTop: 0 }, 600);
+            $('#toTopImg').click(function () {
+                $("html, body").animate({scrollTop: 0}, 600);
                 return false;
             });
         });
@@ -104,7 +104,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/admin/index" style="color: white;">ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิตคณะรัฐศาสตร์และสังคมศาสตร์ มหาวิทยาลัยพะเยา</a>
+                <a class="navbar-brand" href="/admin/index" style="color: white;">ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิต{{env('FACULTY')}} มหาวิทยาลัยพะเยา</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -115,11 +115,13 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
+                        {{--
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
+                        --}}
                         <li><a href="/admin/auth/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
