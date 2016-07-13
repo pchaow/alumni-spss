@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/banner.ico">
 
-    <title>ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิตคณะรัฐศาสตร์และสังคมศาสตร์ มหาวิทยาลัยพะเยา</title>
+    <title>ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิต{{env('FACULTY')}} มหาวิทยาลัยพะเยา</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -104,7 +104,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/admin/index" style="color: white;">ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิตคณะรัฐศาสตร์และสังคมศาสตร์ มหาวิทยาลัยพะเยา</a>
+                <a class="navbar-brand" href="/admin/index" style="color: white;">ระบบฐานข้อมูลภาวะการมีงานทำ บัณฑิต{{env('FACULTY')}} มหาวิทยาลัยพะเยา</a>
             </div>
             <!-- /.navbar-header -->
 
