@@ -16,7 +16,7 @@ class AddThailandProvince extends Migration
 
 
         // trim province
-        DB::update(' update province set provine_code = trim(province_code)');
+        DB::update(' update province set province_code = trim(province_code)');
     }
 
     /**
