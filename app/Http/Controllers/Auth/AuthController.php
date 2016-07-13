@@ -105,6 +105,8 @@ class AuthController extends Controller
                     $user->up()->save($upprofile);
                     $upprofile->upProfileType()->associate($type);
 
+
+                    \Auth::login($user);
                 }
                 return redirect('/admin/index');
             }
