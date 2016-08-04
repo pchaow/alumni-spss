@@ -148,7 +148,7 @@
                         </div>
 
                         <div class="panel-footer">
-                            <span class="pull-left">ประเภทงานของบัณฑิต</span>
+                            <span class="pull-left">ช่วงเวลาในการได้งานทำ</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
