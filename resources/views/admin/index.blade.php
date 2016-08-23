@@ -82,7 +82,7 @@
         </div>
         <div class="col-lg-3 col-md-6">
             <a target="_blank"
-               href="https://www.facebook.com/groups/371288036329445/">
+               href="{{env('FB_GROUP_URL')}}">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
