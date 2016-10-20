@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -35,7 +35,7 @@
 <body>
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation"
-     style="margin-bottom: 0; background-color:#8B1C62;">
+     style="margin-bottom: 0; background-color:{{env('TOP_NAV_COLOR')}};">
     <div class="navbar-header">
         <a class="navbar-brand" href="/admin/index" style="color: white;">ระบบฐานข้อมูลภาวะการมีงานทำ
             บัณฑิต{{env('FACULTY')}} มหาวิทยาลัยพะเยา</a>
@@ -86,7 +86,7 @@
 
         @include('share.error')
 
-        <div class="panel panel-info" style="color:#8B1C62;">
+        <div class="panel panel-info">
             <div class="panel-heading">
                 <i class="fa fa-briefcase"></i>
                 บุคลากร{{env('FACULTY')}}
