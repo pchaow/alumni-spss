@@ -30,7 +30,8 @@
                         </div>
                         <div class="panel-footer">
                             <span class="pull-left">จำนวนบัณฑิต</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #5cb85c;"></i></span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"
+                                                        style="color: #5cb85c;"></i></span>
                             <div class="clearfix"></div>
                         </div>
 
@@ -53,7 +54,8 @@
                         </div>
                         <div class="panel-footer">
                             <span class="pull-left">สถานที่ทำงานของบัณฑิต</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #f0ad4e;"></i></span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"
+                                                        style="color: #f0ad4e;"></i></span>
                             <div class="clearfix"></div>
                         </div>
 
@@ -77,7 +79,8 @@
 
                         <div class="panel-footer">
                             <span class="pull-left">ภูมิลำเนาของบัณฑิต</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #d9534f;"></i></span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"
+                                                        style="color: #d9534f;"></i></span>
                             <div class="clearfix"></div>
                         </div>
 
@@ -156,8 +159,6 @@
                     </div>
                 </a>
             </div>
-        </div>
-
         </div>
     </div>
 @endsection

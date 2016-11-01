@@ -52,9 +52,7 @@ class SearchAlumniController extends Controller
         $firstname = Input::get("firstname");
         $lastname = Input::get("lastname");
 
-       
-
-
+        
         $data_alumni = Alumni::query();
         if(Input::has("education_year")){
             $data_alumni->where('student_id', 'LIKE', "$educationYear%");
