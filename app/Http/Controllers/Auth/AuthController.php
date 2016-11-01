@@ -59,7 +59,7 @@ class AuthController extends Controller
             if ($staffInfoResult->CitizenID) {
 
                 //check faculty
-                if ($staffInfoResult->Faculty != env('FACULTY')) {
+                if (!isset($staffInfoResult->Faculty) || $staffInfoResult->Faculty != env('FACULTY')) {
                     return redirect('/')->withErrors(['up' => 'Only ' . env('FACULTY') . ' can be logged in.']);
                 }
 

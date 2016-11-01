@@ -12,8 +12,8 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class User extends Model implements AuthenticatableContract,
-                                    AuthorizableContract,
-                                    CanResetPasswordContract
+    AuthorizableContract,
+    CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
@@ -29,7 +29,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['firstname','lastname','username','national_id', 'email', 'password'];
+    protected $fillable = ['firstname', 'lastname', 'username', 'national_id', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -39,8 +39,9 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
 
-    public function usertype(){
-        return $this->belongsTo('App\Models\UserType','usertype_id');
+    public function usertype()
+    {
+        return $this->belongsTo('App\Models\UserType', 'usertype_id');
     }
 
     public function up()
@@ -48,4 +49,44 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasOne(UpProfile::class);
     }
 
+    public function roles()
+    {
+        return $this->usertype();
+    }
+
+
+    public function isAdmin()
+    {
+        $role = $this->roles()->where("name", '=', 'ADMIN')->first();
+        if ($role) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function hasRole($roles)
+    {
+
+        if (is_array($roles)) {
+            foreach ($roles as $need_role) {
+                if ($this->checkIfUserHasRole($need_role)) {
+                    return true;
+                }
+            }
+        } else {
+            return $this->checkIfUserHasRole($roles);
+        }
+        return false;
+    }
+
+    private function getUserRole()
+    {
+        return $this->roles()->getResults();
+    }
+
+    private function checkIfUserHasRole($need_role)
+    {
+        return $this->roles()->where('name', '=', $need_role)->first();
+    }
 }

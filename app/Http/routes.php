@@ -17,9 +17,9 @@ use App\Models\User;
 
 Route::get('/ajax-yearGrad', function () {
     $yearGrad = Input::get('yearGrad');
-        if(!$yearGrad){
-            return;
-        }
+    if (!$yearGrad) {
+        return;
+    }
     $years = \App\Models\Alumni::select('yearofgraduation')
         ->where('yearofgraduation', '>=', $yearGrad)
         ->distinct()
@@ -30,14 +30,14 @@ Route::get('/ajax-yearGrad', function () {
 
 Route::get('/ajax-branch', function () {
     $degree_id = Input::get('degree_id');
-    if($degree_id!=null) {
+    if ($degree_id != null) {
         $branch = \App\Models\Alumni::select('branch')
             ->where('degree', '=', $degree_id)
             ->distinct()
             ->orderby('branch', 'ASC')
             ->get();
         return \Illuminate\Support\Facades\Response::json($branch);
-    }else{
+    } else {
         $branch = \App\Models\Alumni::select('branch')
             ->distinct()
             ->orderby('branch', 'ASC')
@@ -67,11 +67,13 @@ Route::group(['middleware' => ['web']], function () {
     });
 
 
-    Route::group(['prefix' => 'admin'], function () {
+    Route::post('/admin/auth/signin', "Auth\AuthController@postSignin");
 
- 
-
-        Route::post('/auth/signin', "Auth\AuthController@postSignin");
+    Route::group([
+        'prefix' => 'admin',
+        'middleware' => 'roles',
+        'roles' => ['ADMIN']
+    ], function () {
 
         Route::get('/auth/logout', "Auth\AuthController@postLogout");
 
